@@ -32,7 +32,7 @@ export default function Post({ post, morePosts, preview }: Props) {
           type="BlogPosting"
           url={`/${post.slug}`}
           title={post.title}
-          images={[`https://www.jhagas.space/${post.ogImage.url}`]}
+          images={[`https://www.jhagas.space${post.ogImage.url}`]}
           datePublished={post.date}
           dateModified={post.date}
           authorName="Jhagas Hana Winaya"
@@ -51,7 +51,7 @@ export default function Post({ post, morePosts, preview }: Props) {
             siteName: "Jhagas's Space",
             images: [
               {
-                url: `https://www.jhagas.space/${post.ogImage.url}`,
+                url: `https://www.jhagas.space${post.ogImage.url}`,
                 width: 1200,
                 height: 630,
                 alt: `Ilustrasi gambar artikel ${post.title}`,
