@@ -29,7 +29,7 @@ function Seo() {
     <NextSeo
       title="Tentang Saya | Jhagas's Space"
       description="Sekilas tentang Jhagas, penulis blog Jhagas's Space"
-      canonical="https://jhagas.space/about-me"
+      canonical="https://www.jhagas.space/about-me"
       openGraph={{
         profile: {
           firstName: "Jhagas",
@@ -40,11 +40,11 @@ function Seo() {
         description: "Sekilas tentang Jhagas, penulis blog Jhagas's Space",
         type: "website",
         locale: "id_ID",
-        url: "https://jhagas.space/about-me",
+        url: "https://www.jhagas.space/about-me",
         siteName: "Jhagas's Space",
         images: [
           {
-            url: "/aboutog.png",
+            url: "https://www.jhagas.space/aboutog.png",
             width: 1200,
             height: 630,
             alt: "Jhagas's Space, Tentang Saya",

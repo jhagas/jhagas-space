@@ -10,11 +10,11 @@ const config: DefaultSeoProps = {
       "Exploring Jhagas's Space, a personal blog, and my journey through the fascinating world of science and physics",
     type: "website",
     locale: "id_ID",
-    url: "https://jhagas.space/",
+    url: "https://www.jhagas.space/",
     siteName: "Jhagas's Space",
     images: [
       {
-        url: "/ogimage.png",
+        url: "https://www.jhagas.space/ogimage.png",
         width: 1200,
         height: 630,
         alt: "Jhagas's Space with description",

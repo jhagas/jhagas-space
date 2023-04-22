@@ -32,7 +32,7 @@ export default function Post({ post, morePosts, preview }: Props) {
           type="BlogPosting"
           url={`/${post.slug}`}
           title={post.title}
-          images={[post.ogImage.url]}
+          images={[`https://www.jhagas.space/${post.ogImage.url}`]}
           datePublished={post.date}
           dateModified={post.date}
           authorName="Jhagas Hana Winaya"
@@ -41,17 +41,17 @@ export default function Post({ post, morePosts, preview }: Props) {
         <NextSeo
           title={title}
           description={post.desc}
-          canonical="https://jhagas.space/"
+          canonical="https://www.jhagas.space/"
           openGraph={{
             title: title,
             description: post.desc,
             type: "website",
             locale: "id_ID",
-            url: `https://jhagas.space/`,
+            url: `https://www.jhagas.space/`,
             siteName: "Jhagas's Space",
             images: [
               {
-                url: post.ogImage.url,
+                url: `https://www.jhagas.space/${post.ogImage.url}`,
                 width: 1200,
                 height: 630,
                 alt: `Ilustrasi gambar artikel ${post.title}`,
