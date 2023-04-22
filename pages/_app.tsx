@@ -3,6 +3,7 @@ import "../styles/index.css";
 import { Inter } from "next/font/google";
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
+import { Analytics } from "@vercel/analytics/react";
 
 export const inter = Inter({ subsets: ["latin"] });
 
@@ -11,6 +12,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <div className={inter.className}>
       <DefaultSeo {...SEO} />
       <Component {...pageProps} />
+      <Analytics />
     </div>
   );
 }
