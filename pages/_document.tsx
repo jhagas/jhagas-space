@@ -14,7 +14,12 @@ export default function Document() {
           rel="stylesheet"
           href="//unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/atom-one-light.min.css"
         />
-        <link rel="icon" href="/favicon.svg"  />
+        <link rel="icon" href="/favicon.svg" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1690174069927248"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
       <body>
         <Main />
