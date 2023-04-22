@@ -32,7 +32,7 @@ export default function Post({ post, morePosts, preview }: Props) {
       <>
         <ArticleJsonLd
           type="BlogPosting"
-          url={`https://www.jhagas.space/${post.slug}`}
+          url={`https://www.jhagas.space/posts/${post.slug}`}
           title={post.title}
           images={[`https://www.jhagas.space${post.ogImage.url}`]}
           datePublished={post.date}
@@ -43,13 +43,13 @@ export default function Post({ post, morePosts, preview }: Props) {
         <NextSeo
           title={title}
           description={post.desc}
-          canonical={`https://www.jhagas.space/${post.slug}`}
+          canonical={`https://www.jhagas.space/posts/${post.slug}`}
           openGraph={{
             title: title,
             description: post.desc,
             type: "website",
             locale: "id_ID",
-            url: `https://www.jhagas.space/${post.slug}`,
+            url: `https://www.jhagas.space/posts/${post.slug}`,
             siteName: "Jhagas's Space",
             images: [
               {
