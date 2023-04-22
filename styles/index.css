@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.katex {
+  font-size: 1.15em;
+}
+
+.katex-html {
+  @apply py-2 overflow-x-auto overflow-y-hidden;
+}
+
+.katex-display > .katex > .katex-html > .tag {
+  @apply relative left-10 lg:absolute lg:right-0 lg:left-auto;
+}
+
+.post-title {
+  @apply text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-tight md:leading-tight text-center bg-gradient-to-tl from-[#F44369] to-[#3E3B92] text-transparent bg-clip-text;
+}
+
+.markdown-styles_markdown__h_8de > blockquote {
+  border-left: 10px solid #f44369;
+  @apply pr-4 pl-10 py-7 my-3 bg-zinc-50 rounded-lg text-opacity-90 font-semibold shadow-sm shadow-slate-200;
+}
+
+blockquote p {
+  @apply inline text-[0.95rem];
+}
+
+.markdown-styles_markdown__h_8de > h2 {
+  @apply font-semibold bg-gradient-to-tl from-[#F44369] to-[#3E3B92] text-transparent bg-clip-text max-w-fit;
+}
+
+pre > code {
+  @apply text-[0.9rem] rounded-lg shadow-sm shadow-slate-200;
+}
+
+.markdown-styles_markdown__h_8de > p > code {
+  @apply bg-zinc-100 text-red-600 rounded-md mx-1 p-1;
+}
+
+li > code {
+  @apply bg-zinc-100 text-red-600 rounded-md mx-1 p-1;
+}
+
+.markdown-styles_markdown__h_8de > p > img {
+  @apply mx-auto rounded-lg my-10 lg:max-w-xl;
+}
+
+.markdown-styles_markdown__h_8de > table {
+  @apply table text-[0.95rem] shadow-sm shadow-slate-200 rounded-lg overflow-auto max-w-fit mx-auto;
+  display: block;
+}
+.markdown-styles_markdown__h_8de > table th:first-child {
+  position: static;
+}
+
+ol {
+  @apply list-decimal ml-10;
+}
+
+ul {
+  @apply list-disc ml-10;
+}
+
+li {
+  @apply pl-2 text-[0.95rem];
+}
+
+.markdown-styles_markdown__h_8de > p {
+  @apply text-justify break-words text-[0.95rem];
+}
+
+.markdown-styles_markdown__h_8de a {
+  @apply text-[#F44369] underline hover:text-[#3E3B92] transition-colors;
+}
+
+.Typewriter__cursor {
+  @apply text-[#F44369];
+}
