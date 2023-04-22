@@ -25,12 +25,14 @@ export default function Post({ post, morePosts, preview }: Props) {
     return <ErrorPage statusCode={404} />;
   }
 
+  console.log(post.slug);
+
   function Seo() {
     return (
       <>
         <ArticleJsonLd
           type="BlogPosting"
-          url={`/${post.slug}`}
+          url={`https://www.jhagas.space/${post.slug}`}
           title={post.title}
           images={[`https://www.jhagas.space${post.ogImage.url}`]}
           datePublished={post.date}
@@ -41,13 +43,13 @@ export default function Post({ post, morePosts, preview }: Props) {
         <NextSeo
           title={title}
           description={post.desc}
-          canonical="https://www.jhagas.space/"
+          canonical={`https://www.jhagas.space/${post.slug}`}
           openGraph={{
             title: title,
             description: post.desc,
             type: "website",
             locale: "id_ID",
-            url: `https://www.jhagas.space/`,
+            url: `https://www.jhagas.space/${post.slug}`,
             siteName: "Jhagas's Space",
             images: [
               {
