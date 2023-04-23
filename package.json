@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "typecheck": "tsc"
   },
@@ -14,6 +15,7 @@
     "gray-matter": "^4.0.3",
     "next": "latest",
     "next-seo": "^6.0.0",
+    "next-sitemap": "^4.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
