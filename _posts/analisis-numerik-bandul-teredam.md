@@ -92,6 +92,8 @@ $$
 
 ## Kode Python dan Analisis
 
+Jadi konsep utama dari metode numerik adalah untuk menghitung nilai $y$ maka dibutuhkan nilai $y’$ dari iterasi sebelumnya yang dikalikan dengan $h$ atau *timestep*, dan untuk menghitung $y’$ maka dibutuhkan nilai $y’’$ dari iterasi sebelumnya yang juga dikalikan dengan $h$. $y’’$ merupakan hasil dari persamaan diferensial biasa dari persoalan di atas.
+
 ### Inisiasi Library Numpy dan Matplotlib Serta Mengatur Ukuran Grafik
 
 
