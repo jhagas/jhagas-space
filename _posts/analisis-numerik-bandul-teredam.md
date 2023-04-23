@@ -1,5 +1,5 @@
 ---
-title: 'Analisis Numerik Persamaan Diferensial Bandul Teredam '
+title: 'Analisis Numerik Persamaan Diferensial Bandul Teredam'
 desc: 'Analisis dilakukan dengan metode Titik Tengah, Euler Termodifikasi, Runge-Kutta Orde 4, Adam-Bashforth Orde 4'
 tags: 'Computational Physics'
 coverImage: '/Damped_Pendulum_files/cover.png'

@@ -1,6 +1,6 @@
 ---
-title: 'Perbandingan 2 Metode Integral Numerik (Trapezoidal dan Simpson) Untuk Kasus Terjun Patung'
-desc: 'Penggunaan Integral Numerik Metode Trapezoidal dan Metode Simpson Pada Kasus Terjun Patung. Juga dijabarkan selisih (eror) kedua metode tersebut dari solusi eksak permasalahan'
+title: 'Perbandingan 2 Metode Integral Numerik (Trapezoidal dan Simpson) Untuk Kasus Terjun Payung'
+desc: 'Penggunaan Integral Numerik Metode Trapezoidal dan Metode Simpson Pada Kasus Terjun Payung. Juga dijabarkan selisih (eror) kedua metode tersebut dari solusi eksak permasalahan'
 tags: 'Computational Physics'
 coverImage: '/Terjun%20Payung%201aee79d9be594c1698a0e4512f6db34a/cover.png'
 date: '2023-04-17'
