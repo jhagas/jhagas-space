@@ -32,7 +32,7 @@ blockquote p {
 }
 
 pre > code {
-  @apply text-[0.9rem] rounded-lg shadow-sm shadow-slate-200;
+  @apply text-[0.9rem] rounded-lg shadow-sm shadow-slate-200 mb-7;
 }
 
 .markdown-styles_markdown__h_8de > p > code {
