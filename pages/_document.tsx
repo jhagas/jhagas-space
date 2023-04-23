@@ -32,11 +32,6 @@ export default function Document() {
           href="/favicon/favicon-16x16.png"
         />
         <link rel="manifest" href="/favicon/site.webmanifest" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1690174069927248"
-          crossOrigin="anonymous"
-        ></script>
       </Head>
       <body>
         <Main />
