@@ -44,7 +44,7 @@ function Seo() {
         siteName: "Jhagas's Space",
         images: [
           {
-            url: "https://www.jhagas.space/aboutog.png",
+            url: "https://www.jhagas.space/assets/aboutog.png",
             width: 1200,
             height: 630,
             alt: "Jhagas's Space, Tentang Saya",
@@ -62,7 +62,7 @@ export default function About() {
       <div className="bg-zinc-50 px-4 h-screen">
         <div className="relative bg-white rounded-2xl p-9 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-xl min-w-min shadow-md">
           <Image
-            src="/profiles.jpeg"
+            src="/assets/profiles.jpeg"
             alt="Jhagas's Photo of Himself"
             width="200"
             height="200"

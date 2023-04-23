@@ -14,7 +14,7 @@ const config: DefaultSeoProps = {
     siteName: "Jhagas's Space",
     images: [
       {
-        url: "https://www.jhagas.space/ogimage.png",
+        url: "https://www.jhagas.space/assets/ogimage.png",
         width: 1200,
         height: 630,
         alt: "Jhagas's Space with description",
