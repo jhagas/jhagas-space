@@ -27,8 +27,8 @@ const tech = [
 function Seo() {
   return (
     <NextSeo
-      title="Tentang Saya | Jhagas's Space"
-      description="Sekilas tentang Jhagas, penulis blog Jhagas's Space"
+      title="Tentang Jhagas Hana Winaya | Jhagas's Space, Science & Technology Blog"
+      description="Sekilas tentang Jhagas Hana Winaya, penulis blog Jhagas's Space"
       canonical="https://www.jhagas.space/about-me"
       openGraph={{
         profile: {
@@ -36,8 +36,8 @@ function Seo() {
           lastName: "Winaya",
           gender: "male",
         },
-        title: "Tentang Saya | Jhagas's Space, My Personal Blog",
-        description: "Sekilas tentang Jhagas, penulis blog Jhagas's Space",
+        title: "Tentang Jhagas Hana Winaya | Jhagas's Space, Science & Technology Blog",
+        description: "Sekilas tentang Jhagas Hana Winaya, penulis blog Jhagas's Space",
         type: "website",
         locale: "id_ID",
         url: "https://www.jhagas.space/about-me",

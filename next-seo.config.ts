@@ -1,13 +1,13 @@
 import { DefaultSeoProps } from "next-seo";
 
 const config: DefaultSeoProps = {
-  title: "Jhagas's Space",
+  title: "Jhagas's Space, Science and Technology Blog",
   description:
-    "Exploring Jhagas's Space, a personal blog, and my journey through the fascinating world of science and physics",
+    "Exploring Jhagas's Space, a personal blog, and my journey through the fascinating world of science, physics, engineering, bleeding edge technologies and education advices",
   openGraph: {
-    title: "Jhagas's Space, My Personal Blog",
+    title: "Jhagas's Space, Science and Technology Blog",
     description:
-      "Exploring Jhagas's Space, a personal blog, and my journey through the fascinating world of science and physics",
+      "Exploring Jhagas's Space, a personal blog, and my journey through the fascinating world of science, physics, engineering, bleeding edge technologies and education advices",
     type: "website",
     locale: "id_ID",
     url: "https://www.jhagas.space/",

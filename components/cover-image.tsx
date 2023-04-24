@@ -11,7 +11,7 @@ const CoverImage = ({ title, src }: Props) => {
   const image = (
     <Image
       src={src}
-      alt={`Cover Image for ${title}`}
+      alt={`Article Cover Image`}
       className="w-full rounded-lg"
       width={400}
       height={200}
