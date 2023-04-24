@@ -35,15 +35,15 @@ pre > code {
   @apply text-[0.9rem] rounded-lg shadow-sm shadow-slate-200 mb-7;
 }
 
-.markdown-styles_markdown__h_8de > p > code {
-  @apply bg-zinc-100 text-red-600 rounded-md mx-1 p-1;
+p > code {
+  @apply bg-zinc-100 text-red-600 rounded-md mx-1 p-1 break-words;
 }
 
 li > code {
   @apply bg-zinc-100 text-red-600 rounded-md mx-1 p-1;
 }
 
-.markdown-styles_markdown__h_8de > p > img {
+p > img {
   @apply mx-auto rounded-lg my-10 lg:max-w-xl;
 }
 

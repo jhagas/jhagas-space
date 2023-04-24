@@ -27,7 +27,7 @@ Dalam artikel ini, akan dijelaskan bagaimana cara melakukan monitoring dan data 
         
         ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled.png)
         
-    2. Masukkan `http://arduino.esp8266.com/stable/package_esp8266com_index.json` **** pada form **“Additional Boards Manager URLs”** seperti gambar berikut. Lalu, klik tombol “OK”
+    2. Masukkan `http://arduino.esp8266.com/stable/package_esp8266com_index.json` pada form **“Additional Boards Manager URLs”** seperti gambar berikut. Lalu, klik tombol “OK”
         
         ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%201.png)
         
@@ -223,10 +223,11 @@ void loop()
     
     Key diisi seperti pada tabel berikut dengan value menyesuaikan dengan supabase anda
     
-    | Key                         | Value                                                                                                                                                                                                            |
-    | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | REACT_APP_SUPABASE_URL      | https://pmtntcvniacqbzuafytw.supabase.co                                                                 |
-    | REACT_APP_SUPABASE_ANON_KEY | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtdG50Y3ZuaWFjcWJ6dWFmeXR3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzEzNTgyOTUsImV4cCI6MTk4NjkzNDI5NX0.HbRBJwbgQgZc1xhnoC8z1nRsF7_8YtX-p2ZChtCVXKM |
+| Key                         | Value                                                                                                                                                                                                            |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| REACT_APP_SUPABASE_URL      | https://pmtntcvniacqbzuafytw.supabase.co                                                                                                                                                                         |
+| REACT_APP_SUPABASE_ANON_KEY | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtdG50Y3ZuaWFjcWJ6dWFmeXR3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzEzNTgyOTUsImV4cCI6MTk4NjkzNDI5NX0.HbRBJwbgQgZc1xhnoC8z1nRsF7_8YtX-p2ZChtCVXKM |
+
 11. Lalu klik “Deploy Site”
 12. Setelah selesai melakukan deployment, ubah domain situs anda (opsional)
     

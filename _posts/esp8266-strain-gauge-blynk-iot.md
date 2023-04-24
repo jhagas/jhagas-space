@@ -19,7 +19,7 @@ Strain gauge dan modul HX711 (ADC dan Amplifier) sangat cocok mengukur berat pad
         
         ![Untitled](/Technical%20Details%20Project%20Elka%2007de03e54f6142b4bdcfa3c385aadce3/Untitled.png)
         
-    - Masukkan `http://arduino.esp8266.com/stable/package_esp8266com_index.json` **** pada form **“Additional Boards Manager URLs”** seperti gambar berikut. Lalu, klik tombol “OK”
+    - Masukkan `http://arduino.esp8266.com/stable/package_esp8266com_index.json` pada form **“Additional Boards Manager URLs”** seperti gambar berikut. Lalu, klik tombol “OK”
         
         ![Untitled](/Technical%20Details%20Project%20Elka%2007de03e54f6142b4bdcfa3c385aadce3/Untitled%201.png)
         
