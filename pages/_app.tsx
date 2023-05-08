@@ -16,6 +16,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1690174069927248"
         crossOrigin="anonymous"
       ></Script>
+      <script
+        async
+        custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"
+      ></script>
       <Component {...pageProps} />
       <Analytics />
     </div>
