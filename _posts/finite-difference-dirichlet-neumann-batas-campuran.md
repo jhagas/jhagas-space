@@ -110,7 +110,7 @@ $$
 3. **Persamaan 3** berlaku pada $j=0$ dengan $i=1,2,3$ (Batas bawah)
 4. **Persamaan 4** berlaku pada $i=0$ dengan $j=0$
 
-Sehingga kombinasinya menghasilkan 11 persamaan yang berbeda. 5 persamaan terakhir adalah persamaan dari batas grid kanan dan bawah.
+Sehingga kombinasinya menghasilkan 11 persamaan yang berbeda. 5 persamaan terakhir adalah persamaan dari batas grid kanan dan atas. Dari keempat persamaan tersebut, dimasukkan nilai i dan j yang sesuai pada titi grid yang diinginkan.
 
 ---
 

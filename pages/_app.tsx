@@ -12,10 +12,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className={inter.className}>
       <DefaultSeo {...SEO} />
-      <Script
+      <script
+        async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1690174069927248"
         crossOrigin="anonymous"
-      ></Script>
+      ></script>
       <script
         async
         custom-element="amp-auto-ads"
