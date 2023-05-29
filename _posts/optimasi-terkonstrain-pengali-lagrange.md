@@ -32,7 +32,7 @@ $$
 
 Cari titik minimum fungsi tersebut pada konstrain yang diberikan.
 
-## ****Pembentukan Lagrangian Dari Fungsi Objektif Persoalan****
+## Pembentukan Lagrangian Dari Fungsi Objektif Persoalan
 
 Dalam kasus ini terdapat 2 *inequality constrain* (batas pertidaksamaan) dari persamaan 1 dan persamaan 2 sehingga batasan tersebut perlu diubah menjadi *equality constrain* (batas persamaan). Kita bisa menganggap ada satu variabel pada tiap batasan yang menyebabkan adanya pertidaksamaan tersebut, yaitu $\theta_1^2$ dan $\theta_2^2$. Dengan demikian, kedua batasan tersebut menjadi
 
