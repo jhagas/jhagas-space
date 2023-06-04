@@ -52,7 +52,7 @@ L=(2x+3y-x^3-2y^2)+\lambda_1(\theta_1^2+x+3y-\frac{x^2}{2}-\frac{11}{2})+\lambda
 \end{align}
 $$
 
-Untuk mendapatkan nilai optimum masing-masing parameter, turunan parsial pertama dari persamaan 7 pada setiap parameter harus bernilai nol
+Untuk mendapatkan nilai minimum masing-masing parameter, turunan parsial pertama dari persamaan 7 pada setiap parameter harus bernilai nol
 
 $$
 \begin{align}
@@ -173,7 +173,7 @@ def jacobian(x):
 
 ### Iterasi Utama
 
-Kode dibawah melakukan proses iteratif untuk menyelesaikan sistem persamaan menggunakan matriks Jacobian. Kode ini diinisialisasi dengan loop yang mengulang dari rentang `0` hingga `niter-1`. Dalam setiap iterasi, matriks Jacobian dihitung menggunakan fungsi `jacobian()`, dan kemudian digunakan untuk memecahkan vektor solusi `dx`. Vektor solusi baru kemudian dikurangi dari yang sebelumnya dan diteruskan ke `x[i+1,:]`. Kode kemudian memeriksa konvergensi dengan mengukur selisih absolut antara vektor solusi baru dan lama, dan jika selisihnya kurang dari nilai toleransi yang telah ditetapkan sebelumnya, kode keluar dari *loop* dan mencetak solusi yang konvergen. Jika tidak, vektor solusi baru ditambahkan ke matriks x menggunakan np.vstack().
+Kode dibawah melakukan proses iteratif untuk menyelesaikan sistem persamaan menggunakan matriks Jacobian. Kode ini diinisialisasi dengan loop yang mengulang dari rentang `0` hingga `niter-1`. Dalam setiap iterasi, matriks Jacobian dihitung menggunakan fungsi `jacobian()`, dan kemudian digunakan untuk memecahkan vektor solusi `dx`. Vektor solusi baru kemudian dikurangi dari yang sebelumnya dan diteruskan ke `x[i+1,:]`. Kode kemudian memeriksa konvergensi dengan mengukur selisih absolut antara vektor solusi baru dan lama, dan jika selisihnya kurang dari nilai toleransi yang telah ditetapkan sebelumnya, kode keluar dari *loop* dan mencetak solusi yang konvergen. Jika tidak, vektor solusi baru ditambahkan ke matriks `x` menggunakan `np.vstack()`.
 
 Akhirnya, kode mencetak nomor iterasi dan solusi saat ini untuk setiap iterasi. Di mana solusi yang didapat dari program ini adalah pada iterasi yang terakhir dan urutan indeksnya akan sama dengan indeks yang telah ditetapkan pada proses membuat fungsi objektif.
 

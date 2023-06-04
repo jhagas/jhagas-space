@@ -31,7 +31,7 @@ const Header = () => {
             href="/"
             className="btn btn-ghost normal-case text-lg md:text-xl flex gap-3 hover:bg-zinc-50 hover:text-[#F44369] transition-colors duration-500"
           >
-            <BsFillRocketTakeoffFill size="22px" className="text-orange-500" />
+            <BsFillRocketTakeoffFill size="22px" className="gay" />
             Jhagas's Space
           </Link>
         </div>
@@ -74,7 +74,7 @@ const Header = () => {
             href="/about-me"
             className="btn w-full bg-[#F44369] border-0 hover:bg-[#3E3B92] text-white"
           >
-            About me
+            Tentang Saya
           </Link>
         </li>
       </ul>
