@@ -31,7 +31,7 @@ const Header = () => {
             href="/"
             className="btn btn-ghost normal-case text-lg md:text-xl flex gap-3 hover:bg-zinc-50 hover:text-[#F44369] transition-colors duration-500"
           >
-            <BsFillRocketTakeoffFill size="22px" className="gay" />
+            <BsFillRocketTakeoffFill size="22px" className="text-orange-500" />
             Jhagas's Space
           </Link>
         </div>
