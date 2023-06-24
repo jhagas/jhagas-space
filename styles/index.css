@@ -10,8 +10,16 @@
   @apply py-2 overflow-x-auto overflow-y-hidden;
 }
 
+.katex-display > .katex > .katex-html {
+  @apply flex
+}
+
+.katex-display > .katex > .katex-html > .base {
+  @apply mx-auto;
+}
+
 .katex-display > .katex > .katex-html > .tag {
-  @apply relative left-10 lg:absolute lg:right-0 lg:left-auto;
+  @apply relative ml-10;
 }
 
 .post-title {
