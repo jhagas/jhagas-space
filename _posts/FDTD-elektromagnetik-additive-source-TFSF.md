@@ -76,22 +76,26 @@ Dari gambar di atas diketahui bahwa pendekatan 2 dimensi digunakan pada perhitun
 Ditinjau Hukum Faraday (dari persamaan 3) pada titik ruang-waktu $((m+\frac12)\Delta x, q\Delta t)$ yang ditunjukkan dengan persamaan
 
 $$
+\begin{align*}
 \mu \left.
 \frac{\partial H_y}{\partial t}  \right |_{(m+\frac12)\Delta x, q\Delta t}
 =
 \left.
 \frac{\partial E_z}{\partial x}
 \right |_{(m+\frac12)\Delta x, q\Delta t}
+\end{align*}
 $$
 
 Karena kita melakukan diskretisasi *finite difference*, maka turunan medan magnet terhadap waktu pada digantikan dengan pendekatan metode center, $H^{q+\frac12}_y[m+\frac12]$ dan $H^{q-\frac12}_y[m+\frac12]$ dan turunan medan listrik berupa ruang digantikan dengan $E^q_z[m+1]$ dan $E^q_z[m]$ sehingga
 
 $$
+\begin{align*}
 \mu \frac{H^{q+\frac12}_y[m+\frac12] - H^{q-\frac12}_y[m+\frac12]}{\Delta t}  
 
 =
 
 \frac{E^q_z[m+1] - E^q_z[m]}{\Delta x}
+\end{align*}
 $$
 
 yang apabila persamaan di atas ditata ulang untuk mencari *update equation* untuk $H_y$ didapatkan persamaan
@@ -110,6 +114,7 @@ $$
 Ditinjau Hukum Faraday (dari persamaan 4) pada titik ruang-waktu $(m\Delta x, (q+\frac12)\Delta t)$ yang ditunjukkan dengan persamaan
 
 $$
+\begin{align*}
 \epsilon \left.
 \frac{\partial E_z}{\partial t}
 \right |_{m\Delta x, (q+\frac12)\Delta t}
@@ -117,17 +122,20 @@ $$
 \left.
 \frac{\partial H_y}{\partial x}
 \right |_{m\Delta x, (q+\frac12)\Delta t}
+\end{align*}
 $$
 
 Seperti yang telah kita lakukan sebelumnya pada Update Equation Hukum Faraday, kita mengganti turunan medan listrik terhadap waktu dengan $E^{q+\frac12}_z[m]$ dan $E^{q}_z[m]$, serta turunan medan magnet terhadap ruang digantikan dengan $H^{q+\frac12}_y[m+\frac12]$ dan $H^{q+\frac12}_y[m-\frac12]$ sehingga
 
 $$
+\begin{align*}
 \epsilon 
 \frac{E^{q+\frac12}_z[m] - E^{q}_z[m]}{\Delta t}  
 
 =
 
 \frac{H^{q+\frac12}_y[m+\frac12] - H^{q+\frac12}_y[m-\frac12]}{\Delta x}
+\end{align*}
 $$
 
 yang apabila persamaan di atas ditata ulang untuk mencari *update equation* untuk $E_z$ didapatkan persamaan
@@ -197,6 +205,7 @@ $$
 Digunakan metode *leap-frog* di mana satu medan dihitung terlebih dahulu lalu medan yang lain dihitung, lalu proses diulang-ulang. Ditinjau Hukum Faraday (dari persamaan 13) pada titik ruang-waktu $(m\Delta x, (q+\frac12)\Delta t)$ yang ditunjukkan dengan persamaan
 
 $$
+\begin{align*}
 \epsilon \left.
 \frac{\partial E_z}{\partial t}
 \right |_{m\Delta x, (q+\frac12)\Delta t}
@@ -204,17 +213,20 @@ $$
 \left [
 \frac{\partial H_y}{\partial x}  -J_z
 \right ]_{m\Delta x, (q+\frac12)\Delta t}
+\end{align*}
 $$
 
 Seperti yang telah kita lakukan sebelumnya pada Update Equation Hukum Faraday, kita mengganti turunan medan listrik terhadap waktu dengan $E^{q+\frac12}_z[m]$ dan $E^{q}_z[m]$, serta turunan medan magnet terhadap ruang digantikan dengan $H^{q+\frac12}_y[m+\frac12]$ dan $H^{q+\frac12}_y[m-\frac12]$ sehingga
 
 $$
+\begin{align*}
 \epsilon 
 \frac{E^{q+\frac12}_z[m] - E^{q}_z[m]}{\Delta t}  
 
 =
 
 \frac{H^{q+\frac12}_y[m+\frac12] - H^{q+\frac12}_y[m-\frac12]}{\Delta x} - J_z^{q+\frac12}[m]
+\end{align*}
 $$
 
 yang apabila persamaan di atas ditata ulang untuk mencari *update equation* untuk $E_z$ didapatkan persamaan
@@ -358,7 +370,9 @@ Simulasi ini memerlukan penggunaan library numpy dan matplotlib, serta fungsi `F
 Selain sumber awal pada $t=100 \ s$, simulasi ini juga menggabungkan fungsi untuk sumber kepadatan arus ($J_z$), yang ditambahkan ke persamaan pembaruan untuk medan listrik yang digunakan untuk mensimulasikan sumber arus. Digunakan fungsi rapat arus $J_z$ (sumber tambahan) pada titik $x=100 \ m$ sebagai berikut
 
 $$
-J_z= e^{ (-t+30) * (t-30) / 100 }
+\begin{align*}
+J_z= e^{ (-q+30) * (q/-30) / 100 }
+\end{align*}
 $$
 
 Kode ini kemudian membuat dua plot animasi, satu untuk medan listrik dan satu untuk medan magnetik. Plot menunjukkan perubahan dalam medan listrik dan magnetik dalam ruang dan waktu, saat gelombang merambat melalui domain simulasi. Pada plot grafik, gelombang EM dimulai dari sumber tambahan yang dimulai pada $x=100 \ m$ dan menjalar ke kanan dan ke kiri sesuai yang diharapkan. Tampak pula letak gelombang listrik dan gelombang magnetik memiliki selisih (beda fasa) sebesar 90 derajat. Ketika gelombang listrik ataupun gelombang magnetik mencapai batas ($x=0$ dan $x=200$), maka gelombang-gelombang tersebut akan memantul dan kembali ke dalam ruang yang telah dibuat. Diketahui pula bahwa besar dari medan magnet jauh lebih kecil dari medan listrik.
@@ -482,13 +496,17 @@ Kode di atas ini mengimplementasikan metode *finite-difference time-domain* (FDT
 Fungsi `animate` didefinisikan untuk memperbarui medan listrik pada setiap langkah waktu. Pembaruan dilakukan berdasarkan hukum Ampere dan hukum Faraday, yang menggambarkan hubungan antara medan magnetik dan arus listrik yang menghasilkannya. Medan listrik dan medan magnet yang dihasilkan kemudian di *plot* sebagai grafik garis animasi menggunakan `matplotlib`. Kondisi batas TFSF (*total-field scattered-field*) juga diterapkan untuk menambahkan sumber gelombang datar. Kondisi batas diterapkan antara `hy[49]` dan `ez[50]`. Kondisi batas ini digunakan untuk mensimulasikan interaksi antara gelombang datar yang terjadi dan objek yang dipantulkan. Hal ini memungkinkan pemisahan medan total dan medan tersebar, yang diperlukan dalam banyak masalah penyebaran elektromagnetik. Fungsi koreksi pada $H_y$ yang digunakan adalah
 
 $$
-H_y(49) = H_y(49)- e^{ (-qTime+30) (qTime - 30) / 100 } / \ \text{imp0}
+\begin{align*}
+H_y(49) = H_y(49)- e^{ (-q+30) (q - 30) / 100 } / \ \text{imp0}
+\end{align*}
 $$
 
 Sedangkan fungsi koreksi pada $E_z$ adalah
 
 $$
-E_z(50) = E_z(50)+ e^{-(qTime + 0.5 - (-0.5) - 30) (qTime + 0.5 - (-0.5) - 30) / 100}
+\begin{align*}
+E_z(50) = E_z(50)+ e^{-(q + 0.5 - (-0.5) - 30) (q + 0.5 - (-0.5) - 30) / 100}
+\end{align*}
 $$
 
 Animasi yang dihasilkan menunjukkan evolusi waktu dari medan listrik dan magnetik ketika gelombang merambat melalui ruang. Animasi dimulai dengan sumber aditif pada waktu dan lokasi tertentu, yang menciptakan gangguan pada medan elektromagnetik. Gelombang kemudian merambat keluar dari sumber, seperti yang terlihat dalam animasi. Animasi juga menunjukkan pantulan gelombang pada batas domain simulasi, yang merupakan hasil dari gelombang yang bertemu dengan perubahan medium. Animasi memberikan representasi visual dari perilaku gelombang elektromagnetik dan dapat digunakan untuk mempelajari sifat dan interaksi gelombang dengan berbagai material.

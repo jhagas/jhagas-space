@@ -15,19 +15,25 @@ Gaya yang bekerja pada bandul adalah
 1. Gaya Berat, diambil hanya bagian tangensial (tegak lurus dengan arah ayunan). Negatif karena arahnya selalu berkebalikan dengan arah geraknya
     
     $$
+    \begin{align*}
     W_T = -mg \sin \theta
+    \end{align*}
     $$
     
 2. Gaya gesek udara, bergantung pada kecepatan sudut
     
     $$
+    \begin{align*}
     F_D = -cL\dot\theta
+    \end{align*}
     $$
     
 3. Gaya Tegang Tali, yang saling menghilangkan dengan bagian normal pada gaya gravitasi
     
     $$
+    \begin{align*}
     W_n-T=0
+    \end{align*}
     $$
     
 
@@ -43,19 +49,25 @@ $$
 Karena digunakan $\theta$ sebagai variabel utama, dan $a = \ddot t$ (**CATATAN**: $\ddot t$ adalah percepatan pada sumbu tangensial dari gerak ayunan, selanjutnya $t$ akan didefinisikan sebagai waktu). Maka agar percepatan $a$ bisa menjadi percepatan sudut, harus dibagi $L$ yang merupakan panjang tali (radius ayunan)
 
 $$
+    \begin{align*}
 a = L\frac{d^2\theta}{dt^2}
+    \end{align*}
 $$
 
 Sehingga persamaan gaya menjadi
 
 $$
+    \begin{align*}
 -mg \sin \theta - cL\frac{d\theta}{dt} = mL\frac{d^2\theta}{dt^2}
+    \end{align*}
 $$
 
 yang dapat disusun ulang sebagai
 
 $$
+    \begin{align*}
 \frac{d^2\theta}{dt^2} = -\frac{c}{m} \frac{d\theta}{dt} - \frac{g}{L} \sin \theta
+    \end{align*}
 $$
 
 ## Kondisi & Persoalan
@@ -85,7 +97,9 @@ Artinya bandul disimpangkan sebesar 90 derajat dan dilepaskan dari keadaan diam.
 Untuk menyelesaikan Persamaan Diferensial Biasa (PDB) orde-2, bisa dianggap sebagai 2 persamaan PDB orde-1. Maka dimisalkan bahwa
 
 $$
+\begin{align*}
 w=\frac{d\theta}{dt} \text{\ \ \ sehingga\ \ \ } \frac{dw}{dt} = -\frac{c}{m}w - \frac{g}{L} \sin \theta
+\end{align*}
 $$
 
 > ⚠️ Sayangnya pada permasalahan ini, **tidak ada solusi eksak (dari metode analitik)** yang bisa dijadikan perbandingan galat dari metode numerik yang akan digunakan.

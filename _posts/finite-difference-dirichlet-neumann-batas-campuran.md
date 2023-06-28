@@ -15,7 +15,9 @@ ogImage:
 Selesaikan persamaan berikut
 
 $$
+\begin{align*}
 \frac{\partial^2u}{\partial x^2} + \frac{\partial^2u}{\partial y^2} = f(x, y)
+\end{align*}
 $$
 
 Dengan $f(x,y) = \frac{y}{x}+\frac{x}{y}$. Dari   $1<x<2$   dan   $1<y<2$. Dengan syarat batas
@@ -34,41 +36,53 @@ Dengan $g(x)=x\ln(4x^2)$  dan  $h(y)=2y\ln(2y)$  serta  $\Delta x = \Delta y = 1
 Ingat bahwa sumbu horizontal adalah $y$ dan sumbu vertikal adalah $x$. Dengan mempertimbangkan aproksimasi deret Taylor metode *center*, maka didapat suku-suku dari persamaan di atas
 
 $$
+\begin{align*}
 \frac{\partial^2u}{\partial x^2}
 \approx
 \frac{u_{i+1, j}-2u_{i, j}+u_{i-1, j}}{\Delta x^2}
+\end{align*}
 $$
 
 $$
+\begin{align*}
 \frac{\partial^2u}{\partial y^2}
 \approx
 \frac{u_{i, j+1}-2u_{i, j}+u_{i, j-1}}{\Delta y^2}
+\end{align*}
 $$
 
 Yang apabila dimasukkan kembali ke persamaan pada persoalan, menjadi
 
 $$
+\begin{align*}
 \frac{u_{i+1, j}-2u_{i, j}+u_{i-1, j}}{\Delta x^2} + \frac{u_{i, j+1}-2u_{i, j}+u_{i, j-1}}{\Delta y^2} = f(x, y)
+\end{align*}
 $$
 
 Yang apabila dipersingkat, menjadi
 
 $$
+\begin{align*}
 \left(\frac{1}{\Delta x^2}\right)u_{i+1, j} + \left(\frac{1}{\Delta x^2}\right)u_{i-1, j}+\left(\frac{-2}{\Delta x^2}+\frac{-2}{\Delta y^2}\right)u_{i, j}+\left(\frac{1}{\Delta y^2}\right)u_{i, j+1}+\left(\frac{1}{\Delta y^2}\right)u_{i, j-1} = f(x, y)
+\end{align*}
 $$
 
 Dimisalkan bahwa
 
 $$
+\begin{align*}
 \left(\frac1{\Delta x^2}\right)=a,\ \ \ 
 \left(\frac{-2}{\Delta x^2}+\frac{-2}{\Delta y^2}\right)=b,\ \ \ 
 \left(\frac1{\Delta y^2}\right)=c
+\end{align*}
 $$
 
 Sehingga
 
 $$
+\begin{align*}
 au_{i+1, j} + au_{i-1, j}+bu_{i, j}+cu_{i, j+1}+cu_{i, j-1} = f(x, y)
+\end{align*}
 $$
 
 Untuk menyelesaikan persoalan batas Neumann (Batas kiri dan atas) serta Dirichlet (Batas kanan dan bawah), diperlukan model Gridding sebagai berikut
@@ -87,7 +101,9 @@ $$
 Sehingga dengan cara yang sama didapatkan batas untuk $j=0$ (Batas bawah)
 
 $$
+\begin{align*}
 u_{i,-1} = u_{i,1}
+\end{align*}
 $$
 
 Akan berlaku 16 persamaan pada model $N = 4$. Maka didapat
@@ -117,6 +133,7 @@ Sehingga kombinasinya menghasilkan 11 persamaan yang berbeda. 5 persamaan terakh
 Apabila dibentuk matriks koefisien, matriks besaran yang tidak diketahui (*unknown*) dan matriks hasil, terbentuk matriks sebagai berikut yang dapat dicari polanya
 
 $$
+\begin{align*}
  \begin{pmatrix}
 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
 c & b & c & 0 & 0 & 2a & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
@@ -172,6 +189,7 @@ h(y) \\
 h(y) \\
 h(y) 
 \end{pmatrix}
+\end{align*}
 $$
 
 ## Pencarian Pola

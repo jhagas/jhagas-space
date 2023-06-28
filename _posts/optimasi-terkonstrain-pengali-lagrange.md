@@ -78,7 +78,9 @@ Pada persamaan 12 dan persamaan 13, kita bisa mengasumsikan pembuat nol persamaa
 Pada kasus pertama, fungsi objektif dapat dibentuk dengan mensubstitusikan $\theta_1=\lambda_2=0$ pada persamaan 8-11 sehingga
 
 $$
+\begin{align*}
 f=\begin{bmatrix}{2-3x^2+\lambda_1(1-x)}\\{3-4y+3\lambda_1}\\{x+3y-\frac{x^2}{2}-\frac{11}{2}}\\{\theta_2^2+5x+2y+\frac{x^2}{10}-10}\end{bmatrix}
+\end{align*}
 $$
 
 yang didefinisikan dengan fungsi objektif pada Python dengan
@@ -100,7 +102,9 @@ Di mana `x[0]` adalah $x$, `x[1]` adalah $y$, `x[2]` adalah $\lambda_1$ dan yang
 Pada kasus ketiga, fungsi objektif dapat dibentuk dengan mensubstitusikan $\lambda_1=\theta_2=0$ pada persamaan 8-11 sehingga
 
 $$
+\begin{align*}
 f=\begin{bmatrix}{2-3x^2+\lambda_2(5+\frac{x}{5})}\\{3-4y+2\lambda_2}\\{\theta_1^2+x+3y-\frac{x^2}{2}-\frac{11}{2}}\\{5x+2y+\frac{x^2}{10}-10}\end{bmatrix}
+\end{align*}
 $$
 
 ```python
@@ -120,7 +124,9 @@ Di mana `x[0]` adalah $x$, `x[1]` adalah $y$, `x[2]` adalah $\lambda_2$ dan yang
 Pada kasus ketiga, fungsi objektif dapat dibentuk dengan mensubstitusikan $\lambda_1=\lambda_2=0$ pada persamaan 8-11 sehingga
 
 $$
+\begin{align*}
 f=\begin{bmatrix}{2-3x^2}\\{3-4y}\\{\theta_1^2+x+3y-\frac{x^2}{2}-\frac{11}{2}}\\{\theta_2^2+5x+2y+\frac{x^2}{10}-10}\end{bmatrix}
+\end{align*}
 $$
 
 ```python

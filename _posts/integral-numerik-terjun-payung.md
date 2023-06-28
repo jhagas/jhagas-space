@@ -13,31 +13,41 @@ ogImage:
 Diketahui gaya yang bekerja pada benda yang terjatuh dengan medium udara adalah gaya berat serta gaya gesek yang merupakan fungsi kecepatan. Gaya berat dirumuskan secara matematis sebagai
 
 $$
+\begin{align*}
 W = mg
+\end{align*}
 $$
 
 Dengan $m$ adalah massa benda dan $g$ adalah percepatan gravitasi pada bumi yang bernilai $9,81\ m^2/s$. Sedangkan gaya gesek fluida (dalam kasus ini adalah udara) secara matematis dijabarkan sebagai berikut.
 
 $$
+\begin{align*}
 f = -cv
+\end{align*}
 $$
 
 Dengan $c$ adalah koefisien gesekan fluida (yang bergantung pada dimensi dan bentuk dari benda yang bergerak dan juga viskositas medium fluida) dan $v$ adalah kecepatan gerak benda. Nilai negatif selalu menandakan gaya gesek fluida arah vektornya selalu berkebalikan dengan arah vektor kecepatannya. Sehingga persamaan Hukum 2 Newton menjadi
 
 $$
+\begin{align*}
 ma-mg+cv = 0
+\end{align*}
 $$
 
 Yang merupakan persamaan diferensial orde pertama karena yang dicari adalah kecepatan dalam fungsi waktu. Maka persamaan menjadi
 
 $$
+\begin{align*}
 \frac{dv}{dt}+\frac{c}{m}v = g
+\end{align*}
 $$
 
 Penyelesaian persmaan diferensial di atas apabila kecepatan mula-mula bernilai nol adalah
 
 $$
+\begin{align*}
 v(t) = \frac{mg}{c}(1-e^{-ct/m})
+\end{align*}
 $$
 
 Diketahui kecepatan adalah turunan jarak terhadap waktu
@@ -103,7 +113,9 @@ $$
 Dengan
 
 $$
+\begin{align*}
 h=\frac{b-c}{n}
+\end{align*}
 $$
 
 Sehingga
@@ -133,8 +145,10 @@ $$
 5. Diketahui pada posisi $x(t)=L$, berlaku
     
     $$
+    \begin{align*}
     L=\frac{h}{2}(f_0+2\sum_{i=1}^{n-1}f_i+f_n)
     
+    \end{align*}
     $$
     
 6. *Source code* metode trapesium
@@ -175,7 +189,9 @@ $$
 Dengan
 
 $$
+\begin{align*}
 h=\frac {b-a} {n}
+\end{align*}
 $$
 
 ##### Penyelesaian menggunakan menggunakan metode simpson 1/3
@@ -187,7 +203,9 @@ $$
 5. Diketahui pada posisi $x(t)=L$, berlaku
     
     $$
+    \begin{align*}
     L=\frac {h}{2} [f_0+4\sum_{i=ganjil}f_i+2\sum_{i=genap}f_i+f_n]
+    \end{align*}
     
     $$
     
@@ -224,7 +242,9 @@ $$
 ## PERHITUNGAN ERROR
 
 $$
+\begin{align*}
 \text{Error} = \left|\frac{f_{\text{eksak}} - f_{\text{numerik}}} {f_{\text{eksak}}}\right| \times 100 \%
+\end{align*}
 $$
 
 Dari hasil perhitungan, diketahui
