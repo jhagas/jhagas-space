@@ -95,7 +95,7 @@ export default function Post({ post, morePosts }: Props) {
               <article className="mb-16">
                 <div
                   onClick={handleMove}
-                  className="cursor-pointer fixed right-5 bottom-5 bg-[#3E3B92] transition-colors hover:bg-[#F44369] rounded-full h-14 w-14 text-white flex justify-center items-center"
+                  className="z-50 cursor-pointer fixed right-5 bottom-5 bg-[#3E3B92] transition-colors hover:bg-[#F44369] rounded-full h-14 w-14 text-white flex justify-center items-center"
                 >
                   <BiUpArrow size="20px" />
                 </div>
@@ -111,7 +111,7 @@ export default function Post({ post, morePosts }: Props) {
             </>
           )}
         </Container>
-        <MoreStories posts={morePosts} name="Artikel Serupa" />
+        <MoreStories posts={morePosts} name="Artikel Serupa" minimal={true} />
       </Layout>
     </>
   );

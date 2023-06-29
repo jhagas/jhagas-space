@@ -23,7 +23,7 @@ const PostHeader = ({ title, coverImage, date, author, tags }: Props) => {
           <p className="font-black text-[#1D2939] dark:text-blue-300 inline">{tags}</p>
         </div>
       </div>
-      <div className="mb-4 md:mb-8 sm:mx-0 max-w-5xl">
+      <div className="mx-3 mb-4 md:mb-8 sm:mx-0 max-w-5xl">
         <CoverImage title={title} src={coverImage} />
       </div>
     </div>

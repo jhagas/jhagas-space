@@ -3,10 +3,11 @@ import type Post from "../interfaces/post";
 
 type Props = {
   posts: Post[];
-  name: string
+  name: string;
+  minimal: boolean;
 };
 
-const MoreStories = ({ posts, name }: Props) => {
+const MoreStories = ({ posts, name, minimal }: Props) => {
   return (
     <section>
       <div className="flex flex-col gap-5 bg-zinc-50 dark:bg-zinc-900 px-3 py-9">
@@ -22,6 +23,7 @@ const MoreStories = ({ posts, name }: Props) => {
             author={post.author}
             slug={post.slug}
             tags={post.tags}
+            minimal={minimal}
           />
         ))}
       </div>
