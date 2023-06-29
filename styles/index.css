@@ -23,12 +23,12 @@
 }
 
 .post-title {
-  @apply text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-tight md:leading-tight text-center bg-gradient-to-tl from-[#F44369] to-[#3E3B92] text-transparent bg-clip-text;
+  @apply text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-tight md:leading-tight text-center bg-gradient-to-tl from-[#F44369] to-[#3E3B92] dark:to-[#16BFFD] text-transparent bg-clip-text;
 }
 
 .markdown-styles_markdown__h_8de > blockquote {
   border-left: 10px solid #f44369;
-  @apply pr-4 pl-10 py-7 my-3 bg-zinc-50 rounded-lg text-opacity-90 font-semibold shadow-sm shadow-slate-200;
+  @apply pr-4 pl-10 py-7 my-3 bg-zinc-50 dark:bg-zinc-800 rounded-lg text-opacity-90 font-semibold shadow-sm dark:shadow-none shadow-slate-200;
 }
 
 blockquote p {
@@ -36,28 +36,35 @@ blockquote p {
 }
 
 .markdown-styles_markdown__h_8de > h2 {
-  @apply font-semibold bg-gradient-to-tl from-[#F44369] to-[#3E3B92] text-transparent bg-clip-text max-w-fit;
+  @apply font-semibold bg-gradient-to-tl from-[#F44369] to-[#3E3B92] dark:to-[#16BFFD] text-transparent bg-clip-text max-w-fit;
 }
 
 pre > code {
-  @apply text-[0.9rem] rounded-lg shadow-sm shadow-slate-200 mb-7;
+  @apply text-[0.9rem] rounded-lg shadow-sm shadow-slate-200 dark:shadow-none mb-7;
 }
 
 p > code {
-  @apply bg-zinc-100 text-red-600 rounded-md mx-1 p-1 break-words;
+  @apply bg-zinc-100 dark:bg-zinc-800 text-red-600 dark:text-orange-400 rounded-md mx-1 p-1 break-words;
 }
 
 li > code {
-  @apply bg-zinc-100 text-red-600 rounded-md mx-1 p-1;
+  @apply bg-zinc-100 dark:bg-zinc-800 text-red-600 dark:text-orange-400 rounded-md mx-1 p-1;
 }
 
 p > img {
-  @apply mx-auto rounded-lg my-10 lg:max-w-xl;
+  @apply mx-auto rounded-lg my-10 lg:max-w-xl dark:bg-white;
 }
 
 .markdown-styles_markdown__h_8de > table {
-  @apply table text-[0.95rem] shadow-sm shadow-slate-200 rounded-lg overflow-auto max-w-fit mx-auto;
+  @apply table text-[0.95rem] shadow-sm shadow-slate-200 dark:shadow-none rounded-lg overflow-auto max-w-fit mx-auto dark:bg-zinc-800;
   display: block;
+}
+
+.markdown-styles_markdown__h_8de > table th {
+  @apply dark:bg-zinc-950
+}
+.markdown-styles_markdown__h_8de > table td {
+  @apply dark:bg-zinc-800 dark:border-zinc-600
 }
 .markdown-styles_markdown__h_8de > table th:first-child {
   position: static;

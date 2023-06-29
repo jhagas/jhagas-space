@@ -8,7 +8,7 @@ type Props = {
 const Layout = ({ preview, children }: Props) => {
   return (
     <>
-      <div className="min-h-screen overflow-x-clip">
+      <div className="min-h-screen overflow-x-clip dark:bg-zinc-900">
         <main>{children}</main>
       </div>
       <Footer />

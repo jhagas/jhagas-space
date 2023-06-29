@@ -1,4 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { useContext } from "react";
+import { DarkContext } from "../pages/_app";
 
 export default function Document() {
   return (
@@ -9,10 +11,6 @@ export default function Document() {
           href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
           integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
           crossOrigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
-          href="//unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/atom-one-light.min.css"
         />
         <link
           rel="apple-touch-icon"

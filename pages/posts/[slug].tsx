@@ -11,6 +11,9 @@ import markdownToHtml from "../../lib/markdownToHtml";
 import type PostType from "../../interfaces/post";
 import { BiUpArrow } from "react-icons/bi";
 import { ArticleJsonLd, NextSeo } from "next-seo";
+import Head from "next/head";
+import { useContext } from "react";
+import { DarkContext } from "../_app";
 
 type Props = {
   post: PostType;
@@ -25,7 +28,7 @@ export default function Post({ post, morePosts, preview }: Props) {
     return <ErrorPage statusCode={404} />;
   }
 
-  console.log(post.slug);
+  const { dark, setDark } = useContext(DarkContext);
 
   function Seo() {
     return (
@@ -72,6 +75,16 @@ export default function Post({ post, morePosts, preview }: Props) {
   return (
     <>
       <Seo />
+      <Head>
+        <link
+          rel="stylesheet"
+          href={
+            dark
+              ? "https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/atom-one-dark.min.css"
+              : "https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/atom-one-light.min.css"
+          }
+        />
+      </Head>
       <Layout preview={preview}>
         <Header />
         <Container>

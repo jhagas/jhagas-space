@@ -1,11 +1,15 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { BsFillRocketTakeoffFill } from "react-icons/bs";
+import { BsFillRocketTakeoffFill, BsMoon, BsSun } from "react-icons/bs";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import { AiOutlineClose } from "react-icons/ai";
+import { DarkContext } from "../pages/_app";
+import { useContext } from "react";
 
 const Header = () => {
   const [clicked, setClicked] = useState(false);
+
+  const {dark, setDark} = useContext(DarkContext);
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => setScrollPosition(window.scrollY);
@@ -19,9 +23,9 @@ const Header = () => {
 
   return (
     <div
-      className={`p-0 px-3 shadow-sm bg-white
+      className={`p-0 px-3 shadow-sm bg-white/50 dark:bg-zinc-800/50
       ${scrollPosition > 60 ? "shadow-slate-800/5" : "shadow-transparent"}
-      transition-all bg-opacity-50 backdrop-blur-md rounded-b-xl duration-300 sm:px-2
+      transition-all backdrop-blur-md rounded-b-xl duration-300 sm:px-2 dark:text-slate-200
       ${clicked ? "h-36" : "h-16"}
       md:px-5 max-w-5xl sticky top-0 z-10 mx-auto`}
     >
@@ -29,20 +33,23 @@ const Header = () => {
         <div className="navbar-start">
           <Link
             href="/"
-            className="btn btn-ghost normal-case text-lg md:text-xl flex gap-3 hover:bg-zinc-50 hover:text-[#F44369] transition-colors duration-500"
+            className="btn btn-ghost normal-case text-lg md:text-xl flex gap-3 hover:bg-zinc-50 dark:hover:bg-zinc-700 hover:text-[#F44369] dark:hover:text-[#ffc6d3]"
           >
             <BsFillRocketTakeoffFill size="22px" className="text-orange-500" />
             Jhagas's Space
           </Link>
         </div>
         <div className="navbar-end center">
+          <div className="btn btn-ghost dark:hover:bg-zinc-700" onClick={() => setDark(!dark)}>
+            { !dark ? <BsMoon size={18}/> : <BsSun size={20}/>}
+          </div>
           <div
-            className=""
+            className="dark:text-white"
             onClick={() => {
               setClicked(!clicked);
             }}
           >
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost lg:hidden dark:hover:bg-zinc-700">
               {clicked ? (
                 <AiOutlineClose size="20px" />
               ) : (
@@ -50,14 +57,14 @@ const Header = () => {
               )}
             </label>
           </div>
-          <ul className="flex-row px-1 hidden lg:flex justify-center items-center gap-3 list-none">
+          <ul className="flex-row m-0 px-1 hidden lg:flex justify-center items-center gap-3 list-none">
             <li>
               <div>
                 <Link
                   href="/about-me"
-                  className="btn bg-[#F44369] border-0 hover:bg-[#3E3B92]"
+                  className="btn bg-[#F44369] dark:bg-[#d8244b] text-white border-0 hover:bg-[#3E3B92] dark:hover:bg-[#ac1838]"
                 >
-                  About me
+                  Tentang Saya
                 </Link>
               </div>
             </li>
@@ -72,7 +79,7 @@ const Header = () => {
         <li>
           <Link
             href="/about-me"
-            className="btn w-full bg-[#F44369] border-0 hover:bg-[#3E3B92] text-white"
+            className="btn w-full bg-[#F44369] dark:bg-[#d8244b] text-white border-0 hover:bg-[#3E3B92] dark:hover:bg-[#ac1838]"
           >
             Tentang Saya
           </Link>
