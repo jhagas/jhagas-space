@@ -4,17 +4,16 @@ import { Inter } from "next/font/google";
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
 import { Analytics } from "@vercel/analytics/react";
-import { useState } from "react";
 import { createContext } from "react";
 import darkTypes from "../interfaces/dark";
-import Head from "next/head";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export const inter = Inter({ subsets: ["latin"] });
 
 export const DarkContext = createContext<darkTypes>({} as darkTypes);
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useLocalStorage("dark", false);
   return (
     <DarkContext.Provider value={{ dark, setDark }}>
       <div className={inter.className}>

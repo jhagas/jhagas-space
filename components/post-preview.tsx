@@ -26,7 +26,7 @@ const PostPreview = ({ title, coverImage, date, tags, slug }: Props) => {
         </div>
         <div className="badge bg-[#3E3B92] dark:text-white border-0">{tags}</div>
       </div>
-      <div className="mb-3 lg:mb-0 lg:mr-4">
+      <div className="mb-3 lg:mb-0 lg:mr-4 lg:max-w-[20rem] lg:min-w-[20rem]">
         <CoverImage title={title} src={coverImage} />
       </div>
     </Link>
