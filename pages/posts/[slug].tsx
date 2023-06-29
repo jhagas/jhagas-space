@@ -5,7 +5,7 @@ import PostBody from "../../components/post-body";
 import Header from "../../components/header";
 import PostHeader from "../../components/post-header";
 import Layout from "../../components/layout";
-import { getPostBySlug, getAllPosts } from "../../lib/api";
+import { getPostBySlug, getAllPosts, getSimilarPosts } from "../../lib/api";
 import PostTitle from "../../components/post-title";
 import markdownToHtml from "../../lib/markdownToHtml";
 import type PostType from "../../interfaces/post";
@@ -14,14 +14,14 @@ import { ArticleJsonLd, NextSeo } from "next-seo";
 import Head from "next/head";
 import { useContext } from "react";
 import { DarkContext } from "../_app";
+import MoreStories from "../../components/more-stories";
 
 type Props = {
   post: PostType;
   morePosts: PostType[];
-  preview?: boolean;
 };
 
-export default function Post({ post, morePosts, preview }: Props) {
+export default function Post({ post, morePosts }: Props) {
   const router = useRouter();
   const title = `${post.title} | Jhagas's Space`;
   if (!router.isFallback && !post?.slug) {
@@ -85,14 +85,14 @@ export default function Post({ post, morePosts, preview }: Props) {
           }
         />
       </Head>
-      <Layout preview={preview}>
+      <Layout>
         <Header />
         <Container>
           {router.isFallback ? (
             <PostTitle>Loading…</PostTitle>
           ) : (
             <>
-              <article className="mb-32">
+              <article className="mb-16">
                 <div
                   onClick={handleMove}
                   className="cursor-pointer fixed right-5 bottom-5 bg-[#3E3B92] transition-colors hover:bg-[#F44369] rounded-full h-14 w-14 text-white flex justify-center items-center"
@@ -111,6 +111,7 @@ export default function Post({ post, morePosts, preview }: Props) {
             </>
           )}
         </Container>
+        <MoreStories posts={morePosts} name="Artikel Serupa" />
       </Layout>
     </>
   );
@@ -134,6 +135,12 @@ export async function getStaticProps({ params }: Params) {
     "coverImage",
     "desc",
   ]);
+  const morePosts = getSimilarPosts(
+    ["title", "date", "slug", "author", "coverImage", "desc", "tags"],
+    post.tags,
+    post.slug
+  );
+
   const content = await markdownToHtml(post.content || "");
 
   return {
@@ -142,6 +149,7 @@ export async function getStaticProps({ params }: Params) {
         ...post,
         content,
       },
+      morePosts,
     },
   };
 }

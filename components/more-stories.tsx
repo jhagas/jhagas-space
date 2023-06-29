@@ -3,14 +3,15 @@ import type Post from "../interfaces/post";
 
 type Props = {
   posts: Post[];
+  name: string
 };
 
-const MoreStories = ({ posts }: Props) => {
+const MoreStories = ({ posts, name }: Props) => {
   return (
     <section>
       <div className="flex flex-col gap-5 bg-zinc-50 dark:bg-zinc-900 px-3 py-9">
         <div className="mx-auto">
-            <p className="font-semibold text-xl">Semua Artikel</p>
+            <p className="font-semibold text-xl">{name}</p>
         </div>
         {posts.map((post) => (
           <PostPreview

@@ -28,7 +28,7 @@ export default function Index({ allPosts }: Props) {
         <Container>
           <Intro />
         </Container>
-        <MoreStories posts={allPosts} />
+        <MoreStories posts={allPosts} name="Semua Artikel" />
         <Footer />
       </div>
     </>
