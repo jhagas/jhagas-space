@@ -34,7 +34,7 @@ const PostPreview = ({
         <div className={`mb-2 ${minimal && "hidden lg:block"}`}>
           <DateFormatter dateString={date} />
         </div>
-        <div className={`badge bg-[#3E3B92] dark:text-white border-0 ${minimal && "text-xs lg:text-sm"}`}>
+        <div className={`badge bg-[#3E3B92] text-white border-0 ${minimal && "text-xs lg:text-sm"}`}>
           {tags}
         </div>
       </div>

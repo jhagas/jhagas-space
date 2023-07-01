@@ -4,10 +4,9 @@ import remarkMath from "remark-math";
 import remarkRehype from "remark-rehype";
 import rehypeKatex from "rehype-katex";
 import rehypeStringify from "rehype-stringify";
-import rehypeHighlight from 'rehype-highlight'
-import remarkGfm from 'remark-gfm'
-import matlab from 'highlight.js/lib/languages/matlab'
-
+import rehypeHighlight from "rehype-highlight";
+import remarkGfm from "remark-gfm";
+import matlab from "highlight.js/lib/languages/matlab";
 
 export default async function markdownToHtml(markdown: string) {
   const result = await unified()

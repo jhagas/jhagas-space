@@ -11,7 +11,7 @@
 }
 
 .katex-display > .katex > .katex-html {
-  @apply flex
+  @apply flex;
 }
 
 .katex-display > .katex > .katex-html > .base {
@@ -61,10 +61,10 @@ p > img {
 }
 
 .markdown-styles_markdown__h_8de > table th {
-  @apply dark:bg-zinc-950
+  @apply dark:bg-zinc-950;
 }
 .markdown-styles_markdown__h_8de > table td {
-  @apply dark:bg-zinc-800 dark:border-zinc-600
+  @apply dark:bg-zinc-800 dark:border-zinc-600;
 }
 .markdown-styles_markdown__h_8de > table th:first-child {
   position: static;
@@ -92,4 +92,20 @@ li {
 
 .Typewriter__cursor {
   @apply text-[#F44369];
+}
+
+.pagination {
+  @apply bg-zinc-100 border-0 hover:bg-zinc-300 dark:bg-zinc-800 hover:dark:bg-zinc-700;
+}
+
+.flex > .btn-disabled {
+  @apply text-zinc-300 bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-600 !important;
+}
+
+.comment {
+  @apply input w-full shadow-sm border-slate-300 focus:border-slate-500 focus:outline-none dark:bg-zinc-700 dark:border-zinc-500 focus:dark:border-zinc-300 dark:text-zinc-100;
+}
+
+.send-disabled {
+  @apply btn-disabled dark:bg-zinc-700 dark:text-zinc-500 !important;
 }

@@ -15,6 +15,8 @@ import Head from "next/head";
 import { useContext } from "react";
 import { DarkContext } from "../_app";
 import MoreStories from "../../components/more-stories";
+import Comment from "../../components/comment-comp";
+import CommentType from "../../interfaces/comment";
 
 type Props = {
   post: PostType;
@@ -110,6 +112,7 @@ export default function Post({ post, morePosts }: Props) {
               </article>
             </>
           )}
+          <Comment slug={post.slug} />
         </Container>
         <MoreStories posts={morePosts} name="Artikel Serupa" minimal={true} />
       </Layout>
