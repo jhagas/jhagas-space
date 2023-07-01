@@ -64,7 +64,7 @@ p > img {
   @apply dark:bg-zinc-950 bg-zinc-100 text-[#3E3B92] dark:text-zinc-100;
 }
 .markdown-styles_markdown__h_8de > table tr {
-  @apply dark:bg-zinc-800 dark:border-zinc-600 text-sm !important;
+  @apply dark:bg-zinc-800 dark:border-zinc-600 border-zinc-300 text-sm !important;
 }
 .markdown-styles_markdown__h_8de > table th:first-child {
   position: static;
@@ -103,7 +103,7 @@ li {
 }
 
 .comment {
-  @apply input w-full shadow-sm border-slate-300 focus:border-slate-500 focus:outline-none dark:bg-zinc-700 dark:border-zinc-500 focus:dark:border-zinc-300 dark:text-zinc-100;
+  @apply input w-full shadow-sm border-slate-300 bg-white focus:border-slate-500 focus:outline-none dark:bg-zinc-700 dark:border-zinc-500 focus:dark:border-zinc-300 dark:text-zinc-100;
 }
 
 .send-disabled {

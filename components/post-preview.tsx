@@ -25,7 +25,7 @@ const PostPreview = ({
     <Link
       passHref
       href={`/posts/${slug}`}
-      className="mx-auto w-full card lg:card-side bg-base-100 shadow-md max-w-4xl dark:bg-zinc-800"
+      className="mx-auto w-full card lg:card-side shadow-md max-w-4xl bg-white dark:bg-zinc-800"
     >
       <div className="card-body pb-1 lg:pb-6">
         <h2 className={`card-title ${minimal && "mb-1 text-base lg:text-xl"}`}>

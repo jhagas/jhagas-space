@@ -17,24 +17,22 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <DarkContext.Provider value={{ dark, setDark }}>
       <div className={inter.className}>
-        <div
-          className={`transition-color duration-300 ${
-            dark && "dark bg-zinc-900 text-slate-100"
-          }`}
-        >
-          <DefaultSeo {...SEO} />
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1690174069927248"
-            crossOrigin="anonymous"
-          ></script>
-          <script
-            async
-            custom-element="amp-auto-ads"
-            src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"
-          ></script>
-          <Component {...pageProps} />
-          <Analytics />
+        <div className={`transition-color duration-300 ${dark && "dark"}`}>
+          <div className="bg-white text-zinc-900 ark:bg-zinc-900 dark:text-slate-100">
+            <DefaultSeo {...SEO} />
+            <script
+              async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1690174069927248"
+              crossOrigin="anonymous"
+            ></script>
+            <script
+              async
+              custom-element="amp-auto-ads"
+              src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"
+            ></script>
+            <Component {...pageProps} />
+            <Analytics />
+          </div>
         </div>
       </div>
     </DarkContext.Provider>
