@@ -84,7 +84,7 @@ export default function AddComment({
         />
       </div>
       <div className="form-control px-5 mt-4">
-        <label className="label cursor-pointer">
+        <label className="label justify-start cursor-pointer">
           <input
             type="checkbox"
             className="checkbox mr-3 checkbox-success"

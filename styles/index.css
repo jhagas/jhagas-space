@@ -61,10 +61,10 @@ p > img {
 }
 
 .markdown-styles_markdown__h_8de > table th {
-  @apply dark:bg-zinc-950;
+  @apply dark:bg-zinc-950 bg-zinc-100 text-[#3E3B92] dark:text-zinc-100;
 }
-.markdown-styles_markdown__h_8de > table td {
-  @apply dark:bg-zinc-800 dark:border-zinc-600;
+.markdown-styles_markdown__h_8de > table tr {
+  @apply dark:bg-zinc-800 dark:border-zinc-600 text-sm !important;
 }
 .markdown-styles_markdown__h_8de > table th:first-child {
   position: static;
