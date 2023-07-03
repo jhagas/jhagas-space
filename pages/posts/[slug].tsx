@@ -112,7 +112,7 @@ export default function Post({ post, morePosts }: Props) {
               </article>
             </>
           )}
-          <Comment slug={post.slug} />
+          <Comment slug={post.slug} key={post.slug} />
         </Container>
         <MoreStories posts={morePosts} name="Artikel Serupa" minimal={true} />
       </Layout>
