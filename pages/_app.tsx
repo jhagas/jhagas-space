@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { createContext } from "react";
 import darkTypes from "../interfaces/dark";
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import NextNProgress from 'nextjs-progressbar';
 
 export const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               custom-element="amp-auto-ads"
               src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"
             ></script>
+            <NextNProgress />
             <Component {...pageProps} />
             <Analytics />
           </div>
