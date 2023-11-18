@@ -41,7 +41,7 @@ $$
 
 di mana:
 
-- $F(s)$ adalah transformasi Laplace dari fungsi $*f(t)*$ terhadap variabel waktu $*t*$,
+- $F(s)$ adalah transformasi Laplace dari fungsi $f(t)$ terhadap variabel waktu $t$,
 - $s$ adalah variabel kompleks,
 - $t$ adalah waktu,
 - $\mathscr{L}$ adalah operator transformasi Laplace.
@@ -211,7 +211,7 @@ Sehingga pada bagian terakhir ini terdapat 3 kemungkinan keadaan yang berpengaru
 
 ### Kemungkinan pertama : ***Underdamped***
 
-Hal ini terjadi ketika di dalam akar $\sqrt{R^2 - \frac{4L}{c}}$ nilainya negatif, atau $R^2 < \frac{4L}{C}$. Karena di dalam akar nilainya negatif, maka pada keadaan ini akan terjadi osilasi pada rangkaian. Seperti yang sudah dijelaskan di atas. Kecepatan sudut osilasi pada keadaan ini adalah
+Hal ini terjadi ketika di dalam akar $\sqrt{R^2 - \frac{4L}{C}}$ nilainya negatif, atau $R^2 < \frac{4L}{C}$. Karena di dalam akar nilainya negatif, maka pada keadaan ini akan terjadi osilasi pada rangkaian. Seperti yang sudah dijelaskan di atas. Kecepatan sudut osilasi pada keadaan ini adalah
 
 $$
 \begin{align*}
@@ -232,11 +232,11 @@ $$
 
 ### Kemungkinan kedua : ***Critical damped***
 
-Hal ini terjadi ketika di dalam akar $\sqrt{R^2 - \frac{4L}{c}}$ nilainya nol, atau $R^2 = \frac{4L}{C}$. Karena di dalam akar nilainya nol, dan tidak ada nilai imajiner di sini, maka pada keadaan ini **TIDAK AKAN** terjadi osilasi pada rangkaian.
+Hal ini terjadi ketika di dalam akar $\sqrt{R^2 - \frac{4L}{C}}$ nilainya nol, atau $R^2 = \frac{4L}{C}$. Karena di dalam akar nilainya nol, dan tidak ada nilai imajiner di sini, maka pada keadaan ini **TIDAK AKAN** terjadi osilasi pada rangkaian.
 
 ### Kemungkinan ketiga : ***Overdamped***
 
-Hal ini terjadi ketika di dalam akar $\sqrt{R^2 - \frac{4L}{c}}$ nilainya positif, atau $R^2 > \frac{4L}{C}$. Karena di dalam akar nilainya positif, dan tidak ada nilai imajiner di sini, maka pada keadaan ini **TIDAK AKAN** terjadi osilasi pada rangkaian.
+Hal ini terjadi ketika di dalam akar $\sqrt{R^2 - \frac{4L}{C}}$ nilainya positif, atau $R^2 > \frac{4L}{C}$. Karena di dalam akar nilainya positif, dan tidak ada nilai imajiner di sini, maka pada keadaan ini **TIDAK AKAN** terjadi osilasi pada rangkaian.
 
 ## Kesimpulan
 
