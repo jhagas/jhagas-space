@@ -54,7 +54,7 @@ Penyelesaian juga bisa dilakukan dengan menggunakan tabel umum transformasi Lapl
 | --- | --- |
 | $f(t)$ | $F(s)$ |
 | 0 | 0 |
-| $\frac{df(t)}{dt}$ | $sF(s) - F(0)$ |
+| $\frac{df(t)}{dt}$ | $sF(s) - f(0)$ |
 | $\int_0^t f(t)\ dt$ | $\frac{F(s)}{s}$ |
 | $\frac{1}{b-a} \left( e^{-at} - e^{-bt} \right)$ | $\frac{1}{(s+a)(s+b)}$ |
 
