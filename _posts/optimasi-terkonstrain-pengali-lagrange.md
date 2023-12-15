@@ -1,6 +1,6 @@
 ---
 title: 'Optimasi Terkonstrain dengan Pengali Lagrange Pada Python'
-desc: 'Implementasi metode pengali lagrange dalam permasalahan optimasi terkonstrain dengan manipulasi fungsi objektif dan matriks jacobian menggunakan bahasa pemrograman MATLAB'
+desc: 'Implementasi metode pengali lagrange dalam permasalahan optimasi terkonstrain dengan manipulasi fungsi objektif dan matriks jacobian menggunakan bahasa pemrograman Python'
 tags: 'Computational Physics'
 coverImage: '/optimasi-terkonstrain/cover.png'
 date: '2023-05-29'
