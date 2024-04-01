@@ -9,7 +9,7 @@ import { useContext } from "react";
 const Header = () => {
   const [clicked, setClicked] = useState(false);
 
-  const {dark, setDark} = useContext(DarkContext);
+  const { dark, setDark } = useContext(DarkContext);
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => setScrollPosition(window.scrollY);
@@ -33,15 +33,18 @@ const Header = () => {
         <div className="navbar-start">
           <Link
             href="/"
-            className="btn btn-ghost normal-case text-lg md:text-xl flex gap-3 hover:bg-zinc-50 dark:hover:bg-zinc-700 hover:text-[#F44369] dark:hover:text-[#ffc6d3]"
+            className="btn btn-ghost normal-case text-lg md:text-xl flex gap-3 hover:bg-zinc-300/30 dark:hover:bg-zinc-700/30 hover:text-[#F44369] dark:hover:text-[#ffc6d3]"
           >
             <BsFillRocketTakeoffFill size="22px" className="text-orange-500" />
             Jhagas's Space
           </Link>
         </div>
         <div className="navbar-end center">
-          <div className="btn btn-ghost dark:hover:bg-zinc-700" onClick={() => setDark(!dark)}>
-            { !dark ? <BsMoon size={18}/> : <BsSun size={20}/>}
+          <div
+            className="btn btn-ghost hover:bg-zinc-300/30 dark:hover:bg-zinc-700/30"
+            onClick={() => setDark(!dark)}
+          >
+            {!dark ? <BsMoon size={18} /> : <BsSun size={20} />}
           </div>
           <div
             className="dark:text-white"
@@ -49,7 +52,10 @@ const Header = () => {
               setClicked(!clicked);
             }}
           >
-            <label tabIndex={0} className="btn btn-ghost lg:hidden dark:hover:bg-zinc-700">
+            <label
+              tabIndex={0}
+              className="btn btn-ghost lg:hidden dark:hover:bg-zinc-700 "
+            >
               {clicked ? (
                 <AiOutlineClose size="20px" />
               ) : (

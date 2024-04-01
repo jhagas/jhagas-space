@@ -9,7 +9,7 @@ const Intro = () => {
           <Typewriter
             options={{
               strings: [
-                "Nature Phenomenon",
+                "Nature Phenomena",
                 "Science and Engineering",
                 "Open Source Technology",
                 "Internet of Things",

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.post-title {
+  @apply text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-tight md:leading-tight text-center bg-gradient-to-tl from-[#F44369] to-[#3E3B92] dark:to-[#16BFFD] text-transparent bg-clip-text;
+}
+
+/* On post-body.tsx, only katex, shiki and color related class @apply relatives written here */
 .katex {
   font-size: 1.15em;
 }
@@ -22,25 +27,8 @@
   @apply relative ml-10;
 }
 
-.post-title {
-  @apply text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-tight md:leading-tight text-center bg-gradient-to-tl from-[#F44369] to-[#3E3B92] dark:to-[#16BFFD] text-transparent bg-clip-text;
-}
-
-.markdown-styles_markdown__h_8de > blockquote {
-  border-left: 10px solid #f44369;
-  @apply pr-4 pl-10 py-7 my-3 bg-zinc-50 dark:bg-zinc-800 rounded-lg text-opacity-90 font-semibold shadow-sm dark:shadow-none shadow-slate-200;
-}
-
-blockquote p {
-  @apply inline text-[0.95rem];
-}
-
-.markdown-styles_markdown__h_8de > h2 {
-  @apply font-semibold bg-gradient-to-tl from-[#F44369] to-[#3E3B92] dark:to-[#16BFFD] text-transparent bg-clip-text max-w-fit;
-}
-
 .shiki {
-  @apply text-[0.9rem] rounded-lg border border-zinc-300 dark:border-zinc-700 mb-7 p-5 overflow-x-scroll;
+  @apply border border-zinc-300 dark:border-zinc-700;
 }
 
 .dark .shiki,
@@ -49,51 +37,34 @@ blockquote p {
   background-color: var(--shiki-dark-bg) !important;
 }
 
-li > code {
-  @apply bg-zinc-100 dark:bg-zinc-800 text-red-600 dark:text-orange-400 rounded-lg mx-1 p-1;
+.markdown-styles_markdown__h_8de blockquote {
+  @apply border border-l-[10px] border-l-[#f44369] dark:border-l-[#f44369] border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800;
 }
 
-p > code {
-  @apply bg-zinc-100 dark:bg-zinc-800 text-red-600 dark:text-orange-400 rounded-md mx-1 p-1 break-words;
+.markdown-styles_markdown__h_8de h2 {
+  @apply bg-gradient-to-tl from-[#F44369] to-[#3E3B92] dark:to-[#16BFFD];
 }
 
-p > img {
-  @apply rounded-lg my-10 w-full max-w-2xl mx-auto dark:bg-white;
+li code {
+  @apply bg-zinc-100 dark:bg-zinc-800 text-red-600 dark:text-orange-400;
 }
 
-.markdown-styles_markdown__h_8de > table {
-  @apply table text-[0.95rem] border border-zinc-300 dark:border-zinc-700 rounded-lg overflow-auto max-w-fit mx-auto dark:bg-zinc-800;
-  display: block;
+p code {
+  @apply bg-zinc-100 dark:bg-zinc-800 text-red-600 dark:text-orange-400;
 }
 
-.markdown-styles_markdown__h_8de > table th {
+p img {
+  @apply dark:bg-white;
+}
+
+.markdown-styles_markdown__h_8de table {
+  @apply border border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800;
+}
+.markdown-styles_markdown__h_8de table th {
   @apply dark:bg-zinc-950 bg-zinc-100 text-[#3E3B92] dark:text-zinc-100;
 }
-.markdown-styles_markdown__h_8de > table tr {
-  @apply dark:bg-zinc-800 dark:border-zinc-600 border-zinc-300 text-sm !important;
-}
-.markdown-styles_markdown__h_8de > table th:first-child {
-  position: static;
-}
-
-ol {
-  @apply list-decimal ml-10;
-}
-
-ul {
-  @apply list-disc ml-10;
-}
-
-li {
-  @apply pl-2 text-[0.95rem];
-}
-
-.markdown-styles_markdown__h_8de > p {
-  @apply text-justify break-words text-[0.95rem];
-}
-
-.markdown-styles_markdown__h_8de a {
-  @apply text-[#F44369] underline hover:text-[#3E3B92] transition-colors;
+.markdown-styles_markdown__h_8de table tr {
+  @apply dark:!bg-zinc-800 dark:!border-zinc-600 !border-zinc-300;
 }
 
 .Typewriter__cursor {

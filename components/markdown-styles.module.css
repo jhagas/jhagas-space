@@ -9,10 +9,73 @@
   @apply my-6;
 }
 
+.markdown p {
+  @apply text-justify break-words text-[0.95rem];
+}
+
+.markdown blockquote {
+  @apply pr-4 pl-10 py-7 my-3 rounded-lg font-semibold;
+}
+
+.markdown blockquote p {
+  @apply inline text-[0.95rem];
+}
+
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-3xl mt-12 mb-4 leading-snug font-bold text-transparent bg-clip-text max-w-fit;
+}
+
+.markdown h3,
+.markdown h4,
+.markdown h5 .markdown h6 {
+  @apply font-bold;
 }
 
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
+}
+
+.markdown pre {
+  @apply text-[0.9rem] rounded-lg mb-7 p-5 overflow-auto;
+}
+
+.markdown li > code {
+  @apply rounded-lg mx-1 p-1;
+}
+
+.markdown p > code {
+  @apply rounded-md mx-1 p-1 break-words;
+}
+
+.markdown p > img {
+  @apply rounded-lg my-10 w-full max-w-2xl mx-auto;
+}
+
+.markdown table {
+  @apply table text-[0.95rem] rounded-lg overflow-auto max-w-fit mx-auto;
+  display: block;
+}
+
+.markdown table tr {
+  @apply !text-sm;
+}
+
+.markdown table th:first-child {
+  position: static;
+}
+
+.markdown ol {
+  @apply list-decimal ml-10;
+}
+
+.markdown ul {
+  @apply list-disc ml-10;
+}
+
+.markdown li {
+  @apply pl-2 text-[0.95rem];
+}
+
+.markdown a {
+  @apply underline text-[#F44369] hover:text-[#3E3B92] transition-colors;
 }
