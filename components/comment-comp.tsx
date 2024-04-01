@@ -55,7 +55,7 @@ export default function Comment({ slug }: params) {
         commentsNow.data.length > 0 &&
         commentsNow.data.map((comment, i) => (
           <div
-            className="mb-5 pt-4 pb-3 px-6 mx-4 rounded-3xl bg-zinc-100 dark:bg-zinc-800 shadow-sm"
+            className="mb-5 pt-4 pb-3 px-6 mx-4 rounded-3xl bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700"
             key={i}
           >
             <div className="flex gap-3 items-center">

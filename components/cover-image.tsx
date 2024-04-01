@@ -1,7 +1,3 @@
-import cn from "classnames";
-import Link from "next/link";
-import Image from "next/image";
-
 type Props = {
   title: string;
   src: string;
@@ -9,16 +5,16 @@ type Props = {
 
 const CoverImage = ({ title, src }: Props) => {
   const image = (
-    <Image
+    <img
       src={src}
       alt={`Article Cover Image`}
-      className="w-full rounded-lg"
-      width={400}
-      height={200}
+      className="!w-full rounded-lg max-w-3xl"
     />
   );
   return (
-    <div className="sm:mx-0 h-full flex items-center justify-center">{image}</div>
+    <div className="sm:mx-0 h-full flex items-center justify-center">
+      {image}
+    </div>
   );
 };
 

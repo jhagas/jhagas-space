@@ -12,7 +12,9 @@ const MoreStories = ({ posts, name, minimal }: Props) => {
     <section>
       <div className="flex flex-col gap-5 bg-zinc-50 dark:bg-zinc-900 px-3 py-9">
         <div className="mx-auto">
-            <p className="font-semibold text-xl">{name}</p>
+          <p className="font-semibold text-xl">
+            {posts.length === 0 ? `Tidak Ada ${name}` : name}
+          </p>
         </div>
         {posts.map((post) => (
           <PostPreview

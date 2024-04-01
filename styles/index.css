@@ -40,7 +40,7 @@ blockquote p {
 }
 
 .shiki {
-  @apply text-[0.9rem] rounded-lg border border-zinc-300 dark:border-zinc-700 mb-7 p-5;
+  @apply text-[0.9rem] rounded-lg border border-zinc-300 dark:border-zinc-700 mb-7 p-5 overflow-x-scroll;
 }
 
 .dark .shiki,
@@ -58,7 +58,7 @@ p > code {
 }
 
 p > img {
-  @apply mx-auto rounded-lg my-10 lg:max-w-xl dark:bg-white;
+  @apply rounded-lg my-10 w-full max-w-2xl mx-auto dark:bg-white;
 }
 
 .markdown-styles_markdown__h_8de > table {
@@ -109,7 +109,7 @@ li {
 }
 
 .comment {
-  @apply input w-full shadow-sm border-slate-300 bg-white focus:border-slate-500 focus:outline-none dark:bg-zinc-700 dark:border-zinc-500 focus:dark:border-zinc-300 dark:text-zinc-100;
+  @apply input w-full border border-zinc-300 dark:border-zinc-600 bg-white focus:border-slate-500 focus:outline-none dark:bg-zinc-700 focus:dark:border-zinc-300 dark:text-zinc-100;
 }
 
 .send-disabled {

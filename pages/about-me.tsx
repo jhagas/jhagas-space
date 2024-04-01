@@ -65,7 +65,7 @@ export default function About() {
     <>
       <Seo />
       <div className="bg-zinc-50 dark:bg-zinc-900 px-4 h-screen transition-colors duration-300">
-        <div className="relative bg-white dark:bg-zinc-800 rounded-2xl p-9 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-xl min-w-min shadow-md">
+        <div className="relative bg-white dark:bg-zinc-800 rounded-2xl p-9 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-xl min-w-min border border-zinc-300 dark:border-zinc-700">
           <Image
             src="/assets/profiles.jpeg"
             alt="Jhagas's Photo of Himself"
