@@ -25,7 +25,7 @@ const PostPreview = ({
     <Link
       passHref
       href={`/posts/${slug}`}
-      className="mx-auto w-full card lg:card-side shadow-md max-w-4xl bg-white dark:bg-zinc-800"
+      className="mx-auto w-full card lg:card-side border border-zinc-300 dark:border-zinc-700 max-w-4xl bg-white dark:bg-zinc-800"
     >
       <div className="card-body pb-1 lg:pb-6">
         <h2 className={`card-title ${minimal && "mb-1 text-base lg:text-xl"}`}>
@@ -34,7 +34,11 @@ const PostPreview = ({
         <div className={`mb-2 ${minimal && "hidden lg:block"}`}>
           <DateFormatter dateString={date} />
         </div>
-        <div className={`badge bg-[#3E3B92] text-white border-0 ${minimal && "text-xs lg:text-sm"}`}>
+        <div
+          className={`badge bg-[#3E3B92] text-white border-0 ${
+            minimal && "text-xs lg:text-sm"
+          }`}
+        >
           {tags}
         </div>
       </div>

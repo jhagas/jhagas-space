@@ -5,13 +5,11 @@ const Intro = () => {
     <section className="flex-col md:flex-row flex items-center justify-center mt-16 mb-16 md:mb-12">
       <div className="flex flex-col items-center text-center w-full">
         <h1 className="post-title">
-          <noscript>
-            Physics, Engineering, Coding and Technology, IoT 
-          </noscript>
+          <noscript>Physics, Engineering, Coding and Technology, IoT</noscript>
           <Typewriter
             options={{
               strings: [
-                "Physics",
+                "Nature Phenomenon",
                 "Science and Engineering",
                 "Open Source Technology",
                 "Internet of Things",

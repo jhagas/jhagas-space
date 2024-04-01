@@ -16,7 +16,6 @@ import { useContext } from "react";
 import { DarkContext } from "../_app";
 import MoreStories from "../../components/more-stories";
 import Comment from "../../components/comment-comp";
-import CommentType from "../../interfaces/comment";
 
 type Props = {
   post: PostType;
@@ -77,16 +76,6 @@ export default function Post({ post, morePosts }: Props) {
   return (
     <>
       <Seo />
-      <Head>
-        <link
-          rel="stylesheet"
-          href={
-            dark
-              ? "https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/atom-one-dark.min.css"
-              : "https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/atom-one-light.min.css"
-          }
-        />
-      </Head>
       <Layout>
         <Header />
         <Container>

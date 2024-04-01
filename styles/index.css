@@ -39,16 +39,22 @@ blockquote p {
   @apply font-semibold bg-gradient-to-tl from-[#F44369] to-[#3E3B92] dark:to-[#16BFFD] text-transparent bg-clip-text max-w-fit;
 }
 
-pre > code {
-  @apply text-[0.9rem] rounded-lg shadow-sm shadow-slate-200 dark:shadow-none mb-7;
+.shiki {
+  @apply text-[0.9rem] rounded-lg border border-zinc-300 dark:border-zinc-700 mb-7 p-5;
+}
+
+.dark .shiki,
+.dark .shiki span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+}
+
+li > code {
+  @apply bg-zinc-100 dark:bg-zinc-800 text-red-600 dark:text-orange-400 rounded-lg mx-1 p-1;
 }
 
 p > code {
   @apply bg-zinc-100 dark:bg-zinc-800 text-red-600 dark:text-orange-400 rounded-md mx-1 p-1 break-words;
-}
-
-li > code {
-  @apply bg-zinc-100 dark:bg-zinc-800 text-red-600 dark:text-orange-400 rounded-md mx-1 p-1;
 }
 
 p > img {
@@ -56,7 +62,7 @@ p > img {
 }
 
 .markdown-styles_markdown__h_8de > table {
-  @apply table text-[0.95rem] shadow-sm shadow-slate-200 dark:shadow-none rounded-lg overflow-auto max-w-fit mx-auto dark:bg-zinc-800;
+  @apply table text-[0.95rem] border border-zinc-300 dark:border-zinc-700 rounded-lg overflow-auto max-w-fit mx-auto dark:bg-zinc-800;
   display: block;
 }
 

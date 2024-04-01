@@ -1,13 +1,13 @@
 ---
-title: 'Monitoring dan Data Logging Sensor dengan Platform Database Supabase dan Aplikasi Web React.js '
-desc: 'Dalam artikel ini, akan dijelaskan secara mendetail bagaimana cara melakukan monitoring dan data logging sensor dengan menggunakan IoT dan platform database Supabase.'
-tags: 'Internet of Things'
-coverImage: '/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/cover.png'
-date: '2023-04-24'
+title: "Monitoring dan Data Logging Sensor dengan Platform Database Supabase dan Aplikasi Web React.js "
+desc: "Dalam artikel ini, akan dijelaskan secara mendetail bagaimana cara melakukan monitoring dan data logging sensor dengan menggunakan IoT dan platform database Supabase."
+tags: "Internet of Things"
+coverImage: "/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/cover.png"
+date: "2023-04-24"
 author:
   name: Jhagas Hana Winaya
 ogImage:
-  url: '/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/cover.png'
+  url: "/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/cover.png"
 ---
 
 Dalam era digital seperti sekarang ini, Internet of Things (IoT) semakin populer dan banyak digunakan dalam berbagai bidang. Salah satu aplikasi IoT yang sering digunakan adalah dalam monitoring dan data logging sensor. Dengan menggunakan IoT, kita dapat mengakses data sensor dari jarak jauh dan melakukan pengolahan data secara real-time.
@@ -23,37 +23,33 @@ Dalam artikel ini, akan dijelaskan bagaimana cara melakukan monitoring dan data 
 3. Koneksi internet Wi-Fi 2.45 GHz untuk disambungkan pada ESP8266, bisa menggunakan hotspot pribadi dari ponsel pintar.
 4. Koneksi internet yang lancar pada komputer anda.
 5. Install Arduino IDE dan dukungan untuk ESP8266
-    1. Pada Arduino IDE, pergi menuju **File** > **Preferences**
-        
-        ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled.png)
-        
-    2. Masukkan `http://arduino.esp8266.com/stable/package_esp8266com_index.json` pada form **“Additional Boards Manager URLs”** seperti gambar berikut. Lalu, klik tombol “OK”
-        
-        ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%201.png)
-        
-    3. Buka Boards Manager. Menuju ke **Tools** > **Board** > **Boards Manager…**
-        
-        ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%202.png)
-        
-    4. Ketik pada pencarian **ESP8266** dan tekan tombol install pada “**ESP8266 by ESP8266 Community”**
-        
-        ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%203.png)
-        
-    5. Tunggu beberapa menit hingga terinstall seperti berikut
-        
-        ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%204.png)
-        
+
+   1. Pada Arduino IDE, pergi menuju **File** > **Preferences**
+
+      ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled.png)
+
+   2. Masukkan `http://arduino.esp8266.com/stable/package_esp8266com_index.json` pada form **“Additional Boards Manager URLs”** seperti gambar berikut. Lalu, klik tombol “OK”
+
+      ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%201.png)
+
+   3. Buka Boards Manager. Menuju ke **Tools** > **Board** > **Boards Manager…**
+
+      ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%202.png)
+
+   4. Ketik pada pencarian **ESP8266** dan tekan tombol install pada “**ESP8266 by ESP8266 Community”**
+
+      ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%203.png)
+
+   5. Tunggu beberapa menit hingga terinstall seperti berikut
+
+      ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%204.png)
 
 ## Persiapan Supabase
 
-- Buat akun [Supabase](https://supabase.com) (login melalui GitHub) dan buat project baru (New Project) lalu pilih ***free tier*** dan **server Singapura,** tunggu beberapa saat hingga project selesai dibuat
-    
-    ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%205.png)
-    
+- Buat akun [Supabase](https://supabase.com) (login melalui GitHub) dan buat project baru (New Project) lalu pilih **_free tier_** dan **server Singapura,** tunggu beberapa saat hingga project selesai dibuat
+  ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%205.png)
 - Setelah project selesai dibuat, masuk ke bagian ini (lihat gambar)
-    
-    ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%206.png)
-    
+  ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%206.png)
 - Lalu pilih **New Query** dan masukkan nama query anda. Sebagai contoh, “**buat tabel**”
 - Masukkan kode berikut pada editor dan klik RUN
 
@@ -70,11 +66,9 @@ alter publication supabase_realtime add table data;
 ---
 
 - Langkah terakhir adalah untuk mencatat Project URL dan API KEY
-    
-    ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%207.png)
-    
-    dalam contoh ini (project yang saya buat)
-    
+  ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%207.png)
+  dalam contoh ini (project yang saya buat)
+
 | PROJECT_URL | https://pmtntcvniacqbzuafytw.supabase.co                                                                                                                                                                         |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | API_KEY     | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtdG50Y3ZuaWFjcWJ6dWFmeXR3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzEzNTgyOTUsImV4cCI6MTk4NjkzNDI5NX0.HbRBJwbgQgZc1xhnoC8z1nRsF7_8YtX-p2ZChtCVXKM |
@@ -103,7 +97,7 @@ Dibutuhkan beberapa library untuk menjalankan kode untuk ESP8266, install melalu
 
 Pastikan untuk mengganti `PROJECT_URL` dan `API_KEY` sesuai dengan apa yang telah dicatat pada proses pembuatan database supabase sebelumnya
 
-```arduino
+```cpp
 #include <WiFiManager.h>
 #include "ArduinoJson.h"
 #include "DHT.h"
@@ -184,45 +178,45 @@ void loop()
 
 1. Masuk ke akun GitHub anda lewat laptop/PC anda (lewati jika sudah)
 2. Buka halaman repository [GitHub](https://github.com/jhagas/greenhouse-ui) ini dan fork agar repository di gandakan menuju akun GitHub anda
-    
-    ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2014.png)
-    
-    ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2015.png)
-    
+
+   ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2014.png)
+
+   ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2015.png)
+
 3. Buka [https://app.netlify.com](https://app.netlify.com/) dan Login dengan GitHub. Lalu otorisasi Netlify untuk membaca repository publik anda, seperti gambar berikut
-    
-    ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2016.png)
-    
+
+   ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2016.png)
+
 4. Lalu pilih “School”, scroll lalu klik “Save and Continue”
-    
-    ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2017.png)
-    
+
+   ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2017.png)
+
 5. Klik “Import from Git” lalu pilih GitHub. Setelah itu, klik “Authorize Netlify”
-    
-    ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2018.png)
-    
+
+   ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2018.png)
+
 6. Isi “All Repository” lalu klik “Install”
-    
-    ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2019.png)
-    
+
+   ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2019.png)
+
 7. Pilih repository anda, dalam hal ini “greenhouse-ui”
-    
-    ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2020.png)
-    
+
+   ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2020.png)
+
 8. Klik “Costumize Build Setting”
-    
-    ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2021.png)
-    
+
+   ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2021.png)
+
 9. dan klik “Costumize More Setting”
-    
-    ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2022.png)
-    
+
+   ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2022.png)
+
 10. Tambahkan dua Environment Variable dan masukkan nilainya dengan value yang telah didapat pada database pada part sebelumnya.
-    
+
     ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2023.png)
-    
+
     Key diisi seperti pada tabel berikut dengan value menyesuaikan dengan supabase anda
-    
+
 | Key                         | Value                                                                                                                                                                                                            |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | REACT_APP_SUPABASE_URL      | https://pmtntcvniacqbzuafytw.supabase.co                                                                                                                                                                         |
@@ -230,21 +224,21 @@ void loop()
 
 11. Lalu klik “Deploy Site”
 12. Setelah selesai melakukan deployment, ubah domain situs anda (opsional)
-    
+
     ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2024.png)
-    
+
     ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2025.png)
-    
+
     ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2026.png)
-    
+
 13. Klik bagian “Deploys” dan lakukan langkah sesuai pada gambar
-    
+
     ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2027.png)
-    
+
 14. Setelah selesai akan ada tulisan **Site is live** seperti pada gambar berikut
-    
+
     ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%2028.png)
-    
+
 15. Selamat, situs anda sudah dapat dibuka pada domain tautan yang anda tentukan. Perlu diperhatikan bahwa perlu setidaknya SATU data yang dikirim dari ESP8266 agar situs ini berfungsi optimal.
 
 ## Hasil Akhir Tampilan

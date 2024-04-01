@@ -46,10 +46,13 @@ export default function AddComment({
   }
 
   const check =
-    newComment.comment.length < 5 || newComment.name.length < 4 || loading || !checkbox;
+    newComment.comment.length < 5 ||
+    newComment.name.length < 4 ||
+    loading ||
+    !checkbox;
 
   return (
-    <div className="mb-5 pt-4 pb-3 px-6 mx-4 rounded-3xl bg-zinc-100 dark:bg-zinc-800 shadow-sm">
+    <div className="mb-5 pt-4 pb-3 px-6 mx-4 rounded-3xl bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700">
       <p className="mt-3 text-center font-extrabold text-[#3E3B92] dark:text-[#12c2e9] mb-2 text-lg">
         Tambahkan Komentar
       </p>
