@@ -2,7 +2,7 @@ import Link from "next/link";
 import { BsFillRocketTakeoffFill, BsMoon, BsSun } from "react-icons/bs";
 import { IoLogoGithub } from "react-icons/io5";
 import { SiLinkedin } from "react-icons/si";
-import { CiMail } from "react-icons/ci";
+import { FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import { NextSeo } from "next-seo";
 import { DarkContext } from "./_app";
@@ -20,9 +20,9 @@ const tech = [
     logo: SiLinkedin,
   },
   {
-    name: "Contact on Email",
-    link: "mailto:jhagas@e.email",
-    logo: CiMail,
+    name: "Instagram Account",
+    link: "https://www.instagram.com/jhagashw",
+    logo: FaInstagram,
   },
 ];
 
@@ -92,18 +92,17 @@ export default function About() {
             </div>
           </div>
           <div className="mt-5">
-            <span className="text-gray-800 dark:text-slate-200">
+            <span className="text-gray-800 dark:text-zinc-200">
               <p className="text-center">
                 Nama saya Jhagas Hana Winaya, saya adalah seorang mahasiswa
-                Fisika dan Gen Z yang punya pemikiran progresif, berorientasi
-                pada nilai-nilai global. Ahli koding + pencurry meme handal.
-                Punya ketertarikan dengan teknologi bleeding-edge, IoT dan juga
-                Embedded Computer (Mikrokontroler)
+                Fisika yang punya pemikiran progresif, berorientasi pada masa
+                depan dan nilai-nilai global. Punya ketertarikan dengan
+                teknologi, Web-development, Blockchain, AI dan IoT
               </p>
             </span>
-            <div className="text-gray-600 dark:text-zinc-400 mt-8 block text-sm text-center">
+            <div className="text-zinc-700 dark:text-zinc-300 mt-8 block text-sm text-center">
               <p>Hubungi saya melalui</p>
-              <div className="flex flex-row w-full justify-center items-center mt-4">
+              <div className="flex flex-row w-full justify-center items-center mt-3">
                 {tech.map((item) => {
                   return (
                     <a
@@ -112,7 +111,7 @@ export default function About() {
                       target="_blank"
                       rel="noreferrer"
                       title={item.name}
-                      className="relative mx-2 transition duration-200 focus:scale-125 hover:scale-125 hover:text-slate-800 focus:text-slate-800"
+                      className="relative mx-2 transition duration-200 focus:scale-125 hover:scale-125 hover:text-zinc-800 focus:text-zinc-800 dark:hover:text-[#ffc6d3] dark:focus:text-[#ffc6d3]"
                     >
                       <item.logo size="28px" />
                     </a>

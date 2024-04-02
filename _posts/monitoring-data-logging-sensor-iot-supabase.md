@@ -97,7 +97,7 @@ Dibutuhkan beberapa library untuk menjalankan kode untuk ESP8266, install melalu
 
 Pastikan untuk mengganti `PROJECT_URL` dan `API_KEY` sesuai dengan apa yang telah dicatat pada proses pembuatan database supabase sebelumnya
 
-```cpp
+```cpp {7-8} /"PROJECT_URL"/ /"API_KEY"/ title="project.ino"
 #include <WiFiManager.h>
 #include "ArduinoJson.h"
 #include "DHT.h"

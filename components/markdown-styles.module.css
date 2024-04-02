@@ -35,16 +35,42 @@
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
 
-.markdown pre {
-  @apply text-[0.9rem] rounded-lg mb-7 p-5 overflow-auto;
+.markdown figure pre {
+  @apply bg-transparent;
 }
 
-.markdown li > code {
+.markdown [data-rehype-pretty-code-figure] {
+  @apply rounded-lg overflow-clip mb-7;
+}
+
+.markdown code[data-theme*=" "] {
+  @apply text-[0.9rem] overflow-auto py-3;
+}
+
+.markdown code[data-theme*=" "] span[data-line] {
+  @apply px-6;
+}
+
+.markdown p > [data-rehype-pretty-code-figure] > code,
+.markdown li [data-rehype-pretty-code-figure] code {
+  @apply rounded p-1 break-words border-none;
+}
+
+.markdown p > [data-rehype-pretty-code-figure] > code span[data-line],
+.markdown li [data-rehype-pretty-code-figure] code span[data-line] {
+  @apply px-0;
+}
+
+.markdown li code {
   @apply rounded-lg mx-1 p-1;
 }
 
 .markdown p > code {
-  @apply rounded-md mx-1 p-1 break-words;
+  @apply rounded p-1 break-words;
+}
+
+.markdown [data-rehype-pretty-code-title] {
+  @apply font-mono text-[0.9rem] px-5 py-2;
 }
 
 .markdown p > img {
@@ -77,5 +103,29 @@
 }
 
 .markdown a {
-  @apply underline text-[#F44369] hover:text-[#3E3B92] transition-colors;
+  @apply hover:underline transition-colors;
+}
+
+.markdown code[data-line-numbers] {
+  counter-reset: line;
+}
+
+.markdown code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+
+.markdown code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 2rem;
+}
+
+.markdown code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 3rem;
 }

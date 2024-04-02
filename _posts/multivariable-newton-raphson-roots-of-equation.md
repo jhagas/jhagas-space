@@ -1,13 +1,13 @@
 ---
-title: 'Penyelesaian Akar dari 3 Persamaan (3 variabel) Menggunakan Metode Newton-Raphson'
-desc: 'Implementasi metode Newton-Raphson untuk menemukan akar persamaan multivariabel dengan bahasa pemrograman python'
-tags: 'Computational Physics'
-coverImage: '/multivariable-newton-raphson/cover.png'
-date: '2023-12-15'
+title: "Penyelesaian Akar dari 3 Persamaan (3 variabel) Menggunakan Metode Newton-Raphson"
+desc: "Implementasi metode Newton-Raphson untuk menemukan akar persamaan multivariabel dengan bahasa pemrograman python"
+tags: "Computational Physics"
+coverImage: "/multivariable-newton-raphson/cover.png"
+date: "2023-12-15"
 author:
   name: Jhagas Hana Winaya
 ogImage:
-  url: '/multivariable-newton-raphson/cover.png'
+  url: "/multivariable-newton-raphson/cover.png"
 ---
 
 Dalam dunia sains dan teknik, seringkali kita dihadapkan pada tantangan untuk menemukan akar dari suatu sistem persamaan. Salah satu metode yang efektif dan populer untuk menyelesaikan sistem persamaan nonlinier adalah metode Newton-Raphson.
@@ -98,14 +98,14 @@ FOR I=1, MAXITER
   1. Hitung F(solusi)
   2. Jika NORM(F(solusi)) < tol, maka konvergen & keluar. Selain itu lanjut.
   3. Hitung matriks Jacobian df = J(solusi)
-  4. Jika DETERMINAN(df) == 0, Terjadi eror & keluar. Selain itu lanjut 
+  4. Jika DETERMINAN(df) == 0, Terjadi eror & keluar. Selain itu lanjut
   5. Hitung solusi = solusi - INVERS(df)*f(solusi)
 ENDDO
 ```
 
 ### Penerapan pada Python
 
-Sebelumnya, kita masukkan library yang akan digunakan, yakni `numpy`.
+Sebelumnya, kita masukkan library yang akan digunakan, yakni `numpy{:python}`.
 
 ```python
 import numpy as np
@@ -155,20 +155,20 @@ m_k=\left[\begin{matrix}x_k\\y_k\\z_k\\\end{matrix}\right]=\left[\begin{matrix}1
 \end{align*}
 $$
 
-Sehingga, dalam python dibuat matriks solusi dengan `np.ones` yang akan menghasilkan matriks 1 dimensi dengan 3 item bernilai 1. Kode ditampilkan sebagai berikut
+Sehingga, dalam python dibuat matriks solusi dengan `np.ones{:python}` yang akan menghasilkan matriks 1 dimensi dengan 3 item bernilai 1. Kode ditampilkan sebagai berikut
 
 ```python
 solusi = np.ones(3)
 ```
 
-Selanjutnya definisikan berapa toleransi yang diperbolehkan, dan maksimal iterasi *loop* yang perlu dijalankan.
+Selanjutnya definisikan berapa toleransi yang diperbolehkan, dan maksimal iterasi _loop_ yang perlu dijalankan.
 
 ```python
 tol = 1e-3
 maxiter = 10
 ```
 
-Untuk *loop* utamanya, akan dijabarkan sebagai berikut
+Untuk _loop_ utamanya, akan dijabarkan sebagai berikut
 
 ```python
 # Untuk mempercantik hasil print
@@ -197,17 +197,17 @@ for ii in range(maxiter):
   solusi -= np.matmul(np.linalg.inv(df), val_F)
 ```
 
-Dari kode loop utama di atas pasti anda muncul pertanyaan, apa itu NORM dalam matriks. Norm dalam matriks adalah suatu fungsi yang mengukur besarnya seluruh nilai yang ada dalam matriks. Norm matriks didefinisikan sebagai nilai maksimum dari hasil perkalian matriks dengan vektor unit. Dalam matematika, norm matriks sering digunakan untuk mengukur kesalahan dalam suatu perhitungan matriks. Yang digunakan dalam pustaka `numpy` adalah metode NORM Frobenius.
+Dari kode loop utama di atas pasti anda muncul pertanyaan, apa itu NORM dalam matriks. Norm dalam matriks adalah suatu fungsi yang mengukur besarnya seluruh nilai yang ada dalam matriks. Norm matriks didefinisikan sebagai nilai maksimum dari hasil perkalian matriks dengan vektor unit. Dalam matematika, norm matriks sering digunakan untuk mengukur kesalahan dalam suatu perhitungan matriks. Yang digunakan dalam pustaka `numpy{:python}` adalah metode NORM Frobenius.
 
 ## Hasil
 
 Dari perhitungan menggunakan python yang telah dijabarkan di atas, ditemukan hasil bahwa
 
-| Variabel | Hasil |
-| --- | --- |
-| $x$ | 1.5615528128094316 |
-| $y$ | 1.8112913796272616 |
-| $z$ | 2.877691460669404 |
+| Variabel | Hasil              |
+| -------- | ------------------ |
+| $x$      | 1.5615528128094316 |
+| $y$      | 1.8112913796272616 |
+| $z$      | 2.877691460669404  |
 
 Nilai solusi konvergen (lebih kecil daripada toleransi) pada iterasi ke-4
 

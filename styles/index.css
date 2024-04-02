@@ -27,43 +27,67 @@
   @apply relative ml-10;
 }
 
-.shiki {
+code[data-theme*=" "] {
+  @apply bg-zinc-50 dark:bg-zinc-800/50;
+}
+
+[data-rehype-pretty-code-title] {
+  @apply bg-zinc-200 dark:bg-zinc-950/50 text-zinc-700 dark:text-zinc-400;
+}
+
+[data-rehype-pretty-code-figure] {
   @apply border border-zinc-300 dark:border-zinc-700;
 }
 
-.dark .shiki,
-.dark .shiki span {
-  color: var(--shiki-dark) !important;
-  background-color: var(--shiki-dark-bg) !important;
+code[data-theme*=" "],
+code[data-theme*=" "] span {
+  color: var(--shiki-light);
 }
 
-.markdown-styles_markdown__h_8de blockquote {
+.dark code[data-theme*=" "],
+.dark code[data-theme*=" "] span {
+  color: var(--shiki-dark);
+}
+
+mark[data-highlighted-chars] {
+  @apply bg-yellow-200 dark:bg-yellow-900/60;
+}
+
+code[data-theme*=" "] > [data-highlighted-line] {
+  @apply bg-orange-100 dark:bg-zinc-700/50 border-l-4 border-l-orange-500;
+}
+
+.markdown-styles_markdown__HwUWZ blockquote {
   @apply border border-l-[10px] border-l-[#f44369] dark:border-l-[#f44369] border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800;
 }
 
-.markdown-styles_markdown__h_8de h2 {
+.markdown-styles_markdown__HwUWZ a {
+  @apply text-[#F44369] hover:text-[#3E3B92] dark:hover:text-[#7c79d7];
+}
+
+.markdown-styles_markdown__HwUWZ h2 {
   @apply bg-gradient-to-tl from-[#F44369] to-[#3E3B92] dark:to-[#16BFFD];
 }
 
 li code {
-  @apply bg-zinc-100 dark:bg-zinc-800 text-red-600 dark:text-orange-400;
+  @apply bg-zinc-100 dark:bg-zinc-800 text-[#24292EFF] dark:text-[#B392F0];
 }
 
 p code {
-  @apply bg-zinc-100 dark:bg-zinc-800 text-red-600 dark:text-orange-400;
+  @apply bg-zinc-100 dark:bg-zinc-800 text-[#24292EFF] dark:text-[#B392F0];
 }
 
 p img {
   @apply dark:bg-white;
 }
 
-.markdown-styles_markdown__h_8de table {
+.markdown-styles_markdown__HwUWZ table {
   @apply border border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800;
 }
-.markdown-styles_markdown__h_8de table th {
+.markdown-styles_markdown__HwUWZ table th {
   @apply dark:bg-zinc-950 bg-zinc-100 text-[#3E3B92] dark:text-zinc-100;
 }
-.markdown-styles_markdown__h_8de table tr {
+.markdown-styles_markdown__HwUWZ table tr {
   @apply dark:!bg-zinc-800 dark:!border-zinc-600 !border-zinc-300;
 }
 

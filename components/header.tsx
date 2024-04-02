@@ -23,9 +23,18 @@ const Header = () => {
 
   return (
     <div
-      className={`p-0 px-3 shadow-sm bg-white/50 dark:bg-zinc-800/50
-      ${scrollPosition > 60 ? "shadow-slate-800/5" : "shadow-transparent"}
-      transition-all backdrop-blur-md rounded-b-xl duration-300 sm:px-2 dark:text-slate-200
+      className={`p-0 px-3 
+      ${
+        scrollPosition === 0
+          ? "bg-transparent"
+          : "bg-white/50 dark:bg-zinc-800/50"
+      }
+      ${
+        scrollPosition > 60
+          ? "shadow shadow-zinc-900/5 lg:border-x border-b border-zinc-200 dark:border-zinc-700/70"
+          : "border-transparent"
+      }
+      transition-all backdrop-blur-md lg:rounded-b-xl duration-100 sm:px-2 dark:text-slate-200
       ${clicked ? "h-36" : "h-16"}
       md:px-5 max-w-5xl sticky top-0 z-10 mx-auto`}
     >
@@ -68,7 +77,7 @@ const Header = () => {
               <div>
                 <Link
                   href="/about-me"
-                  className="btn bg-[#F44369] dark:bg-[#d8244b] text-white border-0 hover:bg-[#3E3B92] dark:hover:bg-[#ac1838]"
+                  className="btn bg-[#F44369] dark:bg-[#d8244b] text-white border-0 hover:bg-[#ac1838]"
                 >
                   Tentang Saya
                 </Link>
@@ -85,7 +94,7 @@ const Header = () => {
         <li>
           <Link
             href="/about-me"
-            className="btn w-full bg-[#F44369] dark:bg-[#d8244b] text-white border-0 hover:bg-[#3E3B92] dark:hover:bg-[#ac1838]"
+            className="btn w-full bg-[#F44369] dark:bg-[#d8244b] text-white border-0 hover:bg-[#ac1838]"
           >
             Tentang Saya
           </Link>

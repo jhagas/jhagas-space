@@ -5,25 +5,7 @@ import remarkRehype from "remark-rehype";
 import rehypeKatex from "rehype-katex";
 import remarkGfm from "remark-gfm";
 import rehypeStringify from "rehype-stringify";
-
-import rehypeShikiFromHighlighter from "@shikijs/rehype/core";
-
-import { getHighlighterCore } from "shiki/core";
-
-const highlighter = await getHighlighterCore({
-  themes: [
-    import("shiki/themes/min-dark.mjs"),
-    import("shiki/themes/min-light.mjs"),
-  ],
-  langs: [
-    import("shiki/langs/javascript.mjs"),
-    import("shiki/langs/typescript.mjs"),
-    import("shiki/langs/python.mjs"),
-    import("shiki/langs/matlab.mjs"),
-    import("shiki/langs/cpp.mjs"),
-  ],
-  loadWasm: import("shiki/wasm"),
-});
+import rehypePrettyCode from "rehype-pretty-code";
 
 export default async function markdownToHtml(markdown: string) {
   const result = await unified()
@@ -31,11 +13,18 @@ export default async function markdownToHtml(markdown: string) {
     .use(remarkGfm)
     .use(remarkMath)
     .use(remarkRehype)
-    .use(rehypeKatex)
-    .use(rehypeShikiFromHighlighter as any, highlighter, {
-      themes: {
+    .use(rehypeKatex as any)
+    .use(rehypePrettyCode, {
+      theme: {
         light: "min-light",
         dark: "min-dark",
+      },
+      keepBackground: false,
+      tokensMap: {
+        fn: "entity.name.function",
+        var: "variable.parameter",
+        obj: "variable.other.object",
+        key: "keyword",
       },
     })
     .use(rehypeStringify)
