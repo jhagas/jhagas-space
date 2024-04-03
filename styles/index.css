@@ -117,3 +117,41 @@ p img {
 .send-disabled {
   @apply btn-disabled dark:bg-zinc-700 dark:text-zinc-500 !important;
 }
+
+pre:has(code) {
+  position: relative;
+}
+
+pre button.copy {
+  right: 1.5rem;
+  top: 0.58rem;
+
+  @apply flex absolute transition-all opacity-20 hover:opacity-100 bg-zinc-200/80 dark:bg-zinc-900 border-zinc-300/30 dark:border-zinc-600/30 border p-1 rounded-md;
+
+  & span {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  & .ready {
+    @apply bg-[url(/assets/copy.svg)] dark:invert w-5;
+  }
+
+  & .success {
+    display: none;
+    @apply bg-[url(/assets/copy-success.svg)] dark:invert w-5;
+  }
+
+  &.copied {
+    & .success {
+      display: block;
+    }
+
+    & .ready {
+      display: none;
+    }
+  }
+}

@@ -6,6 +6,7 @@ import rehypeKatex from "rehype-katex";
 import remarkGfm from "remark-gfm";
 import rehypeStringify from "rehype-stringify";
 import rehypePrettyCode from "rehype-pretty-code";
+import { h } from "hastscript";
 
 const rehypeWrapTableWithDiv = () => (tree) => {
   // Find table element in the tree
@@ -38,19 +39,28 @@ const rehypeWrapTableWithDiv = () => (tree) => {
   }
 };
 
-const rehypePrettyCodeOptions = {
-  theme: {
-    light: "min-light",
-    dark: "min-dark",
-  },
-  keepBackground: false,
-  tokensMap: {
-    fn: "entity.name.function",
-    var: "variable.parameter",
-    obj: "variable.other.object",
-    key: "keyword",
-  },
-};
+export function addCopyButton() {
+  return {
+    name: "shiki-transformer-copy-button",
+    pre(node) {
+      const button = h(
+        "button",
+        {
+          class: "copy",
+          "data-code": this.source,
+          onclick: `
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add('copied');
+          setTimeout(() => this.classList.remove('copied'), 3000)
+        `,
+        },
+        [h("span", { class: "ready" }), h("span", { class: "success" })]
+      );
+
+      node.children.push(button);
+    },
+  };
+}
 
 export default async function markdownToHtml(markdown: string) {
   const result = await unified()
@@ -59,7 +69,20 @@ export default async function markdownToHtml(markdown: string) {
     .use(remarkMath)
     .use(remarkRehype)
     .use(rehypeKatex as any)
-    .use(rehypePrettyCode, rehypePrettyCodeOptions as any)
+    .use(rehypePrettyCode, {
+      theme: {
+        light: "min-light",
+        dark: "min-dark",
+      },
+      keepBackground: false,
+      tokensMap: {
+        fn: "entity.name.function",
+        var: "variable.parameter",
+        obj: "variable.other.object",
+        key: "keyword",
+      },
+      transformers: [addCopyButton()],
+    })
     .use(rehypeWrapTableWithDiv as any)
     .use(rehypeStringify)
     .process(markdown);
