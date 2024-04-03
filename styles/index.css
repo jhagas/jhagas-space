@@ -49,6 +49,11 @@ code[data-theme*=" "] span {
   color: var(--shiki-dark);
 }
 
+p > span[data-rehype-pretty-code-figure] > code,
+li span[data-rehype-pretty-code-figure] code {
+  @apply bg-zinc-100 dark:bg-zinc-800;
+}
+
 mark[data-highlighted-chars] {
   @apply bg-yellow-200 dark:bg-yellow-900/60;
 }
@@ -69,11 +74,8 @@ code[data-theme*=" "] > [data-highlighted-line] {
   @apply bg-gradient-to-tl from-[#F44369] to-[#3E3B92] dark:to-[#16BFFD];
 }
 
+p code,
 li code {
-  @apply bg-zinc-100 dark:bg-zinc-800 text-[#24292EFF] dark:text-[#B392F0];
-}
-
-p code {
   @apply bg-zinc-100 dark:bg-zinc-800 text-[#24292EFF] dark:text-[#B392F0];
 }
 
@@ -82,13 +84,18 @@ p img {
 }
 
 .markdown-styles_markdown__HwUWZ table {
-  @apply border border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800;
+  @apply dark:bg-zinc-800;
 }
+
+.div-table {
+  @apply overflow-x-auto rounded-lg border border-zinc-300 dark:border-zinc-700;
+}
+
 .markdown-styles_markdown__HwUWZ table th {
   @apply dark:bg-zinc-950 bg-zinc-100 text-[#3E3B92] dark:text-zinc-100;
 }
 .markdown-styles_markdown__HwUWZ table tr {
-  @apply dark:!bg-zinc-800 dark:!border-zinc-600 !border-zinc-300;
+  @apply dark:!bg-zinc-800 dark:!border-zinc-700/50 !border-zinc-300;
 }
 
 .Typewriter__cursor {

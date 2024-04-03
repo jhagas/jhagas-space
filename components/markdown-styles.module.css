@@ -39,7 +39,7 @@
   @apply bg-transparent;
 }
 
-.markdown [data-rehype-pretty-code-figure] {
+.markdown figure[data-rehype-pretty-code-figure] {
   @apply rounded-lg overflow-clip mb-7;
 }
 
@@ -56,17 +56,24 @@
   @apply rounded p-1 break-words border-none;
 }
 
-.markdown p > [data-rehype-pretty-code-figure] > code span[data-line],
-.markdown li [data-rehype-pretty-code-figure] code span[data-line] {
+.markdown p > span[data-rehype-pretty-code-figure] > code span[data-line],
+.markdown li span[data-rehype-pretty-code-figure] code span[data-line] {
   @apply px-0;
 }
 
-.markdown li code {
-  @apply rounded-lg mx-1 p-1;
+.markdown p > span[data-rehype-pretty-code-figure],
+.markdown li span[data-rehype-pretty-code-figure] {
+  @apply !mb-0 border-none bg-transparent p-0;
 }
 
+.markdown li figure[data-rehype-pretty-code-figure] code,
+.markdown p figure[data-rehype-pretty-code-figure] code {
+  @apply m-0 py-3 break-words;
+}
+
+.markdown li code,
 .markdown p > code {
-  @apply rounded p-1 break-words;
+  @apply mx-1 p-1 rounded break-words;
 }
 
 .markdown [data-rehype-pretty-code-title] {
@@ -78,8 +85,7 @@
 }
 
 .markdown table {
-  @apply table text-[0.95rem] rounded-lg overflow-auto max-w-fit mx-auto;
-  display: block;
+  @apply table text-[0.95rem] max-w-full;
 }
 
 .markdown table tr {
@@ -91,15 +97,15 @@
 }
 
 .markdown ol {
-  @apply list-decimal ml-10;
+  @apply list-decimal ml-10 my-3;
 }
 
 .markdown ul {
-  @apply list-disc ml-10;
+  @apply list-disc ml-10 my-3;
 }
 
 .markdown li {
-  @apply pl-2 text-[0.95rem];
+  @apply pl-2 text-[0.95rem] mt-2;
 }
 
 .markdown a {

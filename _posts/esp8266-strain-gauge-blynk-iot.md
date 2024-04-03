@@ -124,18 +124,18 @@ void loop()
 
 1. Deklarasi Library yang digunakan
 
-   ```cpp
+   ```cpp {}
    #include <Arduino.h>
    #include <ESP8266WiFi.h>
    #include <BlynkSimpleEsp8266.h>
    #include "HX711.h"
    ```
 
-   Library `<Arduino.h>`, `<ESP8266WiFi.h>` dan `<BlynkSimpleEsp8266.h>` sudah diinstall pada tahap persiapan di atas.
+   Pastikan semua library telah diinstall pada tahap persiapan di atas.
 
 2. Definisikan pin untuk memasang modul HX711
 
-   ```cpp
+   ```cpp /D5/ /D6/
    #define LOADCELL_DOUT_PIN D5
    #define LOADCELL_SCK_PIN D6
 
@@ -144,7 +144,7 @@ void loop()
 
 3. Definisikan token dari Blynk dan Wifi yang akan disambungkan
 
-   ```cpp
+   ```cpp /"YOUR TEMPLATE ID"/ /"YOUR TEMPLATE NAME"/ /"Your Auth Token"/ /"SSID Wifi"/ /"Sandi Wifi"/
    #define BLYNK_TEMPLATE_ID "YOUR TEMPLATE ID"
    #define BLYNK_TEMPLATE_NAME "YOUR TEMPLATE NAME"
    #define BLYNK_AUTH_TOKEN "Your Auth Token"
