@@ -6,7 +6,6 @@ import rehypeKatex from "rehype-katex";
 import remarkGfm from "remark-gfm";
 import rehypeStringify from "rehype-stringify";
 import rehypePrettyCode from "rehype-pretty-code";
-import { visit } from "unist-util-visit";
 
 const rehypeWrapTableWithDiv = () => (tree) => {
   // Find table element in the tree
