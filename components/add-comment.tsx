@@ -1,5 +1,6 @@
+"use client";
+
 import { Dispatch, SetStateAction, useState } from "react";
-import { useRouter } from "next/router";
 
 type params = {
   slug: string;
@@ -96,7 +97,7 @@ export default function AddComment({
           />
           <span className="label-text text-zinc-700 dark:text-zinc-200">
             Dengan mencentang ini anda telah mengetahui bahwa komentar tidak
-            bisa diedit kembali
+            bisa diedit atau dihapus
           </span>
         </label>
       </div>

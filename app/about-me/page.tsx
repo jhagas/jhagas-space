@@ -4,9 +4,7 @@ import { IoLogoGithub } from "react-icons/io5";
 import { SiLinkedin } from "react-icons/si";
 import { FaInstagram } from "react-icons/fa";
 import Image from "next/image";
-import { NextSeo } from "next-seo";
-import { DarkContext } from "./_app";
-import { useContext } from "react";
+import { Metadata } from "next";
 
 const tech = [
   {
@@ -26,45 +24,27 @@ const tech = [
   },
 ];
 
-function Seo() {
-  return (
-    <NextSeo
-      title="Tentang Jhagas Hana Winaya | Jhagas's Space, Science & Technology Blog"
-      description="Sekilas tentang Jhagas Hana Winaya, penulis blog Jhagas's Space"
-      canonical="https://www.jhagas.space/about-me"
-      openGraph={{
-        profile: {
-          firstName: "Jhagas",
-          lastName: "Winaya",
-          gender: "male",
-        },
-        title:
-          "Tentang Jhagas Hana Winaya | Jhagas's Space, Science & Technology Blog",
-        description:
-          "Sekilas tentang Jhagas Hana Winaya, penulis blog Jhagas's Space",
-        type: "website",
-        locale: "id_ID",
-        url: "https://www.jhagas.space/about-me",
-        siteName: "Jhagas's Space",
-        images: [
-          {
-            url: "https://www.jhagas.space/assets/aboutog.png",
-            width: 1200,
-            height: 630,
-            alt: "Jhagas's Space, Tentang Saya",
-          },
-        ],
-      }}
-    />
-  );
-}
+export const metadata: Metadata = {
+  title:
+    "Tentang Jhagas Hana Winaya | Jhagas's Space, Science & Technology Blog",
+  description:
+    "Sekilas tentang Jhagas Hana Winaya, penulis blog Jhagas's Space",
+  openGraph: {
+    type: "website",
+    url: "https://www.jhagas.space/about-me",
+    title:
+      "Tentang Jhagas Hana Winaya | Jhagas's Space, Science & Technology Blog",
+    description:
+      "Sekilas tentang Jhagas Hana Winaya, penulis blog Jhagas's Space",
+    siteName: "Jhagas's Space",
+    locale: "id_ID",
+  },
+};
 
 export default function About() {
-  const { dark, setDark } = useContext(DarkContext);
   return (
     <>
-      <Seo />
-      <div className="bg-zinc-50 dark:bg-zinc-900 px-4 h-screen transition-colors duration-300">
+      <div className="bg-zinc-50 dark:bg-zinc-900 px-4 h-screen transition-colors duration-300 dark:text-zinc-200">
         <div className="relative bg-white dark:bg-zinc-800 rounded-2xl p-9 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-xl min-w-min border border-zinc-300 dark:border-zinc-700">
           <Image
             src="/assets/profiles.jpeg"
@@ -84,15 +64,9 @@ export default function About() {
               />
               Jhagas's Space
             </Link>
-            <div
-              className="btn btn-ghost dark:hover:bg-zinc-700"
-              onClick={() => setDark(!dark)}
-            >
-              {!dark ? <BsMoon size={18} /> : <BsSun size={20} />}
-            </div>
           </div>
           <div className="mt-5">
-            <span className="text-gray-800 dark:text-zinc-200">
+            <span className="text-zinc-800 dark:text-zinc-200">
               <p className="text-center">
                 Nama saya Jhagas Hana Winaya, saya adalah seorang mahasiswa
                 Fisika yang punya pemikiran progresif, berorientasi pada masa

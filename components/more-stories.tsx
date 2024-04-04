@@ -1,5 +1,15 @@
 import PostPreview from "./post-preview";
-import type Post from "../interfaces/post";
+import Author from "../interfaces/author";
+
+type Post = {
+  slug: string;
+  title: string;
+  date: string;
+  coverImage: string;
+  author: Author;
+  desc: string;
+  tags: string;
+};
 
 type Props = {
   posts: Post[];

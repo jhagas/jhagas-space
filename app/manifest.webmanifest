@@ -1,0 +1,16 @@
+{
+  "name": "Jhagas's Space, a Science and Technology Blog",
+  "short_name": "Jhagas's Space",
+  "description": "Exploring Jhagas's Space, a personal blog, and my journey through the fascinating world of science, physics, engineering and bleeding edge technologies",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

@@ -1,15 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BsFillRocketTakeoffFill, BsMoon, BsSun } from "react-icons/bs";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import { AiOutlineClose } from "react-icons/ai";
-import { DarkContext } from "../pages/_app";
-import { useContext } from "react";
+import { useDark } from "./provider/dark";
 
 const Header = () => {
   const [clicked, setClicked] = useState(false);
 
-  const { dark, setDark } = useContext(DarkContext);
+  const [dark, toggleDark] = useDark();
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => setScrollPosition(window.scrollY);
@@ -34,7 +35,7 @@ const Header = () => {
           ? "shadow shadow-zinc-900/5 lg:border-x border-b border-zinc-200 dark:border-zinc-700/70"
           : "border-transparent"
       }
-      transition-all backdrop-blur-md lg:rounded-b-xl duration-100 sm:px-2 dark:text-slate-200
+      transition-all backdrop-blur-md lg:rounded-b-xl duration-100 sm:px-2 dark:text-zinc-200
       ${clicked ? "h-36" : "h-16"}
       md:px-5 max-w-5xl sticky top-0 z-10 mx-auto`}
     >
@@ -51,7 +52,7 @@ const Header = () => {
         <div className="navbar-end center">
           <div
             className="btn btn-ghost hover:bg-zinc-300/30 dark:hover:bg-zinc-700/30"
-            onClick={() => setDark(!dark)}
+            onClick={() => toggleDark()}
           >
             {!dark ? <BsMoon size={18} /> : <BsSun size={20} />}
           </div>

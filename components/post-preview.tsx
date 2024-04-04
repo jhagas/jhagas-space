@@ -24,7 +24,7 @@ const PostPreview = ({
   return (
     <Link
       passHref
-      href={`/posts/${slug}`}
+      href={`/post/${slug}`}
       className="mx-auto w-full card lg:card-side border border-zinc-300 dark:border-zinc-700 max-w-4xl bg-white dark:bg-zinc-800"
     >
       <div className="card-body pb-1 lg:pb-6">

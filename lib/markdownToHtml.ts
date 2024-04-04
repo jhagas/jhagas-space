@@ -69,7 +69,7 @@ export default async function markdownToHtml(markdown: string) {
     .use(remarkMath)
     .use(remarkRehype)
     .use(rehypeKatex as any)
-    .use(rehypePrettyCode, {
+    .use(rehypePrettyCode as any, {
       theme: {
         light: "min-light",
         dark: "min-dark",

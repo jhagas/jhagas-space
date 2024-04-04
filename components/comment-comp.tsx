@@ -1,3 +1,5 @@
+"use client";
+
 import { parseISO } from "date-fns";
 import { format } from "date-fns-tz";
 import { id } from "date-fns/locale";
@@ -28,7 +30,9 @@ export default function Comment({ slug }: params) {
   useEffect(() => {
     async function getData() {
       setLoading(true);
-      const response = await fetch(`/api/comments/${slug}/${page - 1}`);
+      const response = await fetch(
+        `/api/comments/${slug}?pagination=${page - 1}`
+      );
       const data = await response.json();
       setCommentsNow(data);
       setLoading(false);
