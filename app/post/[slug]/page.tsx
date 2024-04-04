@@ -9,6 +9,7 @@ import Comment from "../../../components/comment-comp";
 import HandleUp from "../../../components/movehandle";
 import { Metadata } from "next";
 import { Article } from "schema-dts";
+import Footer from "../../../components/footer";
 
 export async function generateStaticParams() {
   const posts = getAllPosts(["slug"]);
@@ -115,6 +116,7 @@ export default async function Post({ params }) {
         <Comment slug={post.slug} key={post.slug} />
       </Container>
       <MoreStories posts={morePosts} name="Artikel Serupa" minimal={true} />
+      <Footer />
     </>
   );
 }

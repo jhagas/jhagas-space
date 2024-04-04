@@ -37,7 +37,7 @@ const Header = () => {
       }
       transition-all backdrop-blur-md lg:rounded-b-xl duration-100 sm:px-2 dark:text-zinc-200
       ${clicked ? "h-36" : "h-16"}
-      md:px-5 max-w-5xl sticky top-0 z-10 mx-auto`}
+      md:px-5 max-w-5xl sticky top-0 z-20 mx-auto`}
     >
       <div className="navbar">
         <div className="navbar-start">
