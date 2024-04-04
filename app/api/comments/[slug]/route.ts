@@ -28,5 +28,5 @@ export async function GET(request: Request, { params }) {
     data: rows,
   };
 
-  return Response.json(data);
+  return new Response(JSON.stringify(data));
 }

@@ -1,12 +1,16 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { Inter } from "next/font/google";
 import ThemeProvider from "../components/provider/themes";
 import { Metadata } from "next";
 
-export const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.jhagas.space"),
   title: "Jhagas's Space, a Science and Technology Blog",
   description:
     "Exploring Jhagas's Space, a personal blog, and my journey through the fascinating world of science, physics, engineering and bleeding edge technologies",
@@ -27,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
+    <html lang="id" className={inter.className}>
       <head>
         <link
           rel="stylesheet"
@@ -36,7 +40,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className={inter.className}>
+      <body>
         <ThemeProvider>{children}</ThemeProvider>
         <Analytics />
       </body>
