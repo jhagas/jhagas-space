@@ -1,13 +1,13 @@
 ---
-title: 'Perbandingan 2 Metode Integral Numerik (Trapezoidal dan Simpson) Untuk Kasus Terjun Payung'
-desc: 'Penggunaan Integral Numerik Metode Trapezoidal dan Metode Simpson Pada Kasus Terjun Payung. Juga dijabarkan selisih (eror) kedua metode tersebut dari solusi eksak permasalahan'
-tags: 'Computational Physics'
-coverImage: '/Terjun%20Payung%201aee79d9be594c1698a0e4512f6db34a/cover.png'
-date: '2023-04-17'
+title: "Perbandingan 2 Metode Integral Numerik (Trapezoidal dan Simpson) Untuk Kasus Terjun Payung"
+desc: "Penggunaan Integral Numerik Metode Trapezoidal dan Metode Simpson Pada Kasus Terjun Payung. Juga dijabarkan selisih (eror) kedua metode tersebut dari solusi eksak permasalahan"
+tags: "Computational Physics"
+coverImage: "/Terjun%20Payung%201aee79d9be594c1698a0e4512f6db34a/cover.png"
+date: "2023-04-17"
 author:
   name: Jhagas Hana Winaya
 ogImage:
-  url: '/Terjun%20Payung%201aee79d9be594c1698a0e4512f6db34a/cover.png'
+  url: "/Terjun%20Payung%201aee79d9be594c1698a0e4512f6db34a/cover.png"
 ---
 
 Diketahui gaya yang bekerja pada benda yang terjatuh dengan medium udara adalah gaya berat serta gaya gesek yang merupakan fungsi kecepatan. Gaya berat dirumuskan secara matematis sebagai
@@ -67,7 +67,7 @@ x(t) &= \frac{mg}{c} \int_0^t 1-e^{-ct/m} \ dt
 \end{align}
 $$
 
-Dari persamaan dapat dicari posisi tiap satuan waktu menggunakan metode numerik, yakni menggunakan metode simpson dan trapeoida.
+Dari persamaan dapat dicari posisi tiap satuan waktu menggunakan metode numerik, yakni menggunakan metode simpson dan trapezoida.
 
 ## PERMASALAHAN
 
@@ -86,6 +86,7 @@ v(t)&= \frac{mg}{c}\int_0^t [1-e^{-ct/m}]\ dt
 \\x(t)&= \frac{mg}{c}-\left[t+\frac{m}{c}e^{-ct/m}-\frac {m}c\right]
 \\x(8)&= \frac{70 \times 9,8}{20}-\left[8+\frac{70}{20}e^{-20 \times 8/70}-\frac {70}{20}\right]
 \\x(8)&=166,55925 \end{align*}
+
 
 $$
 
@@ -143,40 +144,39 @@ $$
 3. Jumlah pembaginya ditentukan
 4. Nilai `h = [a(1), a(2)] / 2`
 5. Diketahui pada posisi $x(t)=L$, berlaku
-    
-    $$
-    \begin{align*}
-    L=\frac{h}{2}(f_0+2\sum_{i=1}^{n-1}f_i+f_n)
-    
-    \end{align*}
-    $$
-    
-6. *Source code* metode trapesium
-    
-    ```matlab
-    c=20; m=70; g=9.8;
-    a = [0,8]; %batasnya (xawal,xakhir)
-    n = 4; %interval yang dipakai
-    h = (a(2)-a(1)) / n;
-    fff = 0;
-    
-    f = @(t)(m*g/c)*(1-exp(-c*t/m ));
-    
-    for i=1:n+1
-    	if i == 1 || i == n+1
-    		fff = fff + f(a(1));
-    	else
-    		fff = fff + 2*f(a(1));
-    	end
-    
-    	a(1) = a(1) + h;
-    end
-    
-    posisi = h/2*fff
-    ```
-    
-    ![Untitled](/Terjun%20Payung%201aee79d9be594c1698a0e4512f6db34a/Untitled%201.png)
-    
+
+   $$
+   \begin{align*}
+   L=\frac{h}{2}(f_0+2\sum_{i=1}^{n-1}f_i+f_n)
+
+   \end{align*}
+   $$
+
+6. _Source code_ metode trapesium
+
+   ```matlab
+   c=20; m=70; g=9.8;
+   a = [0,8]; %batasnya (xawal,xakhir)
+   n = 4; %interval yang dipakai
+   h = (a(2)-a(1)) / n;
+   fff = 0;
+
+   f = @(t)(m*g/c)*(1-exp(-c*t/m ));
+
+   for i=1:n+1
+   	if i == 1 || i == n+1
+   		fff = fff + f(a(1));
+   	else
+   		fff = fff + 2*f(a(1));
+   	end
+
+   	a(1) = a(1) + h;
+   end
+
+   posisi = h/2*fff
+   ```
+
+   ![Untitled](/Terjun%20Payung%201aee79d9be594c1698a0e4512f6db34a/Untitled%201.png)
 
 #### Metode Simpson 1/3
 
@@ -199,45 +199,45 @@ $$
 1. fungsi didefinisikan `y = f(t)`
 2. batas atas dan batas bawah ditentukan `a = [a(1), a(2)]`
 3. jumlah pembaginya ditentukan
-4. Nilai `h = [a(1), a(2)] / 2` 
+4. Nilai `h = [a(1), a(2)] / 2`
 5. Diketahui pada posisi $x(t)=L$, berlaku
-    
-    $$
-    \begin{align*}
-    L=\frac {h}{2} [f_0+4\sum_{i=ganjil}f_i+2\sum_{i=genap}f_i+f_n]
-    \end{align*}
-    
-    $$
-    
-6. *Source Code* Metode Simpson
-    
-    ```matlab
-    c=20; m=70; g=9.8;
-    
-    a = [0,8]; %batasnya
-    n = 60; %intervalnya
-    h = (a(2)-a(1)) / n;
-    fff = 0;
-    
-    f = @(t)(m*g/c)*(1-exp(-c*t/m ));
-    
-    for i=1:n+1
-    	if i == 1 || i == n+1
-    		fff = fff + f(a(1));
-    	elseif mod(i,2) == 0
-    		fff = fff + 4*f(a(1));
-    	elseif mod(i,2) == 1
-    		fff = fff + 2*f(a(1));
-    	end
-    	
-    	a(1) = a(1) + h;
-    end
-    
-    posisi = h/3*fff
-    ```
-    
-    ![Untitled](/Terjun%20Payung%201aee79d9be594c1698a0e4512f6db34a/Untitled%202.png)
-    
+
+   $$
+   \begin{align*}
+   L=\frac {h}{2} [f_0+4\sum_{i=ganjil}f_i+2\sum_{i=genap}f_i+f_n]
+   \end{align*}
+
+
+   $$
+
+6. _Source Code_ Metode Simpson
+
+   ```matlab
+   c=20; m=70; g=9.8;
+
+   a = [0,8]; %batasnya
+   n = 60; %intervalnya
+   h = (a(2)-a(1)) / n;
+   fff = 0;
+
+   f = @(t)(m*g/c)*(1-exp(-c*t/m ));
+
+   for i=1:n+1
+   	if i == 1 || i == n+1
+   		fff = fff + f(a(1));
+   	elseif mod(i,2) == 0
+   		fff = fff + 4*f(a(1));
+   	elseif mod(i,2) == 1
+   		fff = fff + 2*f(a(1));
+   	end
+
+   	a(1) = a(1) + h;
+   end
+
+   posisi = h/3*fff
+   ```
+
+   ![Untitled](/Terjun%20Payung%201aee79d9be594c1698a0e4512f6db34a/Untitled%202.png)
 
 ## PERHITUNGAN ERROR
 
@@ -284,4 +284,4 @@ Pendekatan Menggunakan Metode Trapesium
 
 Pendekatan Menggunakan Metode Simpson
 
-Dari hasil integral yang diperoleh dengan menggunakan metode pendekatan trapesium dan simpson disimpulkan bahwa metode simpson jauh lebih akurat dengan error $0.00002868%$ dibandingkan dengan metode trapesium dengan error $1.7522%$. Hal tersebut diakibatkan karena metode simpson menggunakan pendekatan fungsi parabola sehingga jarak fungsi `x` dan fungsi pendekatan jarak nya hampir berhimpit (nilai pendekatan sangat mendedekati nilai fungsi `x` ) yang diperjelas pada gambar perbandingan metode.
+Dari hasil integral yang diperoleh dengan menggunakan metode pendekatan trapesium dan simpson disimpulkan bahwa metode simpson jauh lebih akurat dengan error $0.00002868%$ dibandingkan dengan metode trapesium dengan error $1.7522%$. Hal tersebut diakibatkan karena metode simpson menggunakan pendekatan fungsi parabola sehingga jarak fungsi `x` dan fungsi pendekatan jarak nya hampir berhimpit (nilai pendekatan sangat mendekati nilai fungsi `x` ) yang diperjelas pada gambar perbandingan metode.

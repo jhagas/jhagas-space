@@ -140,7 +140,7 @@ f = lambda t, theta, omega: -c/m * omega - g/L * np.sin(theta)
 
 ### Inisiasi Fungsi-fungsi Metode Numerik
 
-Fungsi-fungsi ini menyelesaikan persamaan diferensial orde dua dari bentuk $y'' = f(t,\ y,\ y')$ dengan kondisi awal $y(0)$ = `y0` dan $y'(0)$ = `y_dot_0`. Semua fungsi-fungsi dibawah membutuhkan enam masukan:
+Fungsi-fungsi ini menyelesaikan persamaan diferensial orde dua dari bentuk $y'' = f(t,\ y,\ y')$ dengan kondisi awal $y(0)$ = `y0` dan $y'(0)$ = `y_dot_0`. Semua fungsi-fungsi di bawah membutuhkan enam masukan:
 
 - **`f{:.fn}`**: sebuah fungsi yang menghitung turunan $y'' = f(t, y, y')$ untuk nilai `t`, `y`, dan `y'` tertentu.
 - **`y0`**: nilai awal $y$ pada $t=0$
@@ -151,7 +151,7 @@ Fungsi-fungsi ini menyelesaikan persamaan diferensial orde dua dari bentuk $y'' 
 
 #### Metode Titik Tengah
 
-Fungsi ini menghitung nilai `y` pada setiap titik pada interval yang diberikan dengan menggunakan metode Midpoint. Solusi numerik dari persamaan diferensial dihitung menggunakan rumus iteratif, dimulai dari nilai awal `y0` dan `y_dot_0` pada titik `xmin`. Nilai `y` dan `y'` pada setiap iterasi dihitung berdasarkan nilai-nilai pada iterasi sebelumnya. Setelah mencapai xmax, fungsi mengembalikan **Array NumPy** yang berisi nilai-nilai `y` pada setiap titik dalam interval yang diberikan.
+Fungsi ini menghitung nilai `y` pada setiap titik pada interval yang diberikan dengan menggunakan metode Midpoint. Solusi numerik dari persamaan diferensial dihitung menggunakan rumus iteratif, dimulai dari nilai awal `y0` dan `y_dot_0` pada titik `xmin`. Nilai `y` dan `y'` pada setiap iterasi dihitung berdasarkan nilai-nilai pada iterasi sebelumnya. Setelah mencapai `xmax`, fungsi mengembalikan **Array NumPy** yang berisi nilai-nilai `y` pada setiap titik dalam interval yang diberikan.
 
 ```python
 def MidPointODE(f, y0, y_dot_0, xmin, xmax, h):
@@ -237,7 +237,7 @@ Algoritma Fungsi:
 1. `t`: merupakan array yang memuat nilai-nilai waktu pada setiap langkah waktu yang diperoleh dengan `np.arange()`
 2. `N`: merupakan jumlah langkah waktu yang dilakukan
 3. `y`: merupakan array yang memuat nilai-nilai y dan turunannya pada tiap langkah waktu, yang diinisialisasi dengan kondisi awal
-4. `for i in range(1,4)`: merupakan loop for pertama yang digunakan untuk menghitung nilai-nilai `y` pada 4 langkah waktu pertama menggunakan metode Runge-Kutta Orde 4. Penjelasan dijabarkan pada fungsi Runge-Kutta Orde 4 diatas
+4. `for i in range(1,4)`: merupakan loop for pertama yang digunakan untuk menghitung nilai-nilai `y` pada 4 langkah waktu pertama menggunakan metode Runge-Kutta Orde 4. Penjelasan dijabarkan pada fungsi Runge-Kutta Orde 4 di atas
 5. `for i in range(4,N)`: merupakan loop for kedua yang digunakan untuk menghitung nilai-nilai `y` pada langkah waktu selanjutnya menggunakan metode Adams-Bashforth orde 4
 6. `thm`: merupakan variabel yang digunakan untuk menghitung nilai `y` pada langkah waktu ke-`i+1`
 7. `wm`: merupakan variabel yang digunakan untuk menghitung nilai turunan y pada langkah waktu ke-`i+1`

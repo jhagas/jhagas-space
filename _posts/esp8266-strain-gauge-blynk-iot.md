@@ -10,7 +10,7 @@ ogImage:
   url: "/Technical%20Details%20Project%20Elka%2007de03e54f6142b4bdcfa3c385aadce3/cover.png"
 ---
 
-Strain gauge dan modul HX711 (ADC dan Amplifier) sangat cocok mengukur berat pada berbagai aplikasi. Ketika dikombinasikan dengan platform IoT Blynk, kemungkinan analisis dan visualisasi data menjadi tak terbatas. Dalam artikel ini, kami akan memandu Anda melalui proses persiapan dan kalibrasi strain gauge menggunakan modul HX711 dan mengintegrasikannya dengan platform IoT Blynk. Kami juga akan memberikan penjelasan terperinci tentang cara menginstal library ESP8266 di Arduino IDE, membuat akun Blynk, dan menginstal library HX711 Blynk di Arduino IDE. Akhirnya, kami akan memberikan contoh kode yang dapat digunakan untuk membaca data dari sensor dan mengirimkannya ke Blynk.
+Strain gauge dan modul HX711 (ADC dan Amplifier) sangat cocok mengukur berat pada berbagai aplikasi. Ketika dikombinasikan dengan platform IoT Blynk, kemungkinan analisis dan visualisasi data menjadi tak terbatas. Dalam artikel ini, kami akan memandu Anda melalui proses persiapan dan kalibrasi strain gauge menggunakan modul HX711 dan mengintegrasikannya dengan platform IoT Blynk. Kami juga akan memberikan penjelasan terperinci tentang cara memasang _library_ ESP8266 di Arduino IDE, membuat akun Blynk, dan memasang _library_ HX711 Blynk di Arduino IDE. Akhirnya, kami akan memberikan contoh kode yang dapat digunakan untuk membaca data dari sensor dan mengirimkannya ke Blynk.
 
 ## Persiapan
 
@@ -23,7 +23,7 @@ Strain gauge dan modul HX711 (ADC dan Amplifier) sangat cocok mengukur berat pad
      ![Untitled](/Technical%20Details%20Project%20Elka%2007de03e54f6142b4bdcfa3c385aadce3/Untitled%202.png)
    - Ketik pada pencarian **ESP8266** dan tekan tombol install pada “**ESP8266 by ESP8266 Community”**
      ![Untitled](/Technical%20Details%20Project%20Elka%2007de03e54f6142b4bdcfa3c385aadce3/Untitled%203.png)
-   - Tunggu beberapa menit hingga terinstall seperti berikut
+   - Tunggu beberapa menit hingga terpasang seperti berikut
      ![Untitled](/Technical%20Details%20Project%20Elka%2007de03e54f6142b4bdcfa3c385aadce3/Untitled%204.png)
 2. Buat akun [Blynk](https://blynk.io/)
 3. Install library pada Arduino IDE sebagai berikut
@@ -50,10 +50,10 @@ Strain gauge dan modul HX711 (ADC dan Amplifier) sangat cocok mengukur berat pad
 
 ## Proses Kalibrasi
 
-1. Panggil fungsi `set_scale()` tanpa parameter.
-2. Panggil fungsi `tare()` tanpa parameter.
-3. Tempatkan beban yang telah diketahui beratnya pada timbangan dan panggil `get_units(10)`.
-4. Bagi hasil pada langkah 3 dengan beban yang diketahui. Anda seharusnya mendapatkan parameter yang perlu Anda masukkan ke `set_scale()`.
+1. Panggil fungsi `set_scale(){:cpp}` tanpa parameter.
+2. Panggil fungsi `tare(){:cpp}` tanpa parameter.
+3. Tempatkan beban yang telah diketahui beratnya pada timbangan dan panggil `get_units(10){:cpp}`.
+4. Bagi hasil pada langkah 3 dengan beban yang diketahui. Anda seharusnya mendapatkan parameter yang perlu Anda masukkan ke `set_scale(){:cpp}`.
 5. Sesuaikan parameter pada langkah 4 sampai Anda mendapatkan bacaan yang akurat.
 
 ## Penyiapan Template (Virtual Pin) dan Device Pada Blynk
@@ -63,14 +63,14 @@ Strain gauge dan modul HX711 (ADC dan Amplifier) sangat cocok mengukur berat pad
 3. Pilih mode **Advanced** dan klik **Create**.
 4. Klik **+ Widget** untuk menambahkan widget baru.
 5. Pilih **Value Display** dan tarik ke area kerja.
-6. Pilih **Virtual** dan pilih nomor **V0** (dengan tipe data `double`). Sesuaikan dengan kode pada bagian **Full Code (Arduino)** di bawah.
-7. Copy dan Paste nilai `BLYNK_TEMPLATE_ID`, `BLYNK_TEMPLATE_NAME`, `BLYNK_AUTH_TOKEN` pada kode Arduino IDE anda
+6. Pilih **Virtual** dan pilih nomor **V0** (dengan tipe data `double{:cpp}`). Sesuaikan dengan kode pada bagian **Full Code (Arduino)** di bawah.
+7. Copy dan Paste nilai `"BLYNK_TEMPLATE_ID"{:cpp}`, `"BLYNK_TEMPLATE_NAME"{:cpp}`, `"BLYNK_AUTH_TOKEN"{:cpp}` pada kode Arduino IDE anda
 
    ![Screenshot from 2023-04-20 19-49-54.png](/Technical%20Details%20Project%20Elka%2007de03e54f6142b4bdcfa3c385aadce3/Screenshot_from_2023-04-20_19-49-54.png)
 
 ## Full Code (Arduino)
 
-```cpp
+```cpp project.ino
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
@@ -124,14 +124,14 @@ void loop()
 
 1. Deklarasi Library yang digunakan
 
-   ```cpp {}
+   ```cpp
    #include <Arduino.h>
    #include <ESP8266WiFi.h>
    #include <BlynkSimpleEsp8266.h>
    #include "HX711.h"
    ```
 
-   Pastikan semua library telah diinstall pada tahap persiapan di atas.
+   Pastikan semua library telah di-install pada tahap persiapan di atas.
 
 2. Definisikan pin untuk memasang modul HX711
 
@@ -189,9 +189,9 @@ void loop()
 
    Banyak yang dilakukan di sini, secara garis besar adalah
 
-   1. Penyambungan ke Wifi dan ke server Blynk, `"blynk.cloud:80"`
-   2. Melakukan Zero Set awal pada strain gauge, `scale.tare();`
-   3. Menjalankan fungsi `myTimerEvent` dalam interval 3 detik (3000 milidetik)
+   1. Penyambungan ke Wifi dan ke server Blynk, `"blynk.cloud:80"{:cpp}`
+   2. Melakukan Zero Set awal pada strain gauge, `scale.tare(){:cpp}`
+   3. Menjalankan fungsi `myTimerEvent(){:cpp}` dalam interval 3 detik (3000 milidetik)
 
 6. Void Loop
 
@@ -203,10 +203,10 @@ void loop()
    }
    ```
 
-   Berguna untuk memastikan ESP8266 tetap tersambung ke blynk dan fungsi-fungsi di atas tetap berjalan sebagaimana mestinya.
+   Berguna untuk memastikan ESP8266 tetap tersambung ke Blynk dan fungsi-fungsi di atas tetap berjalan sebagaimana mestinya.
 
 ## Kesimpulan
 
-Dalam artikel ini, kami telah membahas bagaimana menggunakan strain gauge dan modul HX711 untuk mengukur berat pada berbagai aplikasi. Dalam kombinasi dengan platform IoT Blynk, kemungkinan analisis dan visualisasi data menjadi tak terbatas. Kami telah menjelaskan cara menginstal library ESP8266 di Arduino IDE, membuat akun Blynk, dan menginstal library HX711 Blynk di Arduino IDE. Kami juga memberikan contoh kode yang dapat digunakan untuk membaca data dari sensor dan mengirimkannya ke Blynk.
+Dalam artikel ini, kami telah membahas bagaimana menggunakan strain gauge dan modul HX711 untuk mengukur berat pada berbagai aplikasi. Dalam kombinasi dengan platform IoT Blynk, kemungkinan analisis dan visualisasi data menjadi tak terbatas. Kami telah menjelaskan cara memasang _library_ ESP8266 di Arduino IDE, membuat akun Blynk, dan memasang _library_ HX711 Blynk di Arduino IDE. Kami juga memberikan contoh kode yang dapat digunakan untuk membaca data dari sensor dan mengirimkannya ke Blynk.
 
 Dengan begitu, Anda sudah siap untuk memulai proyek Anda sendiri menggunakan strain gauge, modul HX711, dan platform IoT Blynk. Selamat mencoba!

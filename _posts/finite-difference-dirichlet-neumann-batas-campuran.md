@@ -1,13 +1,13 @@
 ---
-title: 'Metode Finite Difference Untuk Persamaan Poisson 2 Dimensi Batas Campuran'
-desc: 'Persamaan Poisson 2 Dimensi dengan batas campuran (Neumann dan Dirichlet) yang diselesaikan dengan metode Finite Difference menggunakan Python beserta penurunan rumus matriksnya'
-tags: 'Computational Physics'
-coverImage: '/2D%20Mixed%20Boundaries%20Poisson%E2%80%99s%20Equation%20de5e218b0f8748d4bebb49adba7f6844/cover.png'
-date: '2023-04-18'
+title: "Metode Finite Difference Untuk Persamaan Poisson 2 Dimensi Batas Campuran"
+desc: "Persamaan Poisson 2 Dimensi dengan batas campuran (Neumann dan Dirichlet) yang diselesaikan dengan metode Finite Difference menggunakan Python beserta penurunan rumus matriksnya"
+tags: "Computational Physics"
+coverImage: "/2D%20Mixed%20Boundaries%20Poisson%E2%80%99s%20Equation%20de5e218b0f8748d4bebb49adba7f6844/cover.png"
+date: "2023-04-18"
 author:
   name: Jhagas Hana Winaya
 ogImage:
-  url: '/2D%20Mixed%20Boundaries%20Poisson%E2%80%99s%20Equation%20de5e218b0f8748d4bebb49adba7f6844/cover.png'
+  url: "/2D%20Mixed%20Boundaries%20Poisson%E2%80%99s%20Equation%20de5e218b0f8748d4bebb49adba7f6844/cover.png"
 ---
 
 ## Persoalan
@@ -20,7 +20,7 @@ $$
 \end{align*}
 $$
 
-Dengan $f(x,y) = \frac{y}{x}+\frac{x}{y}$. Dari   $1<x<2$   dan   $1<y<2$. Dengan syarat batas
+Dengan $f(x,y) = \frac{y}{x}+\frac{x}{y}$. Dari $1<x<2$ dan $1<y<2$. Dengan syarat batas
 
 | Persamaan                                | Lokasi Dalam Grid |
 | ---------------------------------------- | ----------------- |
@@ -29,11 +29,11 @@ Dengan $f(x,y) = \frac{y}{x}+\frac{x}{y}$. Dari   $1<x<2$   dan   $1<y<2$. Denga
 | $u(2,y) = h(y)$                          | Grid Kanan        |
 | $u(x,2) = g(x)$                          | Grid Atas         |
 
-Dengan $g(x)=x\ln(4x^2)$  dan  $h(y)=2y\ln(2y)$  serta  $\Delta x = \Delta y = 10^{-2}$. **Beruntungnya**, nilai $g(x)$ dan $h(y)$ masing-masing pada $x = 2$ dan $y = 2$ adalah sama.
+Dengan $g(x)=x\ln(4x^2)$ dan $h(y)=2y\ln(2y)$ serta $\Delta x = \Delta y = 10^{-2}$. **Beruntungnya**, nilai $g(x)$ dan $h(y)$ masing-masing pada $x = 2$ dan $y = 2$ adalah sama.
 
-## *Gridding* Model (Metode Center)
+## _Gridding_ Model (Metode Center)
 
-Ingat bahwa sumbu horizontal adalah $y$ dan sumbu vertikal adalah $x$. Dengan mempertimbangkan aproksimasi deret Taylor metode *center*, maka didapat suku-suku dari persamaan di atas
+Ingat bahwa sumbu horizontal adalah $y$ dan sumbu vertikal adalah $x$. Dengan mempertimbangkan pendekatan deret Taylor metode *center*, maka didapat suku-suku dari persamaan di atas
 
 $$
 \begin{align*}
@@ -71,8 +71,8 @@ Dimisalkan bahwa
 
 $$
 \begin{align*}
-\left(\frac1{\Delta x^2}\right)=a,\ \ \ 
-\left(\frac{-2}{\Delta x^2}+\frac{-2}{\Delta y^2}\right)=b,\ \ \ 
+\left(\frac1{\Delta x^2}\right)=a,\ \ \
+\left(\frac{-2}{\Delta x^2}+\frac{-2}{\Delta y^2}\right)=b,\ \ \
 \left(\frac1{\Delta y^2}\right)=c
 \end{align*}
 $$
@@ -85,11 +85,11 @@ au_{i+1, j} + au_{i-1, j}+bu_{i, j}+cu_{i, j+1}+cu_{i, j-1} = f(x, y)
 \end{align*}
 $$
 
-Untuk menyelesaikan persoalan batas Neumann (Batas kiri dan atas) serta Dirichlet (Batas kanan dan bawah), diperlukan model Gridding sebagai berikut
+Untuk menyelesaikan persoalan batas Neumann (Batas kiri dan atas) serta Dirichlet (Batas kanan dan bawah), diperlukan model _gridding_ sebagai berikut
 
-![Frame (1).png](/2D%20Mixed%20Boundaries%20Poisson%E2%80%99s%20Equation%20de5e218b0f8748d4bebb49adba7f6844/Frame_(1).png)
+![Frame (1).png](</2D%20Mixed%20Boundaries%20Poisson%E2%80%99s%20Equation%20de5e218b0f8748d4bebb49adba7f6844/Frame_(1).png>)
 
-Diperlukan pula *grid* “hantu” untuk menyelesaikan persoalan batas Neumann pada batas-batas yang turunan pertamanya adalah nol. *Grid* hantu diperlukan untuk menggunakan *finite difference* metode pendekatan *center*.  Sehingga pada $i=0$ (Batas kiri) berlaku
+Diperlukan pula _grid_ “hantu” untuk menyelesaikan persoalan batas Neumann pada batas-batas yang turunan pertamanya adalah nol. _Grid_ hantu diperlukan untuk menggunakan _finite difference_ metode pendekatan _center_. Sehingga pada $i=0$ (Batas kiri) berlaku
 
 $$
 \begin{align*}
@@ -130,7 +130,7 @@ Sehingga kombinasinya menghasilkan 11 persamaan yang berbeda. 5 persamaan terakh
 
 ---
 
-Apabila dibentuk matriks koefisien, matriks besaran yang tidak diketahui (*unknown*) dan matriks hasil, terbentuk matriks sebagai berikut yang dapat dicari polanya
+Apabila dibentuk matriks koefisien, matriks besaran yang tidak diketahui (_unknown_) dan matriks hasil, terbentuk matriks sebagai berikut yang dapat dicari polanya
 
 $$
 \begin{align*}
@@ -150,8 +150,8 @@ a & 0 & 0 & 0 & b & 2c & 0 & 0 & a & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & a & 0 & 0 & 0 & b & 2c & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 
-\end{pmatrix}  
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+\end{pmatrix}
 \begin{pmatrix}
 u_{0,0} \\
 u_{0,1} \\
@@ -168,7 +168,7 @@ u_{2,3} \\
 u_{3,0} \\
 u_{3,1} \\
 u_{3,2} \\
-u_{3,3} 
+u_{3,3}
 \end{pmatrix}
 =
 \begin{pmatrix}
@@ -187,7 +187,7 @@ g(x) \\
 f(x,y) \\
 h(y) \\
 h(y) \\
-h(y) 
+h(y)
 \end{pmatrix}
 \end{align*}
 $$
@@ -195,62 +195,52 @@ $$
 ## Pencarian Pola
 
 - Untuk batas kanan
-    
-    ```python
-    ## Batas kanan
-      for j in range(1, Ny):
-        B[j + (shape - Ny)] = h(y[j])
-    ```
-    
+  ```python
+  ## Batas kanan
+    for j in range(1, Ny):
+      B[j + (shape - Ny)] = h(y[j])
+  ```
 - Untuk batas atas
-    
-    ```python
-    ## Batas Atas
-      for i in range(2, Nx + 1):
-        B[i * Ny - 1] = g(x[i-1])
-    ```
-    
+  ```python
+  ## Batas Atas
+    for i in range(2, Nx + 1):
+      B[i * Ny - 1] = g(x[i-1])
+  ```
 - Untuk batas bawah
-    
-    ```python
-    # Batas Bawah
-      for i in range(1, N):
-        k = Ny * i
-        B[k] = f(x[i],y[0])
-        A[k, k] = b
-        A[k, k+1] = 2*c
-        if k+Ny < shape:
-          A[k, k+Ny] = a
-        A[k, k-Ny] = a
-    ```
-    
+  ```python
+  # Batas Bawah
+    for i in range(1, N):
+      k = Ny * i
+      B[k] = f(x[i],y[0])
+      A[k, k] = b
+      A[k, k+1] = 2*c
+      if k+Ny < shape:
+        A[k, k+Ny] = a
+      A[k, k-Ny] = a
+  ```
 - Untuk batas kiri
-    
-    ```python
-    ## Batas Kiri
-      for j in range(1, Ny):
-        B[j] = f(x[0],y[j])
-        A[j, j] = b
-        A[j, j+1] = c
-        A[j, j-1] = c
-        A[j, j+Ny] = 2*a
-    ```
-    
+  ```python
+  ## Batas Kiri
+    for j in range(1, Ny):
+      B[j] = f(x[0],y[j])
+      A[j, j] = b
+      A[j, j+1] = c
+      A[j, j-1] = c
+      A[j, j+Ny] = 2*a
+  ```
 - Untuk Grid tengah
-    
-    ```python
-    ## Grid Tengah
-      for i in range(1, Nx - 1):
-        for j in range(1, Ny - 1):
-          k = i * Nx + j
-          B[k] = f(x[i],y[j])
-          A[k, k] = b
-          A[k, k-1] = c
-          A[k, k+1] = c
-          A[k, k-Ny] = a
-          A[k, k+Ny] = a
-    ```
-    
+  ```python
+  ## Grid Tengah
+    for i in range(1, Nx - 1):
+      for j in range(1, Ny - 1):
+        k = i * Nx + j
+        B[k] = f(x[i],y[j])
+        A[k, k] = b
+        A[k, k-1] = c
+        A[k, k+1] = c
+        A[k, k-Ny] = a
+        A[k, k+Ny] = a
+  ```
 
 ## Penyelesaian Sistem Persamaan Linier
 
@@ -282,11 +272,11 @@ Namun ketika diberi input yang banyak ($N_x$ dan $N_y$ yang sangat tinggi), maka
 solx = np.linalg.solve(A, B)
 ```
 
-Hal ini dapat terjadi karena pada dasarnya NumPy adalah kode C yang bisa berjalan dengan sangat cepat dan sangat dioptimasi untuk perhitungan matematis. Sedangkan fungsi Gauss-Jordan yang dibuat adalah *native python*, yang mana secara performa sangat jauh selisihnya dengan fungsi bawaan NumPy.
+Hal ini dapat terjadi karena pada dasarnya NumPy adalah kode C yang bisa berjalan dengan sangat cepat dan sangat dioptimasi untuk perhitungan matematis. Sedangkan fungsi Gauss-Jordan yang dibuat adalah _native python_, yang mana secara performa sangat jauh selisihnya dengan fungsi bawaan NumPy.
 
 > Namun kedua kode tersebut akan memberikan hasil yang sama, tapi dengan waktu eksekusi fungsi NumPy yang jauh lebih pendek.
 
-## Plot Grafik Colormap
+## Plot Grafik _Colormap_
 
 ![Untitled](/2D%20Mixed%20Boundaries%20Poisson%E2%80%99s%20Equation%20de5e218b0f8748d4bebb49adba7f6844/Untitled.png)
 

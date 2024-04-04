@@ -1,31 +1,28 @@
 ---
-title: 'Tips untuk Belajar dan Menerapkan Mata Pelajaran STEM'
-desc: 'Belajar materi-materi sains dan teknologi bagi sebagian orang memang dianggap sulit karena banyak konsep ilmu eksak yang abstrak. Namun, dengan terus berlatih dan menerapkan tips-tips yang kami berikan di sini, mempelajari subjek sains dan teknologi akan menjadi lebih mudah dan menyenangkan'
-tags: 'Education'
-coverImage: '/tips-to-learn-stem/cover.png'
-date: '2023-04-19'
+title: "Tips untuk Belajar dan Menerapkan Mata Pelajaran STEM"
+desc: "Belajar materi-materi sains dan teknologi bagi sebagian orang memang dianggap sulit karena banyak konsep ilmu eksak yang abstrak. Namun, dengan terus berlatih dan menerapkan tips-tips yang kami berikan di sini, mempelajari subjek sains dan teknologi akan menjadi lebih mudah dan menyenangkan"
+tags: "Education"
+coverImage: "/tips-to-learn-stem/cover.png"
+date: "2023-04-19"
 author:
   name: Jhagas Hana Winaya
 ogImage:
-  url: '/tips-to-learn-stem/cover.png'
+  url: "/tips-to-learn-stem/cover.png"
 ---
 
 Belajar materi-materi sains dan teknologi bagi sebagian orang memang dianggap sulit karena banyak konsep ilmu eksak yang abstrak. Namun, dengan terus berlatih dan menerapkan tips-tips yang kami berikan di sini, mempelajari subjek sains dan teknologi akan menjadi lebih mudah dan menyenangkan. Sebelumnya, saya ingin memberikan sedikit disclaimer pada artikel ini.
 
 > Original toot is written by @academicalnerd at Mastodon (BIG Thanks to him). I did the Indonesian Translation and I also added some little things to make it more fit with Indonesian academical environment.
-> 
 
 ## Belajar Bahasa Inggris
 
-Banyak dari buku-buku mulai dari Matematika, Fisika, dan subjek-subjek saintek lainnya ditulis dengan menggunakan Bahasa Inggris. Siapa yang tidak tahu buku Fisika Dasar Halliday? Meski ada versi yang telah diterjemahkan ke Bahasa Indonesia, namun ada istilah-istilah tertentu dalam Bahasa Inggris yang tidak mencerminkan maknanya lagi setelah diterjemahkan, jadi Buku Bahasa Inggris lebih baik untuk dipelajari dan dihafal.
+Banyak dari buku-buku mulai dari Matematika, Fisika, dan subjek-subjek SAINTEK lainnya ditulis dengan menggunakan Bahasa Inggris. Siapa yang tidak tahu buku Fisika Dasar Halliday? Meski ada versi yang telah diterjemahkan ke Bahasa Indonesia, namun ada istilah-istilah tertentu dalam Bahasa Inggris yang tidak mencerminkan maknanya lagi setelah diterjemahkan, jadi Buku Bahasa Inggris lebih baik untuk dipelajari dan dihafal.
 
-Selain itu, kita kadang perlu berdiskusi di forum-forum luar negeri yang membahas topik saintek, seperti [QOTO Mastodon](https://qoto.org/) atau forum-forum lain di [Reddit](https://www.reddit.com/) atau [Quora](https://www.quora.com/). Di sisi lain (meski tidak ada hubungannya dengan kegiatan akademik), kita pasti senang kalau bisa paham apalagi tertawa saat melihat meme-meme berbahasa Inggris yang membahas tentang sains dan teknologi. Oleh karena itu, menurut saya Bahasa Inggris sangat penting untuk dipelajari.
+Selain itu, kita kadang perlu berdiskusi di forum-forum luar negeri yang membahas topik SAINTEK, seperti [QOTO Mastodon](https://qoto.org/) atau forum-forum lain di [Reddit](https://www.reddit.com/) atau [Quora](https://www.quora.com/). Di sisi lain (meski tidak ada hubungannya dengan kegiatan akademik), kita pasti senang kalau bisa paham apalagi tertawa saat melihat meme-meme berbahasa Inggris yang membahas tentang sains dan teknologi. Oleh karena itu, menurut saya Bahasa Inggris sangat penting untuk dipelajari.
 
 ## Pelajari Dasarnya Terlebih Dahulu
 
-> Bicaralah dengan orang Rusia dengan Bahasa Rusia, bicaralah fisika dengan
-bahasa matematika.
-> 
+> Bicaralah dengan orang Rusia dengan Bahasa Rusia, bicaralah fisika dengan bahasa matematika.
 
 Semua subjek ilmu murni, maupun ilmu teknik berakar dari Ilmu Matematika. Maka dari itu matematika adalah hal yang paling penting untuk dipelajari. Cobalah berdamai dengan konsep tak hingga, dan konsep-konsep kalkulus lainnya. Tidak akan bisa kita memahami konsep dari materi apabila makna dari rumus matematikanya tidak dipahami.
 

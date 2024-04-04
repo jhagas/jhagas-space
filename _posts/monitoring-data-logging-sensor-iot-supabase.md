@@ -19,8 +19,8 @@ Dalam artikel ini, akan dijelaskan bagaimana cara melakukan monitoring dan data 
 ## Persiapan
 
 1. Buat akun/Sign-up [GitHub](https://github.com/) (Ingat email dan kata sandi anda pakai untuk mendaftar). Lewati jika sudah memiliki akun GitHub.
-2. Siapkan **ESP8266** sebagai perangkat IoT berbasis mikrokontroler, **DHT22** sebagai sensor suhu dan kelembaban.
-3. Koneksi internet Wi-Fi 2.45 GHz untuk disambungkan pada ESP8266, bisa menggunakan hotspot pribadi dari ponsel pintar.
+2. Siapkan **ESP8266** sebagai perangkat IoT berbasis mikrokontroler, **DHT22** sebagai sensor suhu dan kelembapan.
+3. Koneksi internet Wi-Fi 2.45 GHz untuk disambungkan pada ESP8266, bisa menggunakan _hotspot_ pribadi dari ponsel pintar.
 4. Koneksi internet yang lancar pada komputer anda.
 5. Install Arduino IDE dan dukungan untuk ESP8266
 
@@ -40,7 +40,7 @@ Dalam artikel ini, akan dijelaskan bagaimana cara melakukan monitoring dan data 
 
       ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%203.png)
 
-   5. Tunggu beberapa menit hingga terinstall seperti berikut
+   5. Tunggu beberapa menit hingga terpasang seperti berikut
 
       ![Untitled](/Monitoring%20dan%20Data%20Logging%20Sensor%20dengan%20IoT%20dan%20%200e06e2026cec46f295ca003142f51db3/Untitled%204.png)
 

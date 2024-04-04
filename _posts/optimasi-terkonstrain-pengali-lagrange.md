@@ -1,13 +1,13 @@
 ---
-title: 'Optimasi Terkonstrain dengan Pengali Lagrange Pada Python'
-desc: 'Implementasi metode pengali lagrange dalam permasalahan optimasi terkonstrain dengan manipulasi fungsi objektif dan matriks jacobian menggunakan bahasa pemrograman Python'
-tags: 'Computational Physics'
-coverImage: '/optimasi-terkonstrain/cover.png'
-date: '2023-05-29'
+title: "Optimasi Terkonstrain dengan Pengali Lagrange Pada Python"
+desc: "Implementasi metode pengali lagrange dalam permasalahan optimasi terkonstrain dengan manipulasi fungsi objektif dan matriks jacobian menggunakan bahasa pemrograman Python"
+tags: "Computational Physics"
+coverImage: "/optimasi-terkonstrain/cover.png"
+date: "2023-05-29"
 author:
   name: Jhagas Hana Winaya
 ogImage:
-  url: '/optimasi-terkonstrain/cover.png'
+  url: "/optimasi-terkonstrain/cover.png"
 ---
 
 Optimasi terkonstrain adalah suatu metode yang digunakan untuk mencari nilai maksimum atau minimum suatu fungsi dengan mempertimbangkan adanya batasan atau kendala pada variabel-variabel yang terlibat. Batasan ini dapat berupa persamaan atau ketidaksetaraan.
@@ -34,7 +34,7 @@ Cari titik minimum fungsi tersebut pada konstrain yang diberikan.
 
 ## Pembentukan Lagrangian Dari Fungsi Objektif Persoalan
 
-Dalam kasus ini terdapat 2 *inequality constrain* (batas pertidaksamaan) dari persamaan 1 dan persamaan 2 sehingga batasan tersebut perlu diubah menjadi *equality constrain* (batas persamaan). Kita bisa menganggap ada satu variabel pada tiap batasan yang menyebabkan adanya pertidaksamaan tersebut, yaitu $\theta_1^2$ dan $\theta_2^2$. Dengan demikian, kedua batasan tersebut menjadi
+Dalam kasus ini terdapat 2 _inequality constrain_ (batas pertidaksamaan) dari persamaan 1 dan persamaan 2 sehingga batasan tersebut perlu diubah menjadi _equality constrain_ (batas persamaan). Kita bisa menganggap ada satu variabel pada tiap batasan yang menyebabkan adanya pertidaksamaan tersebut, yaitu $\theta_1^2$ dan $\theta_2^2$. Dengan demikian, kedua batasan tersebut menjadi
 
 $$
 \begin{align}
@@ -179,7 +179,7 @@ def jacobian(x):
 
 ### Iterasi Utama
 
-Kode dibawah melakukan proses iteratif untuk menyelesaikan sistem persamaan menggunakan matriks Jacobian. Kode ini diinisialisasi dengan loop yang mengulang dari rentang `0` hingga `niter-1`. Dalam setiap iterasi, matriks Jacobian dihitung menggunakan fungsi `jacobian()`, dan kemudian digunakan untuk memecahkan vektor solusi `dx`. Vektor solusi baru kemudian dikurangi dari yang sebelumnya dan diteruskan ke `x[i+1,:]`. Kode kemudian memeriksa konvergensi dengan mengukur selisih absolut antara vektor solusi baru dan lama, dan jika selisihnya kurang dari nilai toleransi yang telah ditetapkan sebelumnya, kode keluar dari *loop* dan mencetak solusi yang konvergen. Jika tidak, vektor solusi baru ditambahkan ke matriks `x` menggunakan `np.vstack()`.
+Kode dibawah melakukan proses iteratif untuk menyelesaikan sistem persamaan menggunakan matriks Jacobian. Kode ini diinisialisasi dengan loop yang mengulang dari rentang `0` hingga `niter-1`. Dalam setiap iterasi, matriks Jacobian dihitung menggunakan fungsi `jacobian()`, dan kemudian digunakan untuk memecahkan vektor solusi `dx`. Vektor solusi baru kemudian dikurangi dari yang sebelumnya dan diteruskan ke `x[i+1,:]`. Kode kemudian memeriksa konvergensi dengan mengukur selisih absolut antara vektor solusi baru dan lama, dan jika selisihnya kurang dari nilai toleransi yang telah ditetapkan sebelumnya, kode keluar dari _loop_ dan mencetak solusi yang konvergen. Jika tidak, vektor solusi baru ditambahkan ke matriks `x` menggunakan `np.vstack()`.
 
 Akhirnya, kode mencetak nomor iterasi dan solusi saat ini untuk setiap iterasi. Di mana solusi yang didapat dari program ini adalah pada iterasi yang terakhir dan urutan indeksnya akan sama dengan indeks yang telah ditetapkan pada proses membuat fungsi objektif.
 
@@ -204,8 +204,8 @@ for i in range(niter-1):
 
 ## Hasil Optimasi Dari Ketiga Kasus
 
-| Kasus | $x$ | $y$ | $\lambda_1$ | $\lambda_2$ | $\theta_1$ | $\theta_2$ | $f$ |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 0.85261369 | 1.67028712 | 1.22704949 | 0 | 0 | 1.52435636 | 0.516563 |
-| 2 | 1.46741348 | 1.22380119 | 0 | 0.94760237 | 1.19909721 | 0 | 0.451067 |
-| 3 | 0.81649658 | 0.75 | 0 | 0 | 1.66338112 | 2.08586923 | 2.213662 |
+| Kasus | $x$        | $y$        | $\lambda_1$ | $\lambda_2$ | $\theta_1$ | $\theta_2$ | $f$      |
+| ----- | ---------- | ---------- | ----------- | ----------- | ---------- | ---------- | -------- |
+| 1     | 0.85261369 | 1.67028712 | 1.22704949  | 0           | 0          | 1.52435636 | 0.516563 |
+| 2     | 1.46741348 | 1.22380119 | 0           | 0.94760237  | 1.19909721 | 0          | 0.451067 |
+| 3     | 0.81649658 | 0.75       | 0           | 0           | 1.66338112 | 2.08586923 | 2.213662 |

@@ -10,9 +10,9 @@ ogImage:
   url: "/multivariable-newton-raphson/cover.png"
 ---
 
-Dalam dunia sains dan teknik, seringkali kita dihadapkan pada tantangan untuk menemukan akar dari suatu sistem persamaan. Salah satu metode yang efektif dan populer untuk menyelesaikan sistem persamaan nonlinier adalah metode Newton-Raphson.
+Dalam dunia sains dan teknik, sering kali kita dihadapkan pada tantangan untuk menemukan akar dari suatu sistem persamaan. Salah satu metode yang efektif dan populer untuk menyelesaikan sistem persamaan non-linier adalah metode Newton-Raphson.
 
-Artikel ini akan membahas bagaimana metode Newton-Raphson, yang awalnya dikembangkan untuk mencari akar persamaan dengan variabel tunggal, dapat diperluas untuk menyelesaikan sistem persamaan nonlinier dengan tiga variabel. Kunci dari perluasan ini adalah penggunaan matriks Jacobian, yang merupakan matriks turunan parsial pertama dari fungsi yang diberikan.
+Artikel ini akan membahas bagaimana metode Newton-Raphson, yang awalnya dikembangkan untuk mencari akar persamaan dengan variabel tunggal, dapat diperluas untuk menyelesaikan sistem persamaan non-linier dengan tiga variabel. Kunci dari perluasan ini adalah penggunaan matriks Jacobian, yang merupakan matriks turunan parsial pertama dari fungsi yang diberikan.
 
 Dengan memahami dan menerapkan metode Newton-Raphson dan matriks Jacobian, kita dapat menemukan solusi yang tepat dan efisien untuk sistem persamaan nonlinier.
 
@@ -215,4 +215,4 @@ Nilai solusi konvergen (lebih kecil daripada toleransi) pada iterasi ke-4
 
 Dalam artikel ini, kita telah membahas bagaimana metode Newton-Raphson dan matriks Jacobian dapat digunakan untuk menyelesaikan sistem persamaan nonlinier dengan tiga variabel. Kita telah belajar bahwa metode Newton-Raphson, meskipun sederhana, adalah metode yang aktif dalam menemukan akar persamaan. Dengan bantuan matriks Jacobian, kita dapat menerapkan metode ini pada sistem persamaan dengan lebih dari satu variabel.
 
-Secara keseluruhan, penggunaan metode Newton-Raphson dengan matriks Jacobian dalam Python menawarkan solusi yang efisien dan akurat untuk menyelesaikan sistem persamaan nonlinier. Ini membuka banyak kemungkinan untuk penelitian dan aplikasi lebih lanjut dalam berbagai bidang.
+Secara keseluruhan, penggunaan metode Newton-Raphson dengan matriks Jacobian dalam Python menawarkan solusi yang efisien dan akurat untuk menyelesaikan sistem persamaan non-linier. Ini membuka banyak kemungkinan untuk penelitian dan aplikasi lebih lanjut dalam berbagai bidang.
