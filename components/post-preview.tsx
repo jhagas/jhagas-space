@@ -43,7 +43,7 @@ const PostPreview = ({
         </div>
       </div>
       <div className="m-4 sm:m-8 lg:mr-4 lg:max-w-[20rem] lg:min-w-[20rem]">
-        <CoverImage title={title} src={coverImage} />
+        <CoverImage src={coverImage} />
       </div>
     </Link>
   );

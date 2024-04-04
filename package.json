@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build && next-export-optimize-images",
+    "build": "next build",
     "start": "next start",
     "typecheck": "tsc"
   },
@@ -43,7 +43,6 @@
     "autoprefixer": "^10.4.14",
     "daisyui": "^3.1.7",
     "eslint-config-next": "^14.1.4",
-    "next-export-optimize-images": "^3.3.0",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2"
   }
