@@ -1,4 +1,5 @@
 import markdownStyles from "./markdown-styles.module.css";
+import "katex/dist/katex.min.css";
 
 type Props = {
   content: string;

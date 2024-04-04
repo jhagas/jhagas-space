@@ -1,14 +1,17 @@
+import Image from "next/image";
+
 type Props = {
-  title: string;
   src: string;
 };
 
-const CoverImage = ({ title, src }: Props) => {
+const CoverImage = ({ src }: Props) => {
   const image = (
-    <img
+    <Image
       src={src}
       alt={`Article Cover Image`}
       className="!w-full rounded-lg max-w-3xl"
+      width={1200}
+      height={630}
     />
   );
   return (
