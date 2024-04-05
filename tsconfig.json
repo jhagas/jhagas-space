@@ -34,5 +34,5 @@
     "**/*.tsx",
     "lib/rehype-pre-raw.ts",
     ".next/types/**/*.ts"
-  ]
+, "next.config.mjs"  ]
 }

@@ -11,6 +11,7 @@ type Props = {
   author: Author;
   slug: string;
   minimal: boolean;
+  priority: boolean;
 };
 
 const PostPreview = ({
@@ -20,6 +21,7 @@ const PostPreview = ({
   tags,
   slug,
   minimal,
+  priority,
 }: Props) => {
   return (
     <Link
@@ -43,7 +45,11 @@ const PostPreview = ({
         </div>
       </div>
       <div className="m-4 sm:m-8 lg:mr-4 lg:max-w-[20rem] lg:min-w-[20rem]">
-        <CoverImage src={coverImage} />
+        <CoverImage
+          src={coverImage}
+          alt={`Article Image (${title})`}
+          priority={priority}
+        />
       </div>
     </Link>
   );

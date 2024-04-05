@@ -26,7 +26,7 @@ const MoreStories = ({ posts, name, minimal }: Props) => {
             {posts.length === 0 ? `Tidak Ada ${name}` : name}
           </p>
         </div>
-        {posts.map((post) => (
+        {posts.map((post, index) => (
           <PostPreview
             key={post.slug}
             title={post.title}
@@ -36,6 +36,7 @@ const MoreStories = ({ posts, name, minimal }: Props) => {
             slug={post.slug}
             tags={post.tags}
             minimal={minimal}
+            priority={index < 4}
           />
         ))}
       </div>
