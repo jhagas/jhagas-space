@@ -6,7 +6,7 @@ import { id } from "date-fns/locale";
 import { useEffect, useState } from "react";
 import Avatar from "react-avatar";
 import AddComment from "./add-comment";
-import CommentType from "../interfaces/comment";
+import CommentType from "../../../interfaces/comment";
 
 const DateFormatter = ({ dateString }: { dateString: string }) => {
   const date = parseISO(dateString);
@@ -85,7 +85,7 @@ export default function Comment({ slug }: params) {
         <div className="flex justify-center mb-5">
           <div className="flex rounded-2xl overflow-clip shadow-sm">
             <button
-              className={`btn pagination rounded-r-none ${
+              className={`btn bg-zinc-100 border-0 hover:bg-zinc-300 dark:bg-zinc-800 hover:dark:bg-zinc-700 rounded-r-none ${
                 loading ? "btn-disabled" : "text-[#3E3B92] dark:text-[#12c2e9]"
               }`}
               onClick={() => page > 1 && setPage(page - 1)}
@@ -97,7 +97,7 @@ export default function Comment({ slug }: params) {
               {Math.ceil(commentsNow.max / commentsNow.pagination)}
             </button>
             <button
-              className={`btn pagination rounded-l-none ${
+              className={`btn bg-zinc-100 border-0 hover:bg-zinc-300 dark:bg-zinc-800 hover:dark:bg-zinc-700 rounded-l-none ${
                 loading ? "btn-disabled" : "text-[#3E3B92] dark:text-[#12c2e9]"
               }`}
               onClick={() =>

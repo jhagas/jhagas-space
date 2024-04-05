@@ -2,43 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.post-title {
-  @apply text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-tight md:leading-tight text-center bg-gradient-to-tl from-[#F44369] to-[#3E3B92] dark:to-[#16BFFD] text-transparent bg-clip-text;
-}
-
 /* On post-body.tsx, only katex, shiki and color related class @apply relatives written here */
-.katex {
-  font-size: 1.15em;
-}
 
-.katex-html {
-  @apply py-2 overflow-x-auto overflow-y-hidden;
-}
-
-.katex-display > .katex > .katex-html {
-  @apply flex;
-}
-
-.katex-display > .katex > .katex-html > .base {
-  @apply mx-auto;
-}
-
-.katex-display > .katex > .katex-html > .tag {
-  @apply relative ml-10;
-}
-
-code[data-theme*=" "] {
-  @apply bg-zinc-50 dark:bg-zinc-800/50;
-}
-
-[data-rehype-pretty-code-title] {
-  @apply bg-zinc-200 dark:bg-zinc-950/50 text-zinc-700 dark:text-zinc-400;
-}
-
-[data-rehype-pretty-code-figure] {
-  @apply border border-zinc-300 dark:border-zinc-700;
-}
-
+/* REHYPE PRETTY CODE THEME CSS */
 code[data-theme*=" "],
 code[data-theme*=" "] span {
   color: var(--shiki-light);
@@ -49,109 +15,6 @@ code[data-theme*=" "] span {
   color: var(--shiki-dark);
 }
 
-p > span[data-rehype-pretty-code-figure] > code,
-li span[data-rehype-pretty-code-figure] code {
-  @apply bg-zinc-100 dark:bg-zinc-800;
-}
-
-mark[data-highlighted-chars] {
-  @apply bg-yellow-200 dark:bg-yellow-900/60;
-}
-
-code[data-theme*=" "] > [data-highlighted-line] {
-  @apply bg-orange-100 dark:bg-zinc-700/50 border-l-4 border-l-orange-500;
-}
-
-.markdown-styles_markdown__HwUWZ blockquote {
-  @apply border border-l-[10px] border-l-[#f44369] dark:border-l-[#f44369] border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800;
-}
-
-.markdown-styles_markdown__HwUWZ a {
-  @apply text-[#F44369] hover:text-[#3E3B92] dark:hover:text-[#7c79d7];
-}
-
-.markdown-styles_markdown__HwUWZ h2 {
-  @apply bg-gradient-to-tl from-[#F44369] to-[#3E3B92] dark:to-[#16BFFD];
-}
-
-p code,
-li code {
-  @apply bg-zinc-100 dark:bg-zinc-800 text-[#24292EFF] dark:text-[#B392F0];
-}
-
-p img {
-  @apply dark:bg-white;
-}
-
-.markdown-styles_markdown__HwUWZ table {
-  @apply dark:bg-zinc-800;
-}
-
-.div-table {
-  @apply overflow-x-auto rounded-lg border border-zinc-300 dark:border-zinc-700;
-}
-
-.markdown-styles_markdown__HwUWZ table th {
-  @apply dark:bg-zinc-950 bg-zinc-100 text-[#3E3B92] dark:text-zinc-100;
-}
-.markdown-styles_markdown__HwUWZ table tr {
-  @apply dark:!bg-zinc-800 dark:!border-zinc-700/50 !border-zinc-300;
-}
-
 .Typewriter__cursor {
   @apply text-[#F44369];
-}
-
-.pagination {
-  @apply bg-zinc-100 border-0 hover:bg-zinc-300 dark:bg-zinc-800 hover:dark:bg-zinc-700;
-}
-
-.flex > .btn-disabled {
-  @apply text-zinc-300 bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-600 !important;
-}
-
-.comment {
-  @apply input w-full border border-zinc-300 dark:border-zinc-600 bg-white focus:border-slate-500 focus:outline-none dark:bg-zinc-700 focus:dark:border-zinc-300 dark:text-zinc-100;
-}
-
-.send-disabled {
-  @apply btn-disabled dark:bg-zinc-700 dark:text-zinc-500 !important;
-}
-
-pre:has(code) {
-  position: relative;
-}
-
-pre button.copy {
-  right: 1.5rem;
-  top: 0.58rem;
-
-  @apply flex absolute transition-all opacity-20 hover:opacity-100 bg-zinc-200/80 dark:bg-zinc-900 border-zinc-300/30 dark:border-zinc-600/30 border p-1 rounded-md;
-
-  & span {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
-  & .ready {
-    @apply bg-[url(/assets/copy.svg)] dark:invert w-5;
-  }
-
-  & .success {
-    display: none;
-    @apply bg-[url(/assets/copy-success.svg)] dark:invert w-5;
-  }
-
-  &.copied {
-    & .success {
-      display: block;
-    }
-
-    & .ready {
-      display: none;
-    }
-  }
 }

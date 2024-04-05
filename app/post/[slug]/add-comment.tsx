@@ -82,7 +82,7 @@ export default function AddComment({
           type="text"
           name="comment"
           placeholder="Tuliskan komentar anda..."
-          className="comment"
+          className="input w-full border border-zinc-300 dark:border-zinc-600 bg-white focus:border-slate-500 focus:outline-none dark:bg-zinc-700 focus:dark:border-zinc-300 dark:text-zinc-100"
           value={newComment.comment}
           onChange={handleChange}
         />
@@ -105,7 +105,8 @@ export default function AddComment({
         <div
           onClick={sendComment}
           className={`btn w-full bg-[#F44369] dark:bg-[#d8244b] text-white border-0 hover:bg-[#3E3B92] dark:hover:bg-[#ac1838] ${
-            check && "send-disabled"
+            check &&
+            "!btn-disabled dark:!bg-zinc-700 dark:!text-zinc-500 text-zinc-300 !bg-zinc-100"
           }`}
         >
           Kirim Komentar

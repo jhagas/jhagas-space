@@ -71,10 +71,7 @@ $$
 
 Dikarenakan jumlah **unknowns** harus sama dengan jumlah persamaan yang ada (dalam soal ini 3 **unknowns** dan 3 persamaan), matriks **Jacobian** pasti merupakan matriks dengan jumlah baris dan kolom yang sama. Jumlah kolom merepresentasikan jumlah **unknowns** dan jumlah baris merepresentasikan jumlah persamaan.
 
-<aside>
-⚠️ Perlu diketahui pula bahwa determinan dari matriks **Jacobian** tidak boleh nol, agar bisa dilakukan invers
-
-</aside>
+> ⚠️ Perlu diketahui pula bahwa determinan dari matriks Jacobian tidak boleh nol, agar bisa dilakukan invers
 
 Karena akan dilakukan pendekatan numerik Newton-Raphson, maka perlu didefinisikan persamaan pembaharuan dari setiap iterasi. Di mana $k$ adalah iterator dari fungsi pengulangan.
 

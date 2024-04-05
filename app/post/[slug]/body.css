@@ -1,0 +1,146 @@
+/* KATEX CSS FIX */
+.katex {
+  font-size: 1.15em !important;
+}
+
+.katex-html {
+  @apply py-2 overflow-x-auto overflow-y-hidden !important;
+}
+
+.katex-display > .katex > .katex-html {
+  @apply flex !important;
+}
+
+.katex-display > .katex > .katex-html > .base {
+  @apply mx-auto !important;
+}
+
+.katex-display > .katex > .katex-html > .tag {
+  @apply relative ml-10 !important;
+}
+
+/* CODE COPY BUTTON */
+pre:has(code) {
+  position: relative;
+}
+
+pre button.copy {
+  right: 1.5rem;
+  top: 0.58rem;
+
+  @apply flex absolute transition-all opacity-20 hover:opacity-100 bg-zinc-200/80 dark:bg-zinc-900 border-zinc-300/30 dark:border-zinc-600/30 border p-1 rounded-md;
+
+  & span {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  & .ready {
+    @apply bg-[url(/assets/copy.svg)] dark:invert w-5;
+  }
+
+  & .success {
+    display: none;
+    @apply bg-[url(/assets/copy-success.svg)] dark:invert w-5;
+  }
+
+  &.copied {
+    & .success {
+      display: block;
+    }
+
+    & .ready {
+      display: none;
+    }
+  }
+}
+
+/* REHYPE PRETTY CODE CSS */
+p > span[data-rehype-pretty-code-figure] > code,
+li span[data-rehype-pretty-code-figure] code {
+  @apply bg-zinc-100 dark:bg-zinc-800;
+}
+
+mark[data-highlighted-chars] {
+  @apply bg-yellow-200 dark:bg-yellow-900/60;
+}
+
+code[data-theme*=" "] > [data-highlighted-line] {
+  @apply bg-orange-100 dark:bg-zinc-700/50 border-l-4 border-l-orange-500;
+}
+
+[data-rehype-pretty-code-figure] {
+  @apply border border-zinc-300 dark:border-zinc-700;
+}
+
+.markdown figure pre {
+  @apply bg-transparent;
+}
+
+.markdown figure[data-rehype-pretty-code-figure] {
+  @apply rounded-lg overflow-clip mb-7;
+}
+
+.markdown code[data-theme*=" "] {
+  @apply text-[0.9rem] overflow-auto py-3 bg-zinc-50 dark:bg-zinc-800/50;
+}
+
+.markdown code[data-theme*=" "] span[data-line] {
+  @apply px-6;
+}
+
+.markdown p > [data-rehype-pretty-code-figure] > code,
+.markdown li [data-rehype-pretty-code-figure] code {
+  @apply rounded p-1 break-words border-none;
+}
+
+.markdown p > span[data-rehype-pretty-code-figure] > code span[data-line],
+.markdown li span[data-rehype-pretty-code-figure] code span[data-line] {
+  @apply px-0;
+}
+
+.markdown p > span[data-rehype-pretty-code-figure],
+.markdown li span[data-rehype-pretty-code-figure] {
+  @apply !mb-0 border-none bg-transparent p-0;
+}
+
+.markdown li figure[data-rehype-pretty-code-figure] code,
+.markdown p figure[data-rehype-pretty-code-figure] code {
+  @apply m-0 py-3 break-words;
+}
+
+.markdown li code,
+.markdown p code {
+  @apply mx-1 p-1 rounded break-words bg-zinc-100 dark:bg-zinc-800 text-[#24292EFF] dark:text-[#B392F0];
+}
+
+.markdown [data-rehype-pretty-code-title] {
+  @apply font-mono text-[0.9rem] px-5 py-2 bg-zinc-200 dark:bg-zinc-950/50 text-zinc-700 dark:text-zinc-400;
+}
+
+.markdown code[data-line-numbers] {
+  counter-reset: line;
+}
+
+.markdown code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+
+.markdown code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 2rem;
+}
+
+.markdown code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 3rem;
+}

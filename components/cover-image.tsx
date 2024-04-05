@@ -5,18 +5,15 @@ type Props = {
 };
 
 const CoverImage = ({ src }: Props) => {
-  const image = (
-    <Image
-      src={src}
-      alt={`Article Cover Image`}
-      className="!w-full rounded-lg max-w-3xl"
-      width={1200}
-      height={630}
-    />
-  );
   return (
-    <div className="sm:mx-0 h-full flex items-center justify-center">
-      {image}
+    <div className="sm:mx-0 h-full flex items-center justify-center max-w-3xl">
+      <Image
+        src={src}
+        alt={`Article Cover Image`}
+        className="rounded-lg"
+        width={1200}
+        height={630}
+      />
     </div>
   );
 };
