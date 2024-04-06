@@ -19,45 +19,6 @@
   @apply relative ml-10 !important;
 }
 
-/* CODE COPY BUTTON */
-pre:has(code) {
-  position: relative;
-}
-
-pre button.copy {
-  right: 1.5rem;
-  top: 0.58rem;
-
-  @apply flex absolute transition-all opacity-20 hover:opacity-100 bg-zinc-200/80 dark:bg-zinc-900 border-zinc-300/30 dark:border-zinc-600/30 border p-1 rounded-md;
-
-  & span {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
-  & .ready {
-    @apply bg-[url(/assets/copy.svg)] dark:invert w-5;
-  }
-
-  & .success {
-    display: none;
-    @apply bg-[url(/assets/copy-success.svg)] dark:invert w-5;
-  }
-
-  &.copied {
-    & .success {
-      display: block;
-    }
-
-    & .ready {
-      display: none;
-    }
-  }
-}
-
 /* REHYPE PRETTY CODE CSS */
 p > span[data-rehype-pretty-code-figure] > code,
 li span[data-rehype-pretty-code-figure] code {
@@ -118,7 +79,7 @@ code[data-theme*=" "] > [data-highlighted-line] {
 }
 
 .markdown [data-rehype-pretty-code-title] {
-  @apply font-mono text-[0.9rem] px-5 py-2 bg-zinc-200 dark:bg-zinc-950/50 text-zinc-700 dark:text-zinc-400;
+  @apply font-mono font-bold italic px-5 py-2 bg-zinc-200 dark:bg-zinc-950/50 text-zinc-700 dark:text-zinc-400;
 }
 
 .markdown code[data-line-numbers] {

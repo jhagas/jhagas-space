@@ -78,7 +78,7 @@ const Header = () => {
               <div>
                 <Link
                   href="/about-me"
-                  className="btn bg-[#F44369] dark:bg-[#d8244b] text-white border-0 hover:bg-[#ac1838]"
+                  className="btn bg-[#d8244b] text-white border-0 hover:bg-[#ac1838]"
                 >
                   Tentang Saya
                 </Link>
@@ -95,7 +95,7 @@ const Header = () => {
         <li>
           <Link
             href="/about-me"
-            className="btn w-full bg-[#F44369] dark:bg-[#d8244b] text-white border-0 hover:bg-[#ac1838]"
+            className="btn w-full bg-[#d8244b] text-white border-0 hover:bg-[#ac1838]"
           >
             Tentang Saya
           </Link>

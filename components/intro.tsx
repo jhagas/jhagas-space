@@ -4,9 +4,9 @@ import Typewriter from "typewriter-effect";
 
 const Intro = () => {
   return (
-    <section className="flex-col md:flex-row flex items-center justify-center mt-16 mb-16 md:mb-12">
+    <section className="flex-col md:flex-row flex items-center justify-center pt-24 pb-32">
       <div className="flex flex-col items-center text-center w-full">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-tight md:leading-tight text-center bg-gradient-to-tl from-[#F44369] to-[#3E3B92] dark:to-[#16BFFD] text-transparent bg-clip-text">
+        <h1 className="post_title">
           <noscript>Physics, Engineering, Coding and Technology, IoT</noscript>
           <Typewriter
             options={{

@@ -9,10 +9,10 @@ type Props = {
   tags: string;
 };
 
-const PostHeader = async ({ title, coverImage, date, tags }: Props) => {
+const PostHeader = ({ title, coverImage, date, tags }: Props) => {
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      <div className="pt-10 pb-10 md:pb-12 md:pt-20 px-5 max-w-4xl">
+      <div className="pt-10 pb-14 md:pb-14 md:pt-12 px-5 max-w-4xl">
         <PostTitle>{title}</PostTitle>
         <div className="text-xs sm:text-sm text-center mt-3">
           <p className="font-semibold text-[#475467] dark:text-slate-300 inline">
@@ -23,7 +23,7 @@ const PostHeader = async ({ title, coverImage, date, tags }: Props) => {
           </p>
         </div>
       </div>
-      <div className="mx-3 mb-4 md:mb-8 sm:mx-0 max-w-5xl">
+      <div className="mx-3 mb-10 md:mb-8 sm:mx-0 max-w-5xl">
         <CoverImage
           src={coverImage}
           alt={`Article Image (${title})`}

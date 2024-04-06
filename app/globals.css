@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* On post-body.tsx, only katex, shiki and color related class @apply relatives written here */
-
 /* REHYPE PRETTY CODE THEME CSS */
 code[data-theme*=" "],
 code[data-theme*=" "] span {
@@ -15,6 +13,12 @@ code[data-theme*=" "] span {
   color: var(--shiki-dark);
 }
 
+/* TYPEWRITTER EFFECT ON HOMEPAGE */
 .Typewriter__cursor {
   @apply text-[#F44369];
+}
+
+/* MULTICOLOR HEADING */
+.post_title {
+  @apply text-3xl sm:text-4xl md:text-6xl font-extrabold text-center bg-gradient-to-tl from-[#F44369] to-[#3E3B92] dark:to-[#16BFFD] text-transparent bg-clip-text;
 }

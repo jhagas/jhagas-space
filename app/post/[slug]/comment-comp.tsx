@@ -30,11 +30,15 @@ export default function Comment({ slug }: params) {
   useEffect(() => {
     async function getData() {
       setLoading(true);
-      const response = await fetch(
-        `/api/comments/${slug}?pagination=${page - 1}`
-      );
-      const data = await response.json();
-      setCommentsNow(data);
+      try {
+        const response = await fetch(
+          `/api/comments/${slug}?pagination=${page - 1}`
+        );
+        const data = await response.json();
+        setCommentsNow(data);
+      } catch (err) {
+        console.log("Comment Fetching error", err);
+      }
       setLoading(false);
     }
     getData();

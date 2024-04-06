@@ -67,7 +67,7 @@ export default function AddComment({
           type="text"
           name="name"
           placeholder="Tuliskan nama anda..."
-          className="comment"
+          className="input w-full border border-zinc-300 dark:border-zinc-600 bg-white focus:border-slate-500 focus:outline-none dark:bg-zinc-700 focus:dark:border-zinc-300 dark:text-zinc-100"
           value={newComment.name}
           onChange={handleChange}
         />
